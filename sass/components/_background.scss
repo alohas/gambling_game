@@ -1,0 +1,56 @@
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg__img {
+  position: absolute;
+  top: calc(-1 * 5px);
+  left: calc(-1 * 10px);
+  width: calc(100% + 10px * 2);
+  height: calc(100% + 5px * 2);
+  background: url("assets/images/bg.jpg") no-repeat 50% 0;
+  background-color: transparent;
+  background-size: cover;
+  transform: translate3d(0, 0, 0);
+  background-blend-mode: none;
+}
+
+.bg__img:nth-child(n + 2) {
+  opacity: 0;
+}
+
+.bg__img:nth-child(n + 2) {
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.bg__img:nth-child(2) {
+  background-color: transparent;
+  background-blend-mode: none;
+  animation-name: bg-anim-1;
+}
+
+.bg__img:nth-child(3) {
+  background-color: transparent;
+  background-blend-mode: none;
+  animation-name: bg-anim-2;
+}
+
+.bg__img:nth-child(4) {
+  background-color: #fb909a;
+  background-blend-mode: overlay;
+  animation-name: bg-anim-3;
+}
+
+.bg__img:nth-child(5) {
+  background-color: #1c1cc9;
+  background-blend-mode: overlay;
+  animation-name: bg-anim-flash;
+}
