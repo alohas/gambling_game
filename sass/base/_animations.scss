@@ -270,3 +270,20 @@
     transform: translate3d(0, 0, 0);
   }
 }
+
+//SLIDE IN ANIMATIONS
+
+@keyframes sliderIn {
+  to {
+    transform: translateX(-100vw + $slider-size);
+  }
+}
+
+@keyframes sliderFullIn {
+  from {
+    transform: translateX(-100vw + $slider-size);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

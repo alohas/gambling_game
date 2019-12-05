@@ -1,0 +1,16 @@
+.button {
+  display: block;
+  width: 27rem;
+  height: 6rem;
+  margin: auto;
+
+  font-size: $text-m;
+  font-weight: 400;
+  color: $color-mint;
+  cursor: pointer;
+
+  background: transparent;
+  border: 2px solid $color-purple;
+  border-radius: 3rem;
+  outline: none;
+}
