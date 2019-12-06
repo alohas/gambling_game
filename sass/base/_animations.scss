@@ -287,3 +287,15 @@
     transform: translateX(0);
   }
 }
+
+@keyframes gameIn {
+  to {
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+@keyframes menuIn {
+  to {
+    transform: translateX(0);
+  }
+}

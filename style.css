@@ -231,6 +231,14 @@ ORDER: Base + typography > general layout + grid > page layout > components
   to {
     transform: translateX(0); } }
 
+@keyframes gameIn {
+  to {
+    transform: translateY(-50%) translateX(0); } }
+
+@keyframes menuIn {
+  to {
+    transform: translateX(0); } }
+
 *,
 *::after,
 *::before {
@@ -263,19 +271,19 @@ body {
   padding-bottom: 2rem; }
 
 .heading-secondary {
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 2.2rem;
+  font-weight: 500;
   color: #5dfdcb;
   padding-bottom: 1rem;
   text-align: center; }
 
 .heading-tertiary {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 400;
   padding-bottom: 1rem; }
 
 .paragraph {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 300;
   hyphens: auto; }
 
@@ -284,7 +292,11 @@ body {
   color: #5dfdcb;
   text-decoration: none;
   border: none;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: all 0.1s ease-in; }
+
+.text-link:hover {
+  color: #7186f5; }
 
 .u-center-text {
   text-align: center !important; }
@@ -306,8 +318,8 @@ body {
 
 .button {
   display: block;
-  width: 27rem;
-  height: 6rem;
+  width: 24rem;
+  height: 5rem;
   margin: auto;
   font-size: 2.8rem;
   font-weight: 400;
@@ -371,18 +383,18 @@ body {
 .slider {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   background: rgba(0, 0, 0, 0.8);
   display: grid;
   grid-template-columns: 1fr 32vw;
   grid-gap: 2.5rem;
   transform: translateX(-100vw);
-  animation: sliderIn 0.4s ease-in 3s forwards, sliderFullIn 0.4s ease-in 6s forwards; }
+  animation: sliderIn 0.4s ease-in 3s forwards; }
   .slider_left {
+    margin-top: 7rem;
     padding: 2.5rem;
     display: grid;
     place-items: center;
-    grid-template-rows: 45vh 55vh; }
+    grid-template-rows: max-content 1fr; }
     .slider_left-facts {
       height: 100%;
       display: grid;
@@ -390,23 +402,22 @@ body {
       grid-gap: 3rem;
       place-items: center; }
       .slider_left-facts .box {
-        height: 30rem;
-        background: rgba(255, 255, 255, 0.1);
+        height: 100%;
+        background: rgba(255, 255, 255, 0.07);
         padding: 2.5rem; }
         .slider_left-facts .box_icon {
           width: 8rem;
           height: 8rem;
           margin: auto;
           margin-bottom: 1rem; }
-        .slider_left-facts .box p {
-          font-weight: 400; }
     .slider_left-ratings {
       width: 100%;
       height: 100%;
       display: grid; }
       .slider_left-ratings .ratings_overall {
-        width: 60%;
-        margin: auto;
+        width: 33rem;
+        align-self: end;
+        justify-self: center;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         place-items: center; }
@@ -414,9 +425,10 @@ body {
           width: 2px;
           height: 2.8rem;
           background: #7186f5; }
-        .slider_left-ratings .ratings_overall h3:nth-child(1) {
-          padding-right: 4rem;
+        .slider_left-ratings .ratings_overall h3 {
           padding-top: 1rem; }
+          .slider_left-ratings .ratings_overall h3:first-child {
+            justify-self: right; }
         .slider_left-ratings .ratings_overall .star {
           display: inline-block;
           width: 2.5rem;
@@ -440,14 +452,14 @@ body {
         animation: bg-anim-text 4s linear infinite;
         animation-delay: calc(2s + 4s * 0.2); }
     .slider_right-button {
-      margin-top: 4rem; }
+      margin-top: 6rem; }
 
 .review {
   width: 80%;
   padding: 2rem;
   display: grid;
   grid-template-columns: min-content 1fr;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.07);
   transform: skew(-15deg); }
   .review_icon {
     width: 6rem;
@@ -466,3 +478,63 @@ body {
     .review_content-user {
       font-size: 1.6rem;
       font-weight: 300; }
+
+#game {
+  width: 55vw;
+  height: 500px;
+  background: #000;
+  position: absolute;
+  right: 6.5vw;
+  top: 50%;
+  transform: translateY(-50%) translateX(100vw);
+  animation: gameIn 0.6s ease-in 3.5s forwards;
+  z-index: 20; }
+
+.nav {
+  width: 32vw;
+  padding: 2.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: max-content;
+  align-items: start;
+  transform: translateX(-100vw);
+  animation: menuIn 0.4s ease-in 3s forwards;
+  z-index: 100; }
+  .nav_menu {
+    width: 3.5rem;
+    height: 3.5rem; }
+  .nav_logo {
+    justify-self: center;
+    width: 10rem;
+    height: 10rem; }
+  .nav_user {
+    justify-self: right;
+    width: 3.5rem;
+    height: 3.5rem; }
+
+.menu {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7); }
+  .menu_container {
+    width: 32vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 0, 0, 0.5); }
+  .menu_list {
+    list-style: none; }
+    .menu_list-item {
+      margin: 6rem 0;
+      padding: 1rem;
+      border-left: 2px solid #7186f5;
+      transition: all 0.1s ease-in; }
+      .menu_list-item:hover {
+        border-left: 2px solid #5dfdcb; }
