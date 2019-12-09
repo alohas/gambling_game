@@ -10,9 +10,11 @@ if (loggedUserID) {
 const moreBtn = document.querySelector(".slider_right-button");
 const userBtn = document.querySelector(".nav_user");
 const menuBtn = document.querySelector(".nav_menu");
+const reviewsBtn = document.querySelector(".text-link");
 let slidedMore = false;
 let slidedMenu = false;
 let slidedUser = false;
+let slidedReview = false;
 
 moreBtn.addEventListener("click", e => {
   moreSlider();

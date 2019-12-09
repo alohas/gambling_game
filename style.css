@@ -258,7 +258,8 @@ html {
 
 body {
   box-sizing: border-box;
-  position: relative; }
+  position: relative;
+  scroll-behavior: smooth; }
 
 svg {
   display: block;
@@ -534,6 +535,8 @@ body {
   transform: translateX(-100vw);
   animation: menuIn 0.4s ease-in 3s forwards;
   z-index: 100; }
+  .nav * {
+    cursor: pointer; }
   .nav_menu {
     width: 3.5rem;
     height: 3.5rem; }
@@ -545,6 +548,12 @@ body {
     justify-self: right;
     width: 3.5rem;
     height: 3.5rem; }
+
+#reviews .nav {
+  position: relative;
+  width: 100%;
+  animation: none;
+  transform: translateX(0); }
 
 .menu {
   visibility: hidden; }
@@ -679,7 +688,53 @@ input:placeholder-shown + label {
       margin-bottom: 9rem; }
 
 .reviews {
-  width: 80vw;
-  height: 100vh;
-  margin: auto;
-  background: rgba(0, 0, 0, 0.8); }
+  visibility: hidden; }
+  .reviews_heading {
+    color: #7186f5;
+    position: absolute;
+    top: 8rem;
+    left: 2.5rem; }
+  .reviews_container {
+    width: 32vw;
+    height: 100vh;
+    padding-top: 12rem;
+    display: grid;
+    align-items: end;
+    justify-items: center;
+    background: rgba(0, 0, 0, 0.5); }
+  .reviews_add-stars {
+    width: 17rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    background: #f7f71c; }
+  .reviews_add-input {
+    width: 100%;
+    height: 10rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    font-family: inherit;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: white; }
+  .reviews_see {
+    height: 45rem;
+    display: grid;
+    margin-bottom: 2rem;
+    justify-items: center;
+    grid-row-gap: 2rem;
+    overflow: auto; }
+  .reviews_close {
+    width: 3.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+    background: #d33f49;
+    z-index: 101;
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem; }
+
+#reviews:target {
+  visibility: visible; }
