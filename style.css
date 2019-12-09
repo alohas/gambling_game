@@ -642,21 +642,20 @@ input:placeholder-shown + label {
   visibility: hidden;
   transform: translateY(-1rem); }
 
-.login {
-  display: none; }
-  .login_container {
-    width: 32vw;
-    height: 100vh;
-    display: grid;
-    place-items: center;
-    background: rgba(0, 0, 0, 0.5); }
-  .login_form {
-    height: 50vh;
-    display: grid; }
-    .login_form-button {
-      margin-bottom: 5rem; }
-    .login_form-signup {
-      margin-bottom: 5rem; }
+.login_container {
+  width: 32vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.5); }
+
+.login_form {
+  height: 50vh;
+  display: grid; }
+  .login_form-button {
+    margin-bottom: 5rem; }
+  .login_form-signup {
+    margin-bottom: 5rem; }
 
 .signup {
   display: none; }
