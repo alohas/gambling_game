@@ -253,6 +253,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   box-sizing: inherit; }
 
 html {
+  overflow-x: hidden;
   font-size: 62.5%; }
 
 body {

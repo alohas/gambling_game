@@ -7,7 +7,7 @@ login.addEventListener("click", e => {
 });
 
 function get() {
-  fetch("https://rpsexam-61a3.restdb.io/rest/registeredusers    ", {
+  fetch("https://rpsexam-61a3.restdb.io/rest/registeredusers", {
     method: "get",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
@@ -29,7 +29,20 @@ function checkUser(data) {
     if (username == data[i].username) {
       if (password == data[i].password) {
         localStorage.setItem("RPSuser", data[i]._id);
+        loggedUserID = localStorage.getItem("RPSuser");
+        document.querySelector("#password").value = "";
+        document.querySelector("#username").value = "";
+        document.querySelector(".profile").style.visibility = "visible";
+        document.querySelector(".login").style.visibility = "hidden";
+        populateUserInfo(data[i]);
       }
     }
   }
 }
+
+document.querySelector(".logOut").addEventListener("click", e => {
+  localStorage.removeItem("RPSuser");
+  loggedUserID = undefined;
+  document.querySelector(".profile").style.visibility = "hidden";
+  document.querySelector(".login").style.visibility = "hidden";
+});
