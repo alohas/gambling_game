@@ -546,7 +546,7 @@ body {
     height: 3.5rem; }
 
 .menu {
-  display: none; }
+  visibility: hidden; }
   .menu_container {
     width: 32vw;
     height: 100vh;
@@ -643,7 +643,8 @@ input:placeholder-shown + label {
   transform: translateY(-1rem); }
 
 .login {
-  display: none; }
+  visibility: hidden;
+  transition: all 0.2s ease-in; }
   .login_container {
     width: 32vw;
     height: 100vh;

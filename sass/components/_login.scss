@@ -1,5 +1,6 @@
 .login {
-  display: none;
+  visibility: hidden;
+  transition: all 0.2s ease-in;
 
   &_container {
     width: $slider-size;
