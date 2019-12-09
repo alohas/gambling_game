@@ -1,0 +1,24 @@
+.signup {
+  // display: none;
+  &_container {
+    width: $slider-size;
+    height: 100vh;
+    display: grid;
+    align-items: end;
+    justify-items: center;
+
+    background: rgba($color-black, 0.5);
+  }
+  &_form {
+    height: 50vh;
+    display: grid;
+
+    margin-bottom: 50%;
+    &-age {
+      margin-bottom: 3rem;
+    }
+    &-button {
+      margin-bottom: 9rem;
+    }
+  }
+}

@@ -9,7 +9,9 @@
 
   transform: translateX(-100vw);
   animation: sliderIn 0.4s ease-in 3s forwards;
-  //   sliderFullIn 0.4s ease-in 6s forwards;
+  // sliderFullIn 0.4s ease-in 6s forwards;
+
+  z-index: 30;
 
   &_left {
     margin-top: 7rem;

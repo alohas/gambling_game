@@ -1,26 +1,19 @@
 .menu {
   display: none;
 
-  width: 100vw;
-  height: 100vh;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  background: rgba($color-black, 0.7);
-
   &_container {
     width: $slider-size;
     height: 100vh;
     display: grid;
-    place-items: center;
+    align-items: center;
 
     background: rgba($color-black, 0.5);
   }
 
   &_list {
     list-style: none;
+    width: 80%;
+    margin: auto;
 
     &-item {
       margin: 6rem 0;

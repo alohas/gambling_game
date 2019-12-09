@@ -14,3 +14,20 @@
   border-radius: 3rem;
   outline: none;
 }
+
+.button-small {
+  display: block;
+  width: 16rem;
+  height: 4rem;
+  margin: auto;
+
+  font-size: $text-s;
+  font-weight: 400;
+  color: $color-mint;
+  cursor: pointer;
+
+  background: transparent;
+  border: 2px solid $color-purple;
+  border-radius: 3rem;
+  outline: none;
+}

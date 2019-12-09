@@ -1,3 +1,14 @@
+.u-modal {
+  width: 100vw;
+  height: 100vh;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: rgba($color-black, 0.7);
+}
+
 .u-center-text {
   text-align: center !important;
 }

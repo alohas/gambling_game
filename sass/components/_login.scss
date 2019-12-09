@@ -1,0 +1,24 @@
+.login {
+  display: none;
+
+  &_container {
+    width: $slider-size;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+
+    background: rgba($color-black, 0.5);
+  }
+
+  &_form {
+    height: 50vh;
+    display: grid;
+
+    &-button {
+      margin-bottom: 5rem;
+    }
+    &-signup {
+      margin-bottom: 5rem;
+    }
+  }
+}
