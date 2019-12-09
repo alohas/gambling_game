@@ -3,9 +3,11 @@
 const moreBtn = document.querySelector(".slider_right-button");
 const userBtn = document.querySelector(".nav_user");
 const menuBtn = document.querySelector(".nav_menu");
+const reviewsBtn = document.querySelector(".text-link");
 let slidedMore = false;
 let slidedMenu = false;
 let slidedUser = false;
+let slidedReview = false;
 
 moreBtn.addEventListener("click", e => {
   if (!slidedMore) {
@@ -40,3 +42,13 @@ menuBtn.addEventListener("click", e => {
     slidedMenu = false;
   }
 });
+
+// reviewsBtn.addEventListener("click", e => {
+//   if (!slidedReview) {
+//     document.querySelector(".reviews").style.visibility = "visible";
+//     slidedReview = true;
+//   } else {
+//     document.querySelector(".reviews").style.visibility = "hidden";
+//     slidedReview = false;
+//   }
+// });

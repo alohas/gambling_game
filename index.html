@@ -20,7 +20,7 @@
       <svg class="nav_logo"></svg>
       <svg class="nav_user"></svg>
     </nav>
-    <main class="slider">
+    <main class="slider" id="slider">
       <div class="slider_left">
         <div class="slider_left-facts">
           <div class="box">
@@ -119,8 +119,8 @@
           <li class="menu_list-item">
             <a href="#" class="text-link">high score</a>
           </li>
-          <li class="menu_list-item">
-            <a href="#" class="text-link">reviews</a>
+          <li class="menu_list-item link-reviews">
+            <a href="#reviews" class="text-link">reviews</a>
           </li>
           <li class="menu_list-item">
             <a href="#" class="text-link">log in / sign up</a>
@@ -239,6 +239,61 @@
           <a href="#" class="text-link">settings</a>
         </div>
         <button class="button">see more</button>
+      </div>
+    </div>
+
+    <div class="reviews u-modal" id="reviews">
+      <h3 class="heading-tertiary reviews_heading">reviews</h3>
+      <a href="#slider" class="reviews_close"></a>
+      <div class="reviews_container">
+        <form class="reviews_add" id="review">
+          <svg class="reviews_add-stars"></svg>
+          <textarea
+            class="reviews_add-input"
+            name="review"
+            form="review"
+            placeholder="write a review..."
+          ></textarea>
+          <button
+            type="submit"
+            name="submit"
+            class="reviews_add-post button-small"
+          >
+            post
+          </button>
+        </form>
+        <div class="reviews_see">
+          <div class="review">
+            <svg class="review_icon"></svg>
+            <div class="review_content">
+              <svg class="review_content-stars"></svg>
+              <p class="review_content-text paragraph">
+                Best game I ever palyed in my whole life, without a doubt.
+              </p>
+              <p class="review_content-user">~ ewaxd</p>
+            </div>
+          </div>
+          <div class="review">
+            <svg class="review_icon"></svg>
+            <div class="review_content">
+              <svg class="review_content-stars"></svg>
+              <p class="review_content-text paragraph">
+                Best game I ever palyed in my whole life, without a doubt.
+              </p>
+              <p class="review_content-user">~ ewaxd</p>
+            </div>
+          </div>
+          <div class="review">
+            <svg class="review_icon"></svg>
+            <div class="review_content">
+              <svg class="review_content-stars"></svg>
+              <p class="review_content-text paragraph">
+                Best game I ever palyed in my whole life, without a doubt.
+              </p>
+              <p class="review_content-user">~ ewaxd</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <script src="script/script.js"></script>
