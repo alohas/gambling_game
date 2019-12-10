@@ -245,6 +245,16 @@ ORDER: Base + typography > general layout + grid > page layout > components
   to {
     transform: translateX(0); } }
 
+@keyframes navIn {
+  to {
+    transform: translateX(68vw); } }
+
+@keyframes navOut {
+  from {
+    transform: translateX(68vw); }
+  to {
+    transform: translateX(0); } }
+
 *,
 *::after,
 *::before {
@@ -730,7 +740,6 @@ input:placeholder-shown + label {
     width: 3.5rem;
     height: 3.5rem;
     cursor: pointer;
-    background: #d33f49;
     z-index: 101;
     position: absolute;
     top: 2.5rem;

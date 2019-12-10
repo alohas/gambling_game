@@ -31,13 +31,19 @@ menuBtn.addEventListener("click", e => {
 function moreSlider() {
   if (!slidedMore) {
     document.querySelector(".slider").style.animation = "";
+    document.querySelector(".nav").style.animation = "";
     document.querySelector(".slider").style.animation =
       "sliderFullIn 0.4s ease-in forwards";
+    document.querySelector(".nav").style.animation =
+      "navIn 0.4s ease-in forwards";
     slidedMore = true;
   } else {
     document.querySelector(".slider").style.animation = "";
+    document.querySelector(".nav").style.animation = "";
     document.querySelector(".slider").style.animation =
       "sliderOut 0.4s ease-in forwards";
+    document.querySelector(".nav").style.animation =
+      "navOut 0.4s ease-in forwards";
     slidedMore = false;
   }
 }

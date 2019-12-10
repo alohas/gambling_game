@@ -308,3 +308,18 @@
     transform: translateX(0);
   }
 }
+
+@keyframes navIn {
+  to {
+    transform: translateX(68vw);
+  }
+}
+
+@keyframes navOut {
+  from {
+    transform: translateX(68vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
