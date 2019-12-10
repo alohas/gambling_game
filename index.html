@@ -321,7 +321,7 @@
               />
               <label for="password">password</label>
             </div>
-            <p class="paragraph confirmModifications_paragraph-alertWrongPass"> Type in your password and click confirm in order to save the desired modifications. </p>
+            <p class="paragraph confirmModifications_paragraph-alertWrongPass"> Wrong password </p>
               <input type="submit" class="confirmModifications_form-login button-small" value="confirm"> 
               <button class="confirmModifications_form-login_back button-small" type="button">
                   back
@@ -343,8 +343,9 @@
                 />
                 <label for="password"> old password</label>
               </div>
+              <p class="paragraph modifyPassword_paragraph-alertWrongPass"> Wrong password </p>
               <p class="paragraph"> Choose new password </p>
-              <div class="modifyPassword_form-password">
+              <div class="modifyPassword_form-password_new">
                   <input
                     type="text"
                     name="password"
@@ -355,7 +356,7 @@
                   <label for="password"> new password</label>
                 </div>
                 <p class="paragraph"> Retype new password </p>
-                <div class="modifyPassword_form-password">
+                <div class="modifyPassword_form-password_new-retype">
                     <input
                       type="text"
                       name="password"
@@ -363,8 +364,9 @@
                       placeholder="password"
                       required
                     />
-                    <label for="password"> new password</label>
+                    <label for="password"> new password confirm </label>
                   </div>
+                  <p class="paragraph modifyPassword_paragraph-alertNoMatch"></p>
                 <input type="submit" class="modifyPassword_form-login button-small" value="confirm"> 
                 <button class="modifyPassword_form-login_back button-small" type="button">
                     back

@@ -752,3 +752,9 @@ input:placeholder-shown + label {
 
 .confirmModifications_paragraph-alertWrongPass {
   display: none; }
+
+.modifyPassword_paragraph-alertWrongPass {
+  display: none; }
+
+.modifyPassword_paragraph-alertNoMatch {
+  display: none; }
