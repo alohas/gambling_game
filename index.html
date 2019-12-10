@@ -277,15 +277,11 @@
               />
               <label for="email">email</label>
             </div>
-            <div class="editUser_form-country">
-              <input
-                type="text"
-                name="country"
-                id="country"
-                placeholder="country"
-                required
-              />
-              <label for="country">country</label>
+            <div class="editUser_form-country select_form-country">
+            <select>
+                <option value="volvo" class="option_form-country"></option>
+            </select>
+            <label for="country">country</label>
             </div>
             <div class="editUser_form-age">
               <input
@@ -300,6 +296,7 @@
               <label for="age">age</label>
             </div>
             <p class="paragraph editUser_paragraph-modifyPassword"> Modify password </p>
+            <p class="paragraph editUser_paragraph-alertNoModifs"> You have no modifications </p>
             <button class="editUser_form-login button-small" type="button">
               save
             </button>

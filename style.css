@@ -746,3 +746,6 @@ input:placeholder-shown + label {
 
 .modifyPassword {
   display: none; }
+
+.editUser_paragraph-alertNoModifs {
+  display: none; }
