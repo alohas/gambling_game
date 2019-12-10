@@ -299,9 +299,13 @@
               />
               <label for="age">age</label>
             </div>
-            <button class="editUser_form-login button-small">
+            <p class="paragraph editUser_paragraph-modifyPassword"> Modify password </p>
+            <button class="editUser_form-login button-small" type="button">
               save
             </button>
+            <button class="editUser_form-login_back button-small" type="button">
+                back
+              </button>
           </form>
         </div>
       </div>
@@ -310,7 +314,7 @@
         <div class="signup_container"> 
         <form action="#" class="signup_form confirmModifications_form">
             <p class="paragraph"> Type in your password and click confirm in order to save the desired modifications. </p>
-          <div class="editUser_form-password">
+          <div class="confirmModifications_form-password">
               <input
                 type="text"
                 name="password"
@@ -320,10 +324,56 @@
               />
               <label for="password">password</label>
             </div>
-              <input type="submit" class="editUser_form-login button-small" value="confirm"> 
+              <input type="submit" class="confirmModifications_form-login button-small" value="confirm"> 
+              <button class="confirmModifications_form-login_back button-small" type="button">
+                  back
+                </button>
           </form>
           </div>
       </div>
+
+      <div class="modifyPassword u-modal">
+          <div class="signup_container"> 
+          <form action="#" class="signup_form modifyPassword_form">
+            <div class="modifyPassword_form-password">
+                <input
+                  type="text"
+                  name="password"
+                  id="password"
+                  placeholder="password"
+                  required
+                />
+                <label for="password"> old password</label>
+              </div>
+              <p class="paragraph"> Choose new password </p>
+              <div class="modifyPassword_form-password">
+                  <input
+                    type="text"
+                    name="password"
+                    id="password"
+                    placeholder="password"
+                    required
+                  />
+                  <label for="password"> new password</label>
+                </div>
+                <p class="paragraph"> Retype new password </p>
+                <div class="modifyPassword_form-password">
+                    <input
+                      type="text"
+                      name="password"
+                      id="password"
+                      placeholder="password"
+                      required
+                    />
+                    <label for="password"> new password</label>
+                  </div>
+                <input type="submit" class="modifyPassword_form-login button-small" value="confirm"> 
+                <button class="modifyPassword_form-login_back button-small" type="button">
+                    back
+                  </button>
+            </form>
+            </div>
+        </div>
 
     <div class="reviews u-modal" id="reviews">
       <h3 class="heading-tertiary reviews_heading">reviews</h3>
