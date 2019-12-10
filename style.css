@@ -749,3 +749,6 @@ input:placeholder-shown + label {
 
 .editUser_paragraph-alertNoModifs {
   display: none; }
+
+.confirmModifications_paragraph-alertWrongPass {
+  display: none; }
