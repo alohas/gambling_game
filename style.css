@@ -743,3 +743,6 @@ input:placeholder-shown + label {
 
 .confirmModifications {
   display: none; }
+
+.modifyPassword {
+  display: none; }
