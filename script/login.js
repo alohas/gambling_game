@@ -18,7 +18,7 @@ function get() {
     .then(e => e.json())
     .then(data => {
       checkUser(data);
-      //console.log(data);
+      console.log(data);
     });
 }
 

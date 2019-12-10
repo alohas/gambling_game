@@ -237,12 +237,84 @@
           <p class="profile_user-points paragraph"><svg>$</svg> 1200</p>
         </div>
         <div class="profile_settings">
+            <svg class="profile_settings-icon"></svg>
+            <a href="#" class="text-link see-friends">friends</a>
+            <br>
+            <br>
+            <svg class="profile_settings-icon"></svg>
+            <a href="#" class="text-link edit-profile">edit profile</a>
+            <br>
+            <br>
           <svg class="profile_settings-icon"></svg>
           <a href="#" class="text-link">settings</a>
+          <br>
         </div>
         <button class="button logOut">Log Out</button>
       </div>
     </div>
+
+    <!-- Used to select the user; 2 classes used from signup form -->
+    <div class="editUser u-modal">
+        <div class="signup_container editUser_container">
+          <form action="#" class="signup_form editUser_form">
+            <div class="editUser_form-username">
+              <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="username"
+                required
+              />
+              <label for="username">username</label>
+            </div>
+            <div class="editUser_form-email">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email"
+                required
+              />
+              <label for="email">email</label>
+            </div>
+            <div class="editUser_form-password">
+              <input
+                type="text"
+                name="password"
+                id="password"
+                placeholder="password"
+                required
+              />
+              <label for="password">password</label>
+            </div>
+            <div class="editUser_form-country">
+              <input
+                type="text"
+                name="country"
+                id="country"
+                placeholder="country"
+                required
+              />
+              <label for="country">country</label>
+            </div>
+            <div class="editUser_form-age">
+              <input
+                type="number"
+                name="age"
+                id="age"
+                placeholder="age"
+                min="10"
+                max="18"
+                required
+              />
+              <label for="age">age</label>
+            </div>
+            <button class="editUser_form-login button-small">
+              save
+            </button>
+          </form>
+        </div>
+      </div>
 
     <div class="reviews u-modal" id="reviews">
       <h3 class="heading-tertiary reviews_heading">reviews</h3>
@@ -300,5 +372,6 @@
     </div>
     <script src="script/script.js"></script>
     <script src="script/login.js"></script>
+    <script src="script/edit-profile.js"></script>
   </body>
 </html>

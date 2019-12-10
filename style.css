@@ -730,7 +730,6 @@ input:placeholder-shown + label {
     width: 3.5rem;
     height: 3.5rem;
     cursor: pointer;
-    background: #d33f49;
     z-index: 101;
     position: absolute;
     top: 2.5rem;
@@ -738,3 +737,6 @@ input:placeholder-shown + label {
 
 #reviews:target {
   visibility: visible; }
+
+.editUser {
+  display: none; }
