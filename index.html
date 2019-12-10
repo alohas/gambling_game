@@ -258,7 +258,17 @@
       <a href="#slider" class="reviews_close"></a>
       <div class="reviews_container">
         <form class="reviews_add" id="review">
-          <svg class="reviews_add-stars"></svg>
+          <!-- <svg class="reviews_add-stars"></svg> -->
+          <br>
+          <br>
+          <br>
+          <div class="stars" style="background-color: white;">
+            <img src="assets/images/dummy_star_empty.png" alt="" class="star-1">
+            <img src="assets/images/dummy_star_empty.png" alt="" class="star-2">
+            <img src="assets/images/dummy_star_empty.png" alt="" class="star-3">
+            <img src="assets/images/dummy_star_empty.png" alt="" class="star-4">
+            <img src="assets/images/dummy_star_empty.png" alt="" class="star-5">
+          </div>
           <textarea
             class="reviews_add-input"
             name="review"
@@ -273,41 +283,27 @@
             post
           </button>
         </form>
-        <div class="reviews_see">
-          <div class="review">
-            <svg class="review_icon"></svg>
-            <div class="review_content">
-              <svg class="review_content-stars"></svg>
-              <p class="review_content-text paragraph">
-                Best game I ever palyed in my whole life, without a doubt.
-              </p>
-              <p class="review_content-user">~ ewaxd</p>
-            </div>
-          </div>
-          <div class="review">
-            <svg class="review_icon"></svg>
-            <div class="review_content">
-              <svg class="review_content-stars"></svg>
-              <p class="review_content-text paragraph">
-                Best game I ever palyed in my whole life, without a doubt.
-              </p>
-              <p class="review_content-user">~ ewaxd</p>
-            </div>
-          </div>
-          <div class="review">
-            <svg class="review_icon"></svg>
-            <div class="review_content">
-              <svg class="review_content-stars"></svg>
-              <p class="review_content-text paragraph">
-                Best game I ever palyed in my whole life, without a doubt.
-              </p>
-              <p class="review_content-user">~ ewaxd</p>
-            </div>
-          </div>
-        </div>
+        <section class="reviews_see">
+        
+        </section>
       </div>
     </div>
+
+    <template id="review" class="review-template">
+      <article class="review">
+        <svg class="review_icon avatarUser"></svg>
+        <div class="review_content contentUser">
+          <svg class="review_content-stars starUser"></svg>
+          <p class="review_content-text paragraph reviewUser">
+            Best game I ever palyed in my whole life, without a doubt.
+          </p>
+          <p class="review_content-user usernameUser">~ ewaxd</p>
+        </div>
+      </article>
+    </template>
+
     <script src="script/script.js"></script>
     <script src="script/login.js"></script>
+    <script src="script/reviews.js"></script>
   </body>
 </html>
