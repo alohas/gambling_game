@@ -20,6 +20,93 @@
       <svg class="nav_logo"></svg>
       <svg class="nav_user"></svg>
     </nav>
+    <section id="game">
+      <div class="app">
+        <!-- <div class="app_avatar"></div>
+        <h3 class="app_username">Trial</h3>
+        <h3 class="app_coins hidden"></h3> -->
+
+        <div class="app_wins">
+          <h2 class="app_wins-userw">User wins: <br /><span>0</span></h2>
+          <h2 class="app_wins-pcw">Pc wins: <br /><span>0</span></h2>
+        </div>
+        <h3 class="app-bet">1</h3>
+        <div class="app_player">
+          <h2 class="app_player-name"></h2>
+          <h2 class="app_player-coins">$<span></span></h2>
+        </div>
+        <h2 class="app_result">???</h2>
+
+        <div class="app_hands">
+          <div class="app_hands-user">
+            <h3 class="userh">Your hand: <br /><span></span></h3>
+            <div class="userhimg handsimg">
+              <img src="assets/hands/hand_default.svg" alt="default" />
+            </div>
+          </div>
+
+          <div class="app_hands-pc">
+            <h3 class="pch">Computer hand: <br /><span></span></h3>
+            <div class="pchimg handsimg">
+              <img src="assets/hands/hand_default.svg" alt="default" />
+            </div>
+          </div>
+        </div>
+        <div class="app_options">
+          <button class="rock">Rock</button>
+          <button class="paper">Paper</button>
+          <button class="scissors">Scissors</button>
+          <button class="lizard">Lizard</button>
+          <button class="spock">Spock</button>
+          <button class="spider-man">Spider-man</button>
+          <button class="batman">Batman</button>
+          <button class="wizard">Wizard</button>
+          <button class="glock">Glock</button>
+        </div>
+      </div>
+      <div class="modal_winner">
+        <div class="modal_winner_body">
+          <h2 class="modal_winner_body-message"></h2>
+          <div class="modal_winner_body_notlogged">
+            <p class="modal_winner_body_notlogged-p">
+              If you want to play more, you need to have an account!
+            </p>
+            <div class="modal_winner_body_notlogged_buttons">
+              <button class="modal_winner_body_notlogged_buttons-login">
+                Log In
+              </button>
+              <button class="modal_winner_body_notlogged_buttons-signup">
+                Sign Up
+              </button>
+            </div>
+          </div>
+          <div class="modal_winner_body_logged">
+            <button class="modal_winner_body_logged-restart">Play again</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal_start">
+        <div class="modal_start_body">
+          <button class="modal_start_body-buton">Start</button>
+          <div class="modal_start_body-trial">
+            <h2 class="modal_start_body-trial-text">Trial version</h2>
+          </div>
+          <div class="modal_start_body-logged">
+            <button class="modal_start_body-logged-up">up</button>
+            <input
+              class="modal_start_body-logged-input"
+              type="number"
+              min="10"
+              autocomplete="off"
+              value="10"
+              readonly
+              max=""
+            />
+            <button class="modal_start_body-logged-down">down</button>
+          </div>
+        </div>
+      </div>
+    </section>
     <main class="slider">
       <div class="slider_left">
         <div class="slider_left-facts">
@@ -110,8 +197,6 @@
         </div>
       </div>
     </main>
-
-    <section id="game"></section>
 
     <div class="menu u-modal">
       <div class="menu_container">
@@ -245,5 +330,6 @@
     </div>
     <script src="script/script.js"></script>
     <script src="script/login.js"></script>
+    <script src="script/game.js"></script>
   </body>
 </html>

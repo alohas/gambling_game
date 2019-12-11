@@ -86,4 +86,10 @@ function populateUserInfo(user) {
   console.log(user);
   document.querySelector(".profile_user-name").textContent = user.username;
   document.querySelector(".profile_user-points").textContent = user.coins;
+  document.querySelector(".app_player-name").textContent = user.username;
+  document.querySelector(".app_player-coins span").textContent = user.coins;
+  document.querySelector("div.app_player").style.display = "block";
+  document
+    .querySelector(".modal_start_body-logged-input")
+    .setAttribute("max", user.coins);
 }

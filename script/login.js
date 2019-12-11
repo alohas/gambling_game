@@ -34,7 +34,16 @@ function checkUser(data) {
         document.querySelector("#username").value = "";
         document.querySelector(".profile").style.visibility = "visible";
         document.querySelector(".login").style.visibility = "hidden";
+        document.querySelector(".modal_winner_body_notlogged").style.display =
+          "none";
+        document.querySelector(".modal_winner_body_logged").style.display =
+          "block";
         populateUserInfo(data[i]);
+        document.querySelector(".modal_start_body-trial").style.display =
+          "none";
+        document.querySelector(".modal_start_body-logged").style.display =
+          "block";
+        resetGame();
       }
     }
   }
@@ -45,4 +54,8 @@ document.querySelector(".logOut").addEventListener("click", e => {
   loggedUserID = undefined;
   document.querySelector(".profile").style.visibility = "hidden";
   document.querySelector(".login").style.visibility = "hidden";
+  resetGame();
+  document.querySelector("div.app_player").style.display = "none";
+  document.querySelector(".modal_start_body-trial").style.display = "block";
+  document.querySelector(".modal_start_body-logged").style.display = "none";
 });
