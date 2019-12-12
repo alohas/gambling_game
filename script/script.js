@@ -9,7 +9,7 @@ if (loggedUserID) {
 
 const moreBtn = document.querySelector(".slider_right-button");
 const userBtn = document.querySelector(".nav_user");
-const menuBtn = document.querySelector(".nav_menu");
+const menuBtn = document.querySelector(".wrapper");
 const reviewsBtn = document.querySelector(".text-link");
 let slidedMore = false;
 let slidedMenu = false;
@@ -95,3 +95,9 @@ function populateUserInfo(user) {
   document.querySelector(".profile_user-name").textContent = user.username;
   document.querySelector(".profile_user-points").textContent = user.coins;
 }
+
+var wrapperMenu = document.querySelector(".wrapper");
+
+wrapperMenu.addEventListener("click", function() {
+  wrapperMenu.classList.toggle("open");
+});
