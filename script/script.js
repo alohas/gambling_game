@@ -91,7 +91,7 @@ function fetchUser(id) {
 
 // use THIS function to use user data model on loading stuff on page
 function populateUserInfo(user) {
-  console.log(user);
+  // console.log(user);
   document.querySelector(".profile_user-name").textContent = user.username;
   document.querySelector(".profile_user-points").textContent = user.coins;
 }

@@ -242,9 +242,165 @@
         </div>
         <div class="profile_settings">
           <svg class="profile_settings-icon"></svg>
+          <a href="#" class="text-link see-friends">friends</a>
+          <br />
+          <br />
+          <svg class="profile_settings-icon"></svg>
+          <a href="#" class="text-link edit-profile">edit profile</a>
+          <br />
+          <br />
+          <svg class="profile_settings-icon"></svg>
           <a href="#" class="text-link">settings</a>
+          <br />
         </div>
         <button class="button logOut">Log out</button>
+      </div>
+    </div>
+
+    <!-- Used to select the user; 2 classes used from signup form -->
+    <div class="editUser u-modal">
+      <div class="signup_container editUser_container">
+        <form action="#" class="signup_form editUser_form">
+          <div class="editUser_form-username">
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="username"
+              required
+            />
+            <label for="username">username</label>
+          </div>
+          <div class="editUser_form-email">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="email"
+              required
+            />
+            <label for="email">email</label>
+          </div>
+          <div class="editUser_form-country select_form-country">
+            <select>
+              <option value="volvo" class="option_form-country"></option>
+            </select>
+            <label for="country">country</label>
+          </div>
+          <div class="editUser_form-age">
+            <input
+              type="number"
+              name="age"
+              id="age"
+              placeholder="age"
+              min="10"
+              max="18"
+              required
+            />
+            <label for="age">age</label>
+          </div>
+          <p class="paragraph editUser_paragraph-modifyPassword">
+            Modify password
+          </p>
+          <p class="paragraph editUser_paragraph-alertNoModifs">
+            You have no modifications
+          </p>
+          <button class="editUser_form-login button-small" type="button">
+            save
+          </button>
+          <button class="editUser_form-login_back button-small" type="button">
+            back
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="confirmModifications u-modal">
+      <div class="signup_container">
+        <form action="#" class="signup_form confirmModifications_form">
+          <p class="paragraph">
+            Type in your password and click confirm in order to save the desired
+            modifications.
+          </p>
+          <div class="confirmModifications_form-password">
+            <input
+              type="text"
+              name="password"
+              id="password"
+              placeholder="password"
+              required
+            />
+            <label for="password">password</label>
+          </div>
+          <p class="paragraph confirmModifications_paragraph-alertWrongPass">
+            Wrong password
+          </p>
+          <input
+            type="submit"
+            class="confirmModifications_form-login button-small"
+            value="confirm"
+          />
+          <button
+            class="confirmModifications_form-login_back button-small"
+            type="button"
+          >
+            back
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modifyPassword u-modal">
+      <div class="signup_container">
+        <form action="#" class="signup_form modifyPassword_form">
+          <div class="modifyPassword_form-password">
+            <input
+              type="text"
+              name="password"
+              id="password"
+              placeholder="password"
+              required
+            />
+            <label for="password"> old password</label>
+          </div>
+          <p class="paragraph modifyPassword_paragraph-alertWrongPass">
+            Wrong password
+          </p>
+          <p class="paragraph">Choose new password</p>
+          <div class="modifyPassword_form-password_new">
+            <input
+              type="text"
+              name="password"
+              id="password"
+              placeholder="password"
+              required
+            />
+            <label for="password"> new password</label>
+          </div>
+          <p class="paragraph">Retype new password</p>
+          <div class="modifyPassword_form-password_new-retype">
+            <input
+              type="text"
+              name="password"
+              id="password"
+              placeholder="password"
+              required
+            />
+            <label for="password"> new password confirm </label>
+          </div>
+          <p class="paragraph modifyPassword_paragraph-alertNoMatch"></p>
+          <input
+            type="submit"
+            class="modifyPassword_form-login button-small"
+            value="confirm"
+          />
+          <button
+            class="modifyPassword_form-login_back button-small"
+            type="button"
+          >
+            back
+          </button>
+        </form>
       </div>
     </div>
 
@@ -420,5 +576,6 @@
     </div>
     <script src="script/script.js"></script>
     <script src="script/login.js"></script>
+    <script src="script/edit-profile.js"></script>
   </body>
 </html>
