@@ -20,6 +20,17 @@
   left: $margin;
 }
 
+.u-close-left {
+  width: 3.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+
+  z-index: 101;
+  position: absolute;
+  top: $margin;
+  left: calc(#{$slider-size} - #{$margin} - 3.5rem);
+}
+
 .u-center-text {
   text-align: center !important;
 }

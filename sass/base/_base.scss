@@ -30,6 +30,7 @@ body {
   box-sizing: border-box;
   position: relative;
   scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
 
 svg {

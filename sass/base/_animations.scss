@@ -383,3 +383,12 @@
     transform: rotateY(180deg) translateY(0px);
   }
 }
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -1,5 +1,6 @@
 .signup {
-  display: none;
+  visibility: hidden;
+
   &_container {
     width: $slider-size;
     height: 100vh;
@@ -21,4 +22,8 @@
       margin-bottom: 9rem;
     }
   }
+}
+
+#signup:target {
+  visibility: visible;
 }

@@ -5,6 +5,8 @@ let loggedUserID = localStorage.getItem("RPSuser");
 let userObject;
 if (loggedUserID) {
   fetchUser(loggedUserID);
+  document.querySelector(".nav_user-link").href = "#profile";
+  document.querySelector("#review").style.display = "block";
 }
 
 const moreBtn = document.querySelector(".slider_right-button");
@@ -20,13 +22,13 @@ moreBtn.addEventListener("click", e => {
   moreSlider();
 });
 
-userBtn.addEventListener("click", e => {
-  userSlider();
-});
+// userBtn.addEventListener("click", e => {
+//   userSlider();
+// });
 
-menuBtn.addEventListener("click", e => {
-  menuSlider();
-});
+// menuBtn.addEventListener("click", e => {
+//   menuSlider();
+// });
 
 function moreSlider() {
   if (!slidedMore) {
@@ -34,16 +36,20 @@ function moreSlider() {
     document.querySelector(".nav").style.animation = "";
     document.querySelector(".slider").style.animation =
       "sliderFullIn 0.4s ease-in forwards";
-    document.querySelector(".nav").style.animation =
-      "navIn 0.4s ease-in forwards";
+    // document.querySelector(".nav").style.animation =
+    //   "navIn 0.4s ease-in forwards";
+    document.querySelector(".nav").style.width = "100vw";
+    document.querySelector(".seemore").innerHTML = "see less";
     slidedMore = true;
   } else {
     document.querySelector(".slider").style.animation = "";
     document.querySelector(".nav").style.animation = "";
     document.querySelector(".slider").style.animation =
       "sliderOut 0.4s ease-in forwards";
-    document.querySelector(".nav").style.animation =
-      "navOut 0.4s ease-in forwards";
+    // document.querySelector(".nav").style.animation =
+    //   "navOut 0.4s ease-in forwards";
+    document.querySelector(".nav").style.width = "32vw";
+    document.querySelector(".seemore").innerHTML = "see more";
     slidedMore = false;
   }
 }
@@ -91,7 +97,7 @@ function fetchUser(id) {
 
 // use THIS function to use user data model on loading stuff on page
 function populateUserInfo(user) {
-  // console.log(user);
+  console.log(user);
   document.querySelector(".profile_user-name").textContent = user.username;
   document.querySelector(".profile_user-points").textContent = user.coins;
   document.querySelector(".app_player-name").textContent = user.username;
@@ -102,8 +108,13 @@ function populateUserInfo(user) {
     .setAttribute("max", user.coins);
 }
 
-var wrapperMenu = document.querySelector(".wrapper");
+const wrapperMenu = document.querySelector(".wrapper");
+const closeMenu = document.querySelector(".menu-close");
 
-wrapperMenu.addEventListener("click", function() {
+wrapperMenu.addEventListener("click", () => {
+  wrapperMenu.classList.toggle("open");
+});
+
+closeMenu.addEventListener("click", () => {
   wrapperMenu.classList.toggle("open");
 });
