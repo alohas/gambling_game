@@ -1,0 +1,60 @@
+.friends {
+  visibility: hidden;
+  &_container {
+    width: $slider-size;
+    height: 100vh;
+    padding-top: 12rem;
+
+    display: grid;
+    align-items: end;
+    justify-items: center;
+
+    background: rgba($color-black, 0.5);
+  }
+  &_list {
+    height: 45vh;
+    width: 90%;
+    &-heading {
+      color: $color-mint;
+      font-size: $text-m;
+      margin-bottom: 2rem;
+    }
+    &-list {
+      margin: auto;
+      overflow: auto;
+      list-style: none;
+      &-item {
+        margin-bottom: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+
+        svg {
+          width: 5rem;
+          height: 5rem;
+        }
+        p {
+          font-size: $text-s;
+          font-weight: 400;
+        }
+        button {
+          width: 5rem;
+        }
+      }
+    }
+  }
+  &_close {
+    width: 3.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+
+    z-index: 101;
+    position: absolute;
+    top: $margin;
+    left: $margin;
+  }
+}
+
+#friends:target {
+  visibility: visible;
+}

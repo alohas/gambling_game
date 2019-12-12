@@ -620,6 +620,10 @@ body {
     display: inline-block; }
   .profile_settings a {
     color: #7186f5 !important; }
+  .profile_friends-icon {
+    display: inline-block; }
+  .profile_friends a {
+    color: #7186f5 !important; }
 
 form {
   width: 80%; }
@@ -798,3 +802,49 @@ input:placeholder-shown + label {
       .highscore_table table tbody {
         font-size: 2.2rem;
         font-weight: 300; }
+
+.friends {
+  visibility: hidden; }
+  .friends_container {
+    width: 32vw;
+    height: 100vh;
+    padding-top: 12rem;
+    display: grid;
+    align-items: end;
+    justify-items: center;
+    background: rgba(0, 0, 0, 0.5); }
+  .friends_list {
+    height: 45vh;
+    width: 90%; }
+    .friends_list-heading {
+      color: #5dfdcb;
+      font-size: 2.8rem;
+      margin-bottom: 2rem; }
+    .friends_list-list {
+      margin: auto;
+      overflow: auto;
+      list-style: none; }
+      .friends_list-list-item {
+        margin-bottom: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center; }
+        .friends_list-list-item svg {
+          width: 5rem;
+          height: 5rem; }
+        .friends_list-list-item p {
+          font-size: 2.2rem;
+          font-weight: 400; }
+        .friends_list-list-item button {
+          width: 5rem; }
+  .friends_close {
+    width: 3.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+    z-index: 101;
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem; }
+
+#friends:target {
+  visibility: visible; }
