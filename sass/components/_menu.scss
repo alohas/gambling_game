@@ -19,10 +19,12 @@
       margin: 6rem 0;
       padding: 1rem;
       border-left: 2px solid $color-purple;
+
       transition: all 0.1s ease-in;
 
       &:hover {
         border-left: 2px solid $color-mint;
+        transform: translateX(1rem);
       }
     }
   }
@@ -40,9 +42,8 @@
   .line {
     transition: 0.2s ease-in;
     background-color: $color-purple;
-    border-radius: 25px;
     width: 100%;
-    height: 3px;
+    height: 2px;
     &.half {
       width: 50%;
       &.start {
@@ -82,4 +83,12 @@
 .nav_user > circle,
 path {
   transition: 0.2s ease-in;
+}
+
+#menu:target {
+  visibility: visible;
+}
+
+#menu:target + #game {
+  display: none !important;
 }

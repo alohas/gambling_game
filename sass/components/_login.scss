@@ -5,21 +5,29 @@
   &_container {
     width: $slider-size;
     height: 100vh;
+
     display: grid;
-    place-items: center;
+    grid-template-rows: 65vh 1fr;
+    align-items: end;
+    justify-items: center;
 
     background: rgba($color-black, 0.5);
   }
 
   &_form {
-    height: 50vh;
     display: grid;
 
     &-button {
+      margin-top: 5rem;
       margin-bottom: 5rem;
     }
     &-signup {
-      margin-bottom: 5rem;
+      margin: 0;
+      align-self: start;
     }
   }
+}
+
+#login:target {
+  visibility: visible;
 }
