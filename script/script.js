@@ -7,6 +7,7 @@ if (loggedUserID) {
   fetchUser(loggedUserID);
 }
 
+let scores;
 const moreBtn = document.querySelector(".slider_right-button");
 const userBtn = document.querySelector(".nav_user");
 const menuBtn = document.querySelector(".wrapper");
@@ -15,6 +16,8 @@ let slidedMore = false;
 let slidedMenu = false;
 let slidedUser = false;
 let slidedReview = false;
+
+scoreBoard();
 
 moreBtn.addEventListener("click", e => {
   moreSlider();
@@ -107,3 +110,34 @@ var wrapperMenu = document.querySelector(".wrapper");
 wrapperMenu.addEventListener("click", function() {
   wrapperMenu.classList.toggle("open");
 });
+
+function scoreBoard() {
+  fetch(`https://rpsexam-61a3.restdb.io/rest/registeredusers`, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5ddfb3cc4658275ac9dc201e",
+      "cache-control": "no-cache"
+    }
+  })
+    .then(e => e.json())
+    .then(data => {
+      scores = data.sort((a, b) => (a.coins < b.coins ? 1 : -1));
+      //console.log(scores);
+      showScores();
+    });
+}
+
+function showScores() {
+  for (let i = 0; i <= 9; i++) {
+    const template = document.querySelector("#scoreBoard").content;
+    const clone = template.cloneNode(true);
+    const parent = document.querySelector(".highscoreParent");
+    clone.querySelector(".place").textContent = i + 1;
+    clone.querySelector(".name").textContent = scores[i].username;
+    clone.querySelector(".score").textContent = scores[i].coins;
+    clone.querySelector(".country").textContent = scores[i].country;
+    clone.querySelector(".age").textContent = scores[i].age;
+    parent.appendChild(clone);
+  }
+}

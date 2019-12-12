@@ -603,7 +603,7 @@
         <div class="highscore_sorting">
           <ul class="highscore_sorting-list">
             <li>score</li>
-            <li>country</li>
+            <li id="countries">country</li>
             <li>age</li>
           </ul>
         </div>
@@ -618,68 +618,23 @@
                 <th>age</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>ewa_xd</td>
-                <td>234</td>
-                <td>PL</td>
-                <td>15</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>ewa_xd</td>
-                <td>234</td>
-                <td>PL</td>
-                <td>15</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>ewa_xd</td>
-                <td>234</td>
-                <td>PL</td>
-                <td>15</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>ewa_xd</td>
-                <td>234</td>
-                <td>PL</td>
-                <td>15</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>ewa_xd</td>
-                <td>234</td>
-                <td>PL</td>
-                <td>15</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>ewa_xd</td>
-                <td>234</td>
-                <td>PL</td>
-                <td>15</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>ewa_xd</td>
-                <td>234</td>
-                <td>PL</td>
-                <td>15</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>ewa_xd</td>
-                <td>234</td>
-                <td>PL</td>
-                <td>15</td>
-              </tr>
+            <tbody class="highscoreParent">
+              
             </tbody>
           </table>
         </div>
       </div>
     </div>
+
+    <template id="scoreBoard">
+      <tr>
+        <td class="place"></td>
+        <td class="name"></td>
+        <td class="score"></td>
+        <td class="country"></td>
+        <td class="age"></td>
+      </tr>
+    </template>
 
     <div class="friends u-modal" id="friends">
       <a href="#slider" class="friends_close"></a>
