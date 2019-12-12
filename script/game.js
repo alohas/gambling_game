@@ -38,7 +38,11 @@ const bet = document.querySelector(".app-bet");
 restart.addEventListener("click", resetGame);
 
 start.addEventListener("click", e => {
-  if (userObject.coins > 0) {
+  if (loggedUserID) {
+    if (userObject.coins > 0) {
+      startGame();
+    }
+  } else {
     startGame();
   }
 });
