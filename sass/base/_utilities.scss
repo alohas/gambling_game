@@ -9,6 +9,17 @@
   background: rgba($color-black, 0.7);
 }
 
+.u-close {
+  width: 3.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+
+  z-index: 101;
+  position: absolute;
+  top: $margin;
+  left: $margin;
+}
+
 .u-center-text {
   text-align: center !important;
 }
