@@ -36,7 +36,12 @@ const inputAmount = document.querySelector(".modal_start_body-logged-input");
 const bet = document.querySelector(".app-bet");
 
 restart.addEventListener("click", resetGame);
-start.addEventListener("click", startGame);
+
+start.addEventListener("click", e => {
+  if (userObject.coins > 0) {
+    startGame();
+  }
+});
 
 document
   .querySelector(".modal_winner_body_notlogged_buttons-login")
@@ -109,7 +114,7 @@ function aRound(playerHand, computerHand) {
   document.querySelector(".pch span").textContent = computerHand;
 
   winner.style.visibility = "visible";
-  console.log(playerHand, computerHand);
+  //console.log(playerHand, computerHand);
   if (playerHand === computerHand) {
     winner.textContent = "It is a tie!";
     return;
@@ -365,7 +370,24 @@ function checkScore() {
     if (game.userWin == 2) {
       document.querySelector(".modal_winner_body-message").textContent =
         "Congratulations! You won!";
-    } else if (game.pcWin) {
+      if (loggedUserID) {
+        userObject.coins = userObject.coins + Number(bet.textContent);
+        populateUserInfo(userObject);
+        const postData = JSON.stringify(userObject);
+        fetch(
+          `https://rpsexam-61a3.restdb.io/rest/registeredusers/${loggedUserID}`,
+          {
+            method: "put",
+            headers: {
+              "Content-Type": "application/json; charset=utf-8",
+              "x-apikey": "5ddfb3cc4658275ac9dc201e",
+              "cache-control": "no-cache"
+            },
+            body: postData
+          }
+        );
+      }
+    } else if (game.pcWin == 2) {
       document.querySelector(".modal_winner_body-message").textContent =
         "Oh no! You lost...";
     }
@@ -396,6 +418,7 @@ function resetGame() {
   options.forEach(e => {
     e.disabled = false;
   });
+  bet.style.visibility = "hidden";
   modalStart.style.display = "grid";
 }
 
@@ -405,10 +428,23 @@ function startGame() {
   });
   modalStart.style.display = "none";
   if (loggedUserID) {
-    console.log(inputAmount.value);
     bet.textContent = 2 * Number(inputAmount.value);
     bet.style.visibility = "visible";
     userObject.coins = userObject.coins - Number(inputAmount.value);
     populateUserInfo(userObject);
+
+    const postData = JSON.stringify(userObject);
+    fetch(
+      `https://rpsexam-61a3.restdb.io/rest/registeredusers/${loggedUserID}`,
+      {
+        method: "put",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "x-apikey": "5ddfb3cc4658275ac9dc201e",
+          "cache-control": "no-cache"
+        },
+        body: postData
+      }
+    );
   }
 }

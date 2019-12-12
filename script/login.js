@@ -28,6 +28,7 @@ function checkUser(data) {
   for (let i = 0; i < data.length; i++) {
     if (username == data[i].username) {
       if (password == data[i].password) {
+        userObject = data[i];
         localStorage.setItem("RPSuser", data[i]._id);
         loggedUserID = localStorage.getItem("RPSuser");
         document.querySelector("#password").value = "";
@@ -52,10 +53,12 @@ function checkUser(data) {
 document.querySelector(".logOut").addEventListener("click", e => {
   localStorage.removeItem("RPSuser");
   loggedUserID = undefined;
+  userObject = undefined;
   document.querySelector(".profile").style.visibility = "hidden";
   document.querySelector(".login").style.visibility = "hidden";
   resetGame();
   document.querySelector("div.app_player").style.display = "none";
   document.querySelector(".modal_start_body-trial").style.display = "block";
   document.querySelector(".modal_start_body-logged").style.display = "none";
+  document.querySelector(".app-bet").style.visibility = "hidden";
 });
