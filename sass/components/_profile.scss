@@ -42,4 +42,14 @@
       color: $color-purple !important;
     }
   }
+
+  &_friends {
+    &-icon {
+      display: inline-block;
+    }
+
+    a {
+      color: $color-purple !important;
+    }
+  }
 }
