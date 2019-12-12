@@ -86,10 +86,10 @@ options.forEach(option => {
     let result = null;
 
     setTimeout(() => {
-      playerh.src = `assets/hands/hand_${option.textContent}.svg`;
+      playerh.src = `assets/hands/hand_${option.querySelector("img").alt}.svg`;
       computerh.src = `assets/hands/hand_${generatedHand}.svg`;
 
-      result = aRound(option.textContent, generatedHand);
+      result = aRound(option.querySelector("img").alt, generatedHand);
 
       if (result === "win") {
         game.userWin++;
@@ -118,7 +118,7 @@ function aRound(playerHand, computerHand) {
   document.querySelector(".pch span").textContent = computerHand;
 
   winner.style.visibility = "visible";
-  //console.log(playerHand, computerHand);
+  console.log(playerHand, computerHand);
   if (playerHand === computerHand) {
     winner.textContent = "It is a tie!";
     return;
