@@ -21,3 +21,13 @@
 @import "components/highscore";
 @import "components/friends";
 @import "components/editUser";
+
+@import "components/game/base";
+@import "components/game/animations";
+@import "components/game/background";
+@import "components/game/leftBar";
+@import "components/game/rightBar";
+@import "components/game/topBar";
+@import "components/game/main";
+@import "components/game/openModal";
+@import "components/game/bottomBar";

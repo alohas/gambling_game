@@ -1,0 +1,28 @@
+.app_rightBar {
+  position: absolute;
+  top: 4%;
+  right: 2%;
+
+  text-align: center;
+
+  &-info,
+  &-cart {
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 1rem;
+
+    border-radius: 50%;
+    border: 2px solid $game-purple;
+    path {
+      fill: $game-orange;
+    }
+
+    svg {
+      width: 100%;
+      height: 57%;
+      margin: auto;
+      transform: translateY(1.2rem);
+    }
+  }
+}
