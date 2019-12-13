@@ -76,6 +76,26 @@ function getInputValues() {
 	newUser.password = passwordInput;
 	newUser.country = countryInput;
 	newUser.age = ageInput;
+
+	postUser(newUser);
+}
+
+function postUser(user) {
+	console.log(user);
+	fetch('https://rpsexam-61a3.restdb.io/rest/registeredusers', {
+		method: 'post',
+		headers: {
+			'Content-Type': 'application/json; charset=utf-8',
+			'x-apikey': '5ddfb3cc4658275ac9dc201e',
+			'cache-control': 'no-cache'
+		},
+		body: JSON.stringify(user)
+	})
+		.then((e) => e.json())
+		.then((newActivity) => {
+			// addActivityToDOM(newActivity);
+			console.log(newActivity);
+		});
 }
 
 function offerSelectOptionsSignup() {
