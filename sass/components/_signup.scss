@@ -1,24 +1,29 @@
 .signup {
-  display: none;
-  &_container {
-    width: $slider-size;
-    height: 100vh;
-    display: grid;
-    align-items: end;
-    justify-items: center;
+	display: none;
+	&_container {
+		width: $slider-size;
+		height: 100vh;
+		display: grid;
+		align-items: end;
+		justify-items: center;
 
-    background: rgba($color-black, 0.5);
-  }
-  &_form {
-    height: 50vh;
-    display: grid;
+		background: rgba($color-black, 0.5);
+	}
+	&_form {
+		height: 50vh;
+		display: grid;
 
-    margin-bottom: 50%;
-    &-age {
-      margin-bottom: 3rem;
-    }
-    &-button {
-      margin-bottom: 9rem;
-    }
-  }
+		margin-bottom: 50%;
+		&-age {
+			margin-bottom: 3rem;
+		}
+		&-button {
+			margin-bottom: 9rem;
+		}
+	}
+}
+
+.signup_select_form-country {
+	width: 70%;
+	padding: 0.5rem 0.5rem;
 }
