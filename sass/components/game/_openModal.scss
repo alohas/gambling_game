@@ -1,0 +1,79 @@
+.modal_start {
+  display: grid;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  background-image: url("assets/game/start_bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba($color-black, 0.6);
+  &_body {
+    justify-self: center;
+    align-self: center;
+
+    width: 30rem;
+
+    &-trial {
+      display: none;
+
+      h2 {
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+    &-logged {
+      display: none;
+    }
+
+    input {
+      width: 8rem;
+      padding-left: 2rem;
+      margin: 0 1rem;
+
+      border: 2px solid $game-purple;
+      border-radius: 1rem;
+
+      color: $color-mint;
+      font-weight: 500;
+      font-size: $text-s;
+    }
+  }
+  .start {
+    display: block;
+    margin: auto;
+    margin-bottom: 1rem;
+
+    font-size: $text-xl;
+    color: $color-mint;
+    text-transform: uppercase;
+
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    animation: pulse 1s ease-in backwards infinite;
+  }
+  .bet {
+    width: max-content;
+    margin: auto;
+
+    .up,
+    .down {
+      display: inline-block;
+      width: 3.6rem;
+      height: 3.6rem;
+
+      color: $game-orange;
+      font-size: 1.2rem;
+
+      border-radius: 50%;
+      background: transparent;
+      border: 2px solid $game-purple;
+
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+#game {
+  width: 55vw;
+  height: 500px;
+
+  position: absolute;
+  right: ((100vw - $slider-size) - 55vw) / 2;
+  top: 50%;
+
+  color: $game-orange;
+
+  //transform: translateY(-50%) translateX(100vw);
+  //animation: gameIn 0.6s ease-in 3.5s forwards;
+
+  transform: translateY(-50%) translateX(0);
+}

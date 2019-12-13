@@ -1,0 +1,29 @@
+.app_player {
+  display: none;
+
+  position: absolute;
+  top: 4%;
+  left: 2%;
+
+  text-align: center;
+
+  &-avatar {
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 1rem;
+
+    border-radius: 50%;
+    border: 2px solid $game-purple;
+  }
+
+  &-name {
+    font-size: $text-xs;
+    font-weight: 400;
+  }
+
+  &-coins {
+    border-top: 1px solid $game-purple;
+    color: $game-orange;
+  }
+}

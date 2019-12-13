@@ -1,0 +1,15 @@
+.app {
+  background-image: radial-gradient($game-bg1, $game-bg2);
+  &_separateline {
+    width: 2px;
+    height: 70%;
+
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: $game-bg1;
+    z-index: 0;
+  }
+}

@@ -1,0 +1,24 @@
+.handsimg {
+  width: 100px;
+}
+
+.app-bet {
+  visibility: hidden;
+
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 400;
+  color: $game-orange;
+
+  z-index: 20;
+}
+
+.app_result {
+  visibility: hidden;
+
+  margin-top: 3rem;
+
+  text-align: center;
+  font-size: 3rem;
+  color: $color-mint;
+}

@@ -81,15 +81,17 @@ options.forEach(option => {
     options.forEach(e => {
       e.disabled = true;
     });
-
+    console.log(option.querySelector("svg").dataset.name);
     generatedHand = optionsPC[Math.floor(Math.random() * 8)];
     let result = null;
 
     setTimeout(() => {
-      playerh.src = `assets/hands/hand_${option.querySelector("img").alt}.svg`;
+      playerh.src = `assets/hands/hand_${
+        option.querySelector("svg").dataset.name
+      }.svg`;
       computerh.src = `assets/hands/hand_${generatedHand}.svg`;
 
-      result = aRound(option.querySelector("img").alt, generatedHand);
+      result = aRound(option.querySelector("svg").dataset.name, generatedHand);
 
       if (result === "win") {
         game.userWin++;
@@ -373,7 +375,7 @@ function checkScore() {
     });
     if (game.userWin == 2) {
       document.querySelector(".modal_winner_body-message").textContent =
-        "Congratulations! You won!";
+        "winner";
       if (loggedUserID) {
         userObject.coins = userObject.coins + Number(bet.textContent);
         populateUserInfo(userObject);
@@ -393,7 +395,7 @@ function checkScore() {
       }
     } else if (game.pcWin == 2) {
       document.querySelector(".modal_winner_body-message").textContent =
-        "Oh no! You lost...";
+        "loser";
     }
     if (!loggedUserID) {
       document.querySelector(".modal_winner_body_notlogged").style.display =
