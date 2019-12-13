@@ -7,17 +7,21 @@ get();
 const countryAPI = 'https://restcountries.eu/rest/v2/all';
 let countriesArray = [];
 
-fetch(countryAPI).then((e) => e.json()).then((countries) => {
-	countries.forEach((country) => {
-		let countryObj = {
-			countryName: '',
-			countryAlpha2Code: ''
-		};
-		countryObj.countryName = country.name;
-		countryObj.countryAlpha2Code = country.alpha2Code;
-		countriesArray.push(countryObj);
+function fetchCountries() {
+	fetch(countryAPI).then((e) => e.json()).then((countries) => {
+		countries.forEach((country) => {
+			let countryObj = {
+				countryName: '',
+				countryAlpha2Code: ''
+			};
+			countryObj.countryName = country.name;
+			countryObj.countryAlpha2Code = country.alpha2Code;
+			countriesArray.push(countryObj);
+		});
 	});
-});
+}
+
+fetchCountries();
 
 function offerSelectOptions() {
 	let selectCountry = document.querySelector('.select_form-country select');
