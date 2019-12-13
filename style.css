@@ -1024,10 +1024,16 @@ input:placeholder-shown + label {
   color: #7186f5;
   font-size: 1.6rem;
   font-weight: 600;
-  hyphens: auto;
   padding: 1.5rem 0; }
   .editUser_paragraph-modifyPassword:hover {
     cursor: pointer; }
+  .editUser_paragraph-modifyPassword::before {
+    content: url("assets/images/lock-icon.png"); }
+
+.editUser_paragraph-alertNoModifs {
+  padding-bottom: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 600; }
 
 .editUser_select {
   width: 70%;
@@ -1036,8 +1042,8 @@ input:placeholder-shown + label {
 .confirmModifications_paragraph-alertWrongPass {
   display: none; }
 
-.modifyPassword_paragraph-alertWrongPass {
-  display: none; }
-
-.modifyPassword_paragraph-alertNoMatch {
-  display: none; }
+.modifyPassword_paragraph-alert {
+  display: none;
+  padding-bottom: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 600; }

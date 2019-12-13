@@ -65,16 +65,8 @@ function closeConfirmModifications() {
 
 function closeModifyPassword() {
 	document.querySelector('.modifyPassword').style.display = 'none';
-	document.querySelector('.modifyPassword_paragraph-alertWrongPass').style.display = 'none';
-	document.querySelector('.modifyPassword_paragraph-alertNoMatch').style.display = 'none';
+	document.querySelector('.modifyPassword_paragraph-alert').style.display = 'none';
 }
-
-// .editUser
-
-// extra form for password confirmation after each modification
-// send the data through the object not the placeholder
-// another extra separate form for password modification
-// with three fields
 
 // console.log(userObject);
 
@@ -133,9 +125,6 @@ function checkForChanges() {
 
 // Edit the user
 
-// stars
-// both error messages bottom with bold, padding fixed, smaller
-
 function put(editedUser) {
 	fetch('https://rpsexam-61a3.restdb.io/rest/registeredusers/' + editedUser._id, {
 		method: 'put',
@@ -170,8 +159,12 @@ function validatePasswordInput() {
 		populateUserInfo(userObject);
 		put(userObject);
 		closeConfirmModifications();
-	} else {
-		document.querySelector('.confirmModifications_paragraph-alertWrongPass').style.display = 'block';
+	} else if (userObject.password != typedPassword && typedPassword != '') {
+		document.querySelector('.confirmModifications_paragraph-alert').style.display = 'block';
+		document.querySelector('.confirmModifications_paragraph-alert').textContent = 'Wrong password :( ';
+	} else if (typedPassword == '') {
+		// make fields mint BUG
+		console.log('no input');
 	}
 }
 
@@ -192,7 +185,8 @@ function passwordCheckOld() {
 	if (document.querySelector('.modifyPassword_form-password input').value == userObject.password) {
 		passwordCheckMatch();
 	} else {
-		document.querySelector('.modifyPassword_paragraph-alertWrongPass').style.display = 'block';
+		document.querySelector('.modifyPassword_paragraph-alert').style.display = 'block';
+		document.querySelector('.modifyPassword_paragraph-alert').textContent = 'Wrong password :(';
 	}
 }
 
@@ -209,14 +203,12 @@ function passwordCheckMatch() {
 		) {
 			modifyPassword();
 		} else {
-			document.querySelector('.modifyPassword_paragraph-alertNoMatch').textContent =
-				' No match between passwords';
-			document.querySelector('.modifyPassword_paragraph-alertNoMatch').style.display = 'block';
+			document.querySelector('.modifyPassword_paragraph-alert').textContent = 'No match between passwords';
+			document.querySelector('.modifyPassword_paragraph-alert').style.display = 'block';
 		}
 	} else {
-		document.querySelector('.modifyPassword_paragraph-alertNoMatch').style.display = 'block';
-		document.querySelector('.modifyPassword_paragraph-alertNoMatch').textContent =
-			'Please type in the new passwords';
+		document.querySelector('.modifyPassword_paragraph-alert').style.display = 'block';
+		document.querySelector('.modifyPassword_paragraph-alert').textContent = 'Please type in the new password twice';
 	}
 }
 
