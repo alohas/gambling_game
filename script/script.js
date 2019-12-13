@@ -30,7 +30,9 @@ menuBtn.addEventListener("click", e => {
 });
 
 document.querySelector("#allUsers").addEventListener("click", scoreBoard);
-document.querySelector("#userCountry");
+document
+  .querySelector("#userCountry")
+  .addEventListener("click", showScoresByCountry);
 document.querySelector("#userAge");
 
 function moreSlider() {
@@ -141,6 +143,7 @@ function showScores() {
   for (let i = 0; i <= 9; i++) {
     const template = document.querySelector("#scoreBoard").content;
     const clone = template.cloneNode(true);
+    clone.querySelector("tr").id = scores[i]._id;
     clone.querySelector(".place").textContent = i + 1;
     clone.querySelector(".name").textContent = scores[i].username;
     clone.querySelector(".score").textContent = scores[i].coins;
@@ -151,16 +154,53 @@ function showScores() {
   if (loggedUserID) {
     for (let i = 0; i < scores.length; i++) {
       if (loggedUserID == scores[i]._id) {
-        const template = document.querySelector("#scoreBoard").content;
-        const clone = template.cloneNode(true);
-        const parent = document.querySelector(".highscoreParent");
-        clone.querySelector(".place").textContent = i + 1;
-        clone.querySelector(".name").textContent = scores[i].username;
-        clone.querySelector(".score").textContent = scores[i].coins;
-        clone.querySelector(".country").textContent = scores[i].country;
-        clone.querySelector(".age").textContent = scores[i].age;
-        parent.appendChild(clone);
+        if (i <= 10) {
+          let list = document.querySelectorAll("tr");
+          list.forEach(tr => {
+            if (tr.id == loggedUserID) {
+              tr.classList.add("you");
+            }
+          });
+        } else {
+          const template = document.querySelector("#scoreBoard").content;
+          const clone = template.cloneNode(true);
+          clone.querySelector("tr").classList.add("you");
+          clone.querySelector(".place").textContent = i + 1;
+          clone.querySelector(".name").textContent = scores[i].username;
+          clone.querySelector(".score").textContent = scores[i].coins;
+          clone.querySelector(".country").textContent = scores[i].country;
+          clone.querySelector(".age").textContent = scores[i].age;
+          parent.appendChild(clone);
+        }
       }
     }
   }
+}
+
+function showScoresByCountry() {
+  let countryName;
+  const parent = document.querySelector(".highscoreParent");
+  parent.innerHTML = " ";
+  fetch(`https://rpsexam-61a3.restdb.io/rest/registeredusers`, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5ddfb3cc4658275ac9dc201e",
+      "cache-control": "no-cache"
+    }
+  })
+    .then(e => e.json())
+    .then(data => {
+      for (let i = 0; i < data.length; i++) {
+        if (loggedUserID == data[i]._id) {
+          countryName = data[i].country;
+          console.log(countryName);
+        }
+      }
+      let filteredUsers = data.filter(function(user) {
+        return user.country == countryName;
+      });
+      //scores = data.sort((a, b) => (a.coins < b.coins ? 1 : -1));
+      console.log(filteredUsers);
+    });
 }
