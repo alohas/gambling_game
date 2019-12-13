@@ -418,6 +418,7 @@ body {
   font-size: 2.8rem;
   font-weight: 400;
   color: #5dfdcb;
+  text-transform: lowercase;
   cursor: pointer;
   background: transparent;
   border: 2px solid #7186f5;
@@ -432,6 +433,7 @@ body {
   font-size: 2.2rem;
   font-weight: 400;
   color: #5dfdcb;
+  text-transform: lowercase;
   cursor: pointer;
   background: transparent;
   border: 2px solid #7186f5;
@@ -591,13 +593,6 @@ body {
 .app {
   position: relative;
   height: 100%; }
-  .app-bet {
-    text-align: center;
-    visibility: hidden; }
-  .app_result {
-    margin-top: 50px;
-    visibility: hidden;
-    text-align: center; }
   .app_hands {
     margin-top: 50px;
     display: grid;
@@ -608,29 +603,6 @@ body {
       justify-self: center; }
       .app_hands-pc .pchimg img {
         transform: rotateY(180deg); }
-
-.modal_winner {
-  display: none;
-  position: absolute;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  height: 100%;
-  width: 100%; }
-  .modal_winner_body {
-    justify-self: center;
-    align-self: center;
-    width: 40%;
-    height: 40%;
-    background-color: bisque; }
-    .modal_winner_body-message {
-      text-align: center;
-      color: black; }
-    .modal_winner_body_notlogged {
-      display: none; }
-      .modal_winner_body_notlogged-p {
-        color: black; }
-    .modal_winner_body_logged {
-      display: none; }
 
 .nav {
   width: 32vw;
@@ -1044,7 +1016,8 @@ input:placeholder-shown + label {
     top: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    background: #251343; }
+    background: #251343;
+    z-index: 0; }
 
 .app_player {
   display: none;
@@ -1063,7 +1036,8 @@ input:placeholder-shown + label {
     font-size: 1.6rem;
     font-weight: 400; }
   .app_player-coins {
-    border-top: 1px solid #8c5dda; }
+    border-top: 1px solid #8c5dda;
+    color: #f99419; }
 
 .app_rightBar {
   position: absolute;
@@ -1102,6 +1076,21 @@ input:placeholder-shown + label {
 .handsimg {
   width: 100px; }
 
+.app-bet {
+  visibility: hidden;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #f99419;
+  z-index: 20; }
+
+.app_result {
+  visibility: hidden;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 3rem;
+  color: #5dfdcb; }
+
 .modal_start {
   display: grid;
   position: absolute;
@@ -1119,15 +1108,18 @@ input:placeholder-shown + label {
     width: 30rem; }
     .modal_start_body-trial {
       display: none; }
+      .modal_start_body-trial h2 {
+        text-align: center;
+        text-transform: uppercase; }
     .modal_start_body-logged {
       display: none; }
     .modal_start_body input {
       width: 8rem;
       padding-left: 2rem;
       margin: 0 1rem;
-      border: 2px solid #f800e3;
+      border: 2px solid #8c5dda;
       border-radius: 1rem;
-      color: #f7f71c;
+      color: #5dfdcb;
       font-weight: 500;
       font-size: 2.2rem; }
   .modal_start .start {
@@ -1135,7 +1127,7 @@ input:placeholder-shown + label {
     margin: auto;
     margin-bottom: 1rem;
     font-size: 5.7rem;
-    color: #24e8f7;
+    color: #5dfdcb;
     text-transform: uppercase;
     background: transparent;
     border: none;
@@ -1150,11 +1142,11 @@ input:placeholder-shown + label {
       display: inline-block;
       width: 3.6rem;
       height: 3.6rem;
-      color: #f7f71c;
+      color: #f99419;
       font-size: 1.2rem;
       border-radius: 50%;
       background: transparent;
-      border: 2px solid #f800e3;
+      border: 2px solid #8c5dda;
       outline: none;
       cursor: pointer; }
 
@@ -1174,6 +1166,8 @@ input:placeholder-shown + label {
     border-radius: 50%;
     outline: none;
     cursor: pointer; }
+    .app_options button:hover svg path {
+      fill: #5dfdcb; }
   .app_options svg {
     width: 70%;
     height: auto;
@@ -1184,3 +1178,33 @@ input:placeholder-shown + label {
     margin: auto; }
   .app_options-svg {
     fill: #f99419; }
+
+.modal_winner {
+  display: none;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  position: absolute;
+  z-index: 150;
+  background-color: rgba(0, 0, 0, 0.8); }
+  .modal_winner_body {
+    width: 40%;
+    height: 40%; }
+    .modal_winner_body-message {
+      text-align: center;
+      font-size: 5.7rem;
+      color: #5dfdcb;
+      font-weight: 300;
+      text-transform: uppercase; }
+    .modal_winner_body_notlogged {
+      display: none; }
+      .modal_winner_body_notlogged-p {
+        color: #7186f5;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 2rem; }
+      .modal_winner_body_notlogged_buttons button:first-child {
+        margin-bottom: 1rem; }
+    .modal_winner_body_logged {
+      display: none; }

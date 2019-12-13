@@ -14,6 +14,10 @@
     border-radius: 50%;
     outline: none;
     cursor: pointer;
+
+    &:hover svg path {
+      fill: $game-mint;
+    }
   }
   svg {
     width: 70%;

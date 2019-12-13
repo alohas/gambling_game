@@ -2,16 +2,6 @@
   position: relative;
   height: 100%;
 
-  &-bet {
-    text-align: center;
-    visibility: hidden;
-  }
-
-  &_result {
-    margin-top: 50px;
-    visibility: hidden;
-    text-align: center;
-  }
   &_hands {
     margin-top: 50px;
     display: grid;
@@ -24,34 +14,6 @@
       .pchimg img {
         transform: rotateY(180deg);
       }
-    }
-  }
-}
-.modal_winner {
-  display: none;
-  position: absolute;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  height: 100%;
-  width: 100%;
-  &_body {
-    justify-self: center;
-    align-self: center;
-    width: 40%;
-    height: 40%;
-    background-color: bisque;
-    &-message {
-      text-align: center;
-      color: black;
-    }
-    &_notlogged {
-      display: none;
-      &-p {
-        color: black;
-      }
-    }
-    &_logged {
-      display: none;
     }
   }
 }

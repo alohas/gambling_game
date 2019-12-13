@@ -17,6 +17,11 @@
 
     &-trial {
       display: none;
+
+      h2 {
+        text-align: center;
+        text-transform: uppercase;
+      }
     }
     &-logged {
       display: none;
@@ -27,10 +32,10 @@
       padding-left: 2rem;
       margin: 0 1rem;
 
-      border: 2px solid $game-pink;
+      border: 2px solid $game-purple;
       border-radius: 1rem;
 
-      color: $color-yellow;
+      color: $color-mint;
       font-weight: 500;
       font-size: $text-s;
     }
@@ -41,7 +46,7 @@
     margin-bottom: 1rem;
 
     font-size: $text-xl;
-    color: $game-mint;
+    color: $color-mint;
     text-transform: uppercase;
 
     background: transparent;
@@ -53,18 +58,19 @@
   .bet {
     width: max-content;
     margin: auto;
+
     .up,
     .down {
       display: inline-block;
       width: 3.6rem;
       height: 3.6rem;
 
-      color: $color-yellow;
+      color: $game-orange;
       font-size: 1.2rem;
 
       border-radius: 50%;
       background: transparent;
-      border: 2px solid $game-pink;
+      border: 2px solid $game-purple;
 
       outline: none;
       cursor: pointer;

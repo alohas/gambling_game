@@ -375,7 +375,7 @@ function checkScore() {
     });
     if (game.userWin == 2) {
       document.querySelector(".modal_winner_body-message").textContent =
-        "Congratulations! You won!";
+        "winner";
       if (loggedUserID) {
         userObject.coins = userObject.coins + Number(bet.textContent);
         populateUserInfo(userObject);
@@ -395,7 +395,7 @@ function checkScore() {
       }
     } else if (game.pcWin == 2) {
       document.querySelector(".modal_winner_body-message").textContent =
-        "Oh no! You lost...";
+        "loser";
     }
     if (!loggedUserID) {
       document.querySelector(".modal_winner_body_notlogged").style.display =
