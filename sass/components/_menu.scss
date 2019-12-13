@@ -61,10 +61,10 @@
     transform: rotate(-45deg);
     .line {
       &.start {
-        transform: rotate(-90deg) translateX(3px);
+        transform: rotate(-90deg) translateX(0px);
       }
       &.end {
-        transform: rotate(-90deg) translateX(-3px);
+        transform: rotate(-90deg) translateX(-2px);
       }
     }
   }

@@ -756,9 +756,9 @@ body {
   .wrapper.open {
     transform: rotate(-45deg); }
     .wrapper.open .line.start {
-      transform: rotate(-90deg) translateX(3px); }
+      transform: rotate(-90deg) translateX(0px); }
     .wrapper.open .line.end {
-      transform: rotate(-90deg) translateX(-3px); }
+      transform: rotate(-90deg) translateX(-2px); }
   .wrapper:hover .line {
     background-color: #5dfdcb; }
 
