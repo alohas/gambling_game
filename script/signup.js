@@ -37,9 +37,15 @@ function getUsers(valueInput, propertyToCheck) {
 		});
 }
 
+// once you use e.preventDefault() it does not validate form fields anymore
+
 document.querySelector('.signup_form-button').addEventListener('click', (e) => {
 	e.preventDefault();
-	getInputValues();
+	if (document.querySelector('.signup_form').checkValidity()) {
+		getInputValues();
+	} else {
+		document.querySelector('.signup_form').reportValidity();
+	}
 });
 
 document.querySelector('.signup_form-username').addEventListener('change', usernameCheck);
@@ -62,7 +68,14 @@ function getInputValues() {
 	let usernameInput = document.querySelector('.signup_form-username input').value;
 	let emailInput = document.querySelector('.signup_form-email input').value;
 	let passwordInput = document.querySelector('.signup_form-password input').value;
+	let countryInput = document.querySelector('.signup_option_form-country').textContent;
 	let ageInput = document.querySelector('.signup_form-age input').value;
+
+	newUser.username = usernameInput;
+	newUser.email = emailInput;
+	newUser.password = passwordInput;
+	newUser.country = countryInput;
+	newUser.age = ageInput;
 }
 
 function offerSelectOptionsSignup() {
@@ -79,12 +92,14 @@ function offerSelectOptionsSignup() {
 	}
 }
 
+// add the select options signup on sign up open button
+
 setTimeout(() => offerSelectOptionsSignup(), 500);
 
-document.querySelector('.signup_select_form-country select').addEventListener('change', updateSelect);
+document.querySelector('.signup_select_form-country select').addEventListener('change', updateSelectSignup);
 
 function updateSelectSignup() {
-	let options = document.querySelectorAll('option');
+	let options = document.querySelectorAll('.signup_select_form-country option');
 	document.querySelector('.signup_option_form-country').classList.remove('signup_option_form-country');
 	options[event.target.selectedIndex].classList.remove('fluidCountry');
 	options[event.target.selectedIndex].classList.add('signup_option_form-country');

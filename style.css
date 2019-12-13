@@ -869,7 +869,7 @@ input:placeholder-shown + label {
     .signup_form-button {
       margin-bottom: 9rem; }
 
-.signup_select_form-country {
+.signup_select {
   width: 70%;
   padding: 0.5rem 0.5rem; }
 

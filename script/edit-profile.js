@@ -40,7 +40,7 @@ function offerSelectOptions() {
 document.querySelector('.select_form-country select').addEventListener('change', updateSelect);
 
 function updateSelect() {
-	let options = document.querySelectorAll('option');
+	let options = document.querySelectorAll('.select_form-country option');
 	document.querySelector('.option_form-country').classList.remove('option_form-country');
 	options[event.target.selectedIndex].classList.remove('fluidCountry');
 	options[event.target.selectedIndex].classList.add('option_form-country');
