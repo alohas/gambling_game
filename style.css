@@ -684,9 +684,9 @@ body {
   .wrapper.open {
     transform: rotate(-45deg); }
     .wrapper.open .line.start {
-      transform: rotate(-90deg) translateX(3px); }
+      transform: rotate(-90deg) translateX(0px); }
     .wrapper.open .line.end {
-      transform: rotate(-90deg) translateX(-3px); }
+      transform: rotate(-90deg) translateX(-2px); }
   .wrapper:hover .line {
     background-color: #5dfdcb; }
 
@@ -1051,13 +1051,13 @@ input:placeholder-shown + label {
     margin-bottom: 1rem;
     border-radius: 50%;
     border: 2px solid #8c5dda; }
-    .app_rightBar-info path, .app_rightBar-cart path {
-      fill: #f99419; }
     .app_rightBar-info svg, .app_rightBar-cart svg {
       width: 100%;
       height: 57%;
       margin: auto;
       transform: translateY(1.2rem); }
+  .app_rightBar-info path {
+    fill: #f99419; }
 
 .app_wins {
   width: 50%;
