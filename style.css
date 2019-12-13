@@ -912,56 +912,60 @@ input:placeholder-shown + label {
 #reviews:target {
   visibility: visible; }
 
-.highscore_heading {
-  color: #7186f5;
-  position: absolute;
-  top: 8rem;
-  left: 2.5rem; }
-
-.highscore_container {
-  width: 32vw;
-  height: 100vh;
-  padding-top: 12rem;
-  display: grid;
-  align-items: end;
-  justify-items: center;
-  background: rgba(0, 0, 0, 0.5); }
-
-.highscore_sorting-list {
-  list-style: none; }
-  .highscore_sorting-list li {
-    display: inline-block;
-    padding: 0 0.5rem;
-    margin: 0 0.5rem;
+.highscore {
+  visibility: hidden; }
+  .highscore_heading {
     color: #7186f5;
-    font-size: 2.2rem;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-    transition: all 0.1s ease-in; }
-    .highscore_sorting-list li:hover {
-      color: #5dfdcb;
-      border-bottom: 2px solid #7186f5; }
+    position: absolute;
+    top: 8rem;
+    left: 2.5rem; }
+  .highscore_container {
+    width: 32vw;
+    height: 100vh;
+    padding-top: 12rem;
+    display: grid;
+    align-items: end;
+    justify-items: center;
+    background: rgba(0, 0, 0, 0.5); }
+  .highscore_sorting {
+    display: none; }
+    .highscore_sorting-list {
+      list-style: none; }
+      .highscore_sorting-list li {
+        display: inline-block;
+        padding: 0 0.5rem;
+        margin: 0 0.5rem;
+        color: #7186f5;
+        font-size: 2.2rem;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+        transition: all 0.1s ease-in; }
+        .highscore_sorting-list li:hover {
+          color: #5dfdcb;
+          border-bottom: 2px solid #7186f5; }
+  .highscore_table {
+    width: 90%;
+    height: 50rem;
+    overflow: auto; }
+    .highscore_table table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center; }
+      .highscore_table table th {
+        padding: 1rem;
+        padding-bottom: 3rem;
+        font-size: 2.2rem;
+        font-weight: 400;
+        color: #7186f5; }
+      .highscore_table table td:not(:first-child),
+      .highscore_table table th:not(:first-child) {
+        border-left: 2px solid #7186f5; }
+      .highscore_table table tbody {
+        font-size: 2.2rem;
+        font-weight: 300; }
 
-.highscore_table {
-  width: 90%;
-  height: 50rem;
-  overflow: auto; }
-  .highscore_table table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center; }
-    .highscore_table table th {
-      padding: 1rem;
-      padding-bottom: 3rem;
-      font-size: 2.2rem;
-      font-weight: 400;
-      color: #7186f5; }
-    .highscore_table table td:not(:first-child),
-    .highscore_table table th:not(:first-child) {
-      border-left: 2px solid #7186f5; }
-    .highscore_table table tbody {
-      font-size: 2.2rem;
-      font-weight: 300; }
+#highscore:target {
+  visibility: visible; }
 
 .friends {
   visibility: hidden; }

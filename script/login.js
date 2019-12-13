@@ -44,6 +44,7 @@ function checkUser(data) {
           "none";
         document.querySelector(".modal_start_body-logged").style.display =
           "block";
+        document.querySelector("div.highscore_sorting").style.display = "block";
         resetGame();
       }
     }
@@ -61,4 +62,5 @@ document.querySelector(".logOut").addEventListener("click", e => {
   document.querySelector(".modal_start_body-trial").style.display = "block";
   document.querySelector(".modal_start_body-logged").style.display = "none";
   document.querySelector(".app-bet").style.visibility = "hidden";
+  document.querySelector("div.highscore_sorting").style.display = "none";
 });

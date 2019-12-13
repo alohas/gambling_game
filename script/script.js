@@ -1,7 +1,7 @@
 "use strict";
 
 let loggedUserID = localStorage.getItem("RPSuser");
-//console.log(loggedUserID);
+
 let userObject;
 if (loggedUserID) {
   fetchUser(loggedUserID);
@@ -17,8 +17,6 @@ let slidedMenu = false;
 let slidedUser = false;
 let slidedReview = false;
 
-scoreBoard();
-
 moreBtn.addEventListener("click", e => {
   moreSlider();
 });
@@ -30,6 +28,10 @@ userBtn.addEventListener("click", e => {
 menuBtn.addEventListener("click", e => {
   menuSlider();
 });
+
+document.querySelector("#allUsers").addEventListener("click", scoreBoard);
+document.querySelector("#userCountry");
+document.querySelector("#userAge");
 
 function moreSlider() {
   if (!slidedMore) {
@@ -103,12 +105,17 @@ function populateUserInfo(user) {
   document
     .querySelector(".modal_start_body-logged-input")
     .setAttribute("max", user.coins);
+  document.querySelector("div.highscore_sorting").style.display = "block";
 }
 
 var wrapperMenu = document.querySelector(".wrapper");
 
 wrapperMenu.addEventListener("click", function() {
   wrapperMenu.classList.toggle("open");
+});
+
+document.querySelector(".link-highscore > a").addEventListener("click", e => {
+  scoreBoard();
 });
 
 function scoreBoard() {
@@ -129,15 +136,31 @@ function scoreBoard() {
 }
 
 function showScores() {
+  const parent = document.querySelector(".highscoreParent");
+  parent.innerHTML = " ";
   for (let i = 0; i <= 9; i++) {
     const template = document.querySelector("#scoreBoard").content;
     const clone = template.cloneNode(true);
-    const parent = document.querySelector(".highscoreParent");
     clone.querySelector(".place").textContent = i + 1;
     clone.querySelector(".name").textContent = scores[i].username;
     clone.querySelector(".score").textContent = scores[i].coins;
     clone.querySelector(".country").textContent = scores[i].country;
     clone.querySelector(".age").textContent = scores[i].age;
     parent.appendChild(clone);
+  }
+  if (loggedUserID) {
+    for (let i = 0; i < scores.length; i++) {
+      if (loggedUserID == scores[i]._id) {
+        const template = document.querySelector("#scoreBoard").content;
+        const clone = template.cloneNode(true);
+        const parent = document.querySelector(".highscoreParent");
+        clone.querySelector(".place").textContent = i + 1;
+        clone.querySelector(".name").textContent = scores[i].username;
+        clone.querySelector(".score").textContent = scores[i].coins;
+        clone.querySelector(".country").textContent = scores[i].country;
+        clone.querySelector(".age").textContent = scores[i].age;
+        parent.appendChild(clone);
+      }
+    }
   }
 }

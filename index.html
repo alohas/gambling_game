@@ -254,8 +254,8 @@
     <div class="menu u-modal">
       <div class="menu_container">
         <ul class="menu_list">
-          <li class="menu_list-item">
-            <a href="#" class="text-link">high score</a>
+          <li class="menu_list-item link-highscore">
+            <a href="#highscore" class="text-link">high score</a>
           </li>
           <li class="menu_list-item link-reviews">
             <a href="#reviews" class="text-link">reviews</a>
@@ -596,15 +596,15 @@
       </div>
     </div>
 
-    <div class="highscore u-modal">
+    <div class="highscore u-modal" id="highscore">
       <h3 class="heading-tertiary highscore_heading">highscore</h3>
       <a href="#slider" class="u-close"></a>
       <div class="highscore_container">
         <div class="highscore_sorting">
           <ul class="highscore_sorting-list">
-            <li>score</li>
-            <li id="countries">country</li>
-            <li>age</li>
+            <li id="allUsers">All</li>
+            <li id="userCountry">country</li>
+            <li id="userAge">age</li>
           </ul>
         </div>
         <div class="highscore_table">
@@ -618,9 +618,7 @@
                 <th>age</th>
               </tr>
             </thead>
-            <tbody class="highscoreParent">
-              
-            </tbody>
+            <tbody class="highscoreParent"></tbody>
           </table>
         </div>
       </div>
