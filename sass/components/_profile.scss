@@ -1,58 +1,68 @@
 .profile {
-	visibility: hidden;
+  visibility: hidden;
 
-	&_container {
-		width: $slider-size;
-		height: 100vh;
-		padding: 12rem 0;
+  &_container {
+    width: $slider-size;
+    height: 100vh;
+    padding: 12rem 0;
 
-		display: grid;
-		place-items: center;
+    display: grid;
+    place-items: center;
 
-		background: rgba($color-black, 0.5);
-	}
+    background: rgba($color-black, 0.5);
 
-	&_user {
-		&-icon {
-			width: 17rem;
-			height: 17rem;
-			margin-bottom: 3rem;
+    @include tablet {
+      width: 100vw;
+    }
+  }
 
-			border-radius: 50%;
-			border: 2px solid $color-purple;
-			background: transparent;
-		}
-		&-name {
-			font-size: 3rem;
-		}
-		&-points {
-			text-align: center;
-			background-color: white;
-			&::before {
-				content: url("assets/images/coins-icon.png");
-			}
-		}
-	}
+  &_user {
+    &-container {
+      width: 17rem;
+      height: 17rem;
+      margin-bottom: 3rem;
 
-	&_settings {
-		&-icon {
-			display: inline-block;
-		}
+      border-radius: 50%;
+      border: 2px solid $color-purple;
+      background: transparent;
+    }
+    &-icon {
+      width: 100%;
+      height: 62%;
+      transform: translateY(2rem);
+    }
+    &-name {
+      font-size: 3rem;
+    }
+    &-points {
+      text-align: center;
+      color: $color-mint;
+      font-weight: 400;
+      // &::before {
+      //   content: url("assets/images/coins-icon.png");
+      // }
+    }
+  }
 
-		a {
-			color: $color-purple !important;
-		}
-	}
+  &_settings {
+    &-icon {
+      display: inline-block;
+    }
 
-	&_friends {
-		&-icon {
-			display: inline-block;
-		}
+    a {
+      color: $color-purple !important;
+    }
+  }
 
-		a {
-			color: $color-purple !important;
-		}
-	}
+  &_friends {
+    &-icon {
+      display: inline-block;
+    }
+
+    a {
+      color: $color-purple !important;
+    }
+  }
 }
 
 #profile:target {

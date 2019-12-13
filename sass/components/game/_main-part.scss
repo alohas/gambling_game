@@ -4,6 +4,7 @@
 
 .app-bet {
   visibility: hidden;
+  position: relative;
 
   text-align: center;
   font-size: 3rem;
@@ -14,6 +15,7 @@
 }
 
 .app_result {
+  position: relative;
   visibility: hidden;
 
   margin-top: 3rem;
@@ -21,4 +23,6 @@
   text-align: center;
   font-size: 3rem;
   color: $color-mint;
+
+  z-index: 20;
 }

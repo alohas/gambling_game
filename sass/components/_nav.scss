@@ -15,6 +15,18 @@
 
   z-index: 100;
 
+  @include tablet {
+    width: 100vw;
+    transform: translateX(0);
+    animation: none;
+    position: fixed;
+    // z-index: 101;
+  }
+
+  @include landscape {
+    display: none;
+  }
+
   * {
     cursor: pointer;
   }

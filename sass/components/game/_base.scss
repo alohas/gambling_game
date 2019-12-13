@@ -8,8 +8,29 @@
 
   color: $game-orange;
 
-  //transform: translateY(-50%) translateX(100vw);
-  //animation: gameIn 0.6s ease-in 3.5s forwards;
+  transform: translateY(-50%) translateX(100vw);
+  animation: gameIn 0.6s ease-in 3.5s forwards;
 
-  transform: translateY(-50%) translateX(0);
+  // transform: translateY(-50%) translateX(0);
+
+  @include small-desk {
+    right: 1vw;
+    width: 66vw;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  @include landscape {
+    width: auto;
+    height: 100vh;
+
+    position: relative;
+    right: 0;
+    overflow: hidden;
+
+    transform: translateY(0) translateX(0);
+    animation: none;
+  }
 }

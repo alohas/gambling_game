@@ -10,6 +10,10 @@
     justify-items: center;
 
     background: rgba($color-black, 0.5);
+
+    @include tablet {
+      width: 100vw;
+    }
   }
   &_list {
     height: 45vh;

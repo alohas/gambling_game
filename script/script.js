@@ -18,9 +18,10 @@ let slidedMore = false;
 let slidedMenu = false;
 let slidedUser = false;
 let slidedReview = false;
+const mediaQuery = window.matchMedia("(max-width: 900px)");
 
 moreBtn.addEventListener("click", e => {
-  moreSlider();
+  moreSlider(mediaQuery);
 });
 
 // userBtn.addEventListener("click", e => {
@@ -37,27 +38,31 @@ document
   .addEventListener("click", showScoresByCountry);
 document.querySelector("#userAge").addEventListener("click", showScoresByAge);
 
-function moreSlider() {
-  if (!slidedMore) {
-    document.querySelector(".slider").style.animation = "";
-    document.querySelector(".nav").style.animation = "";
-    document.querySelector(".slider").style.animation =
-      "sliderFullIn 0.4s ease-in forwards";
-    // document.querySelector(".nav").style.animation =
-    //   "navIn 0.4s ease-in forwards";
-    document.querySelector(".nav").style.width = "100vw";
-    document.querySelector(".seemore").innerHTML = "see less";
-    slidedMore = true;
+function moreSlider(mediaQuery) {
+  if (mediaQuery.matches) {
+    console.log("phone");
   } else {
-    document.querySelector(".slider").style.animation = "";
-    document.querySelector(".nav").style.animation = "";
-    document.querySelector(".slider").style.animation =
-      "sliderOut 0.4s ease-in forwards";
-    // document.querySelector(".nav").style.animation =
-    //   "navOut 0.4s ease-in forwards";
-    document.querySelector(".nav").style.width = "32vw";
-    document.querySelector(".seemore").innerHTML = "see more";
-    slidedMore = false;
+    if (!slidedMore) {
+      document.querySelector(".slider").style.animation = "";
+      document.querySelector(".nav").style.animation = "";
+      document.querySelector(".slider").style.animation =
+        "sliderFullIn 0.4s ease-in forwards";
+      // document.querySelector(".nav").style.animation =
+      //   "navIn 0.4s ease-in forwards";
+      document.querySelector(".nav").style.width = "100vw";
+      document.querySelector(".seemore").innerHTML = "see less";
+      slidedMore = true;
+    } else {
+      document.querySelector(".slider").style.animation = "";
+      document.querySelector(".nav").style.animation = "";
+      document.querySelector(".slider").style.animation =
+        "sliderOut 0.4s ease-in forwards";
+      // document.querySelector(".nav").style.animation =
+      //   "navOut 0.4s ease-in forwards";
+      document.querySelector(".nav").style.width = "32vw";
+      document.querySelector(".seemore").innerHTML = "see more";
+      slidedMore = false;
+    }
   }
 }
 
@@ -106,7 +111,8 @@ function fetchUser(id) {
 function populateUserInfo(user) {
   console.log(user);
   document.querySelector(".profile_user-name").textContent = user.username;
-  document.querySelector(".profile_user-points").textContent = user.coins;
+  document.querySelector(".profile_user-points").textContent =
+    "$ " + user.coins;
   document.querySelector(".app_player-name").textContent = user.username;
   document.querySelector(".app_player-coins span").textContent = user.coins;
   document.querySelector("div.app_player").style.display = "block";

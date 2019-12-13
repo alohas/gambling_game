@@ -65,9 +65,9 @@ function colorstars(rating) {
   }
   for (let star of stars) {
     if (star.classList[2] == "full") {
-      star.src = "assets/images/dummy_star_full.png";
+      star.src = "assets/images/star_full.png";
     } else {
-      star.src = "assets/images/dummy_star_empty.png";
+      star.src = "assets/images/star_empty.png";
     }
   }
 }
@@ -75,6 +75,9 @@ function colorstars(rating) {
 document.querySelector(".reviews_add-post").addEventListener("click", e => {
   e.preventDefault();
   modifyUserObject();
+  e.target.textContent = "posted";
+  e.target.style.color = "#7186f5";
+  document.querySelector("textarea").style.color = "rgba(255, 255, 255, 0.4)";
 });
 
 function modifyUserObject() {

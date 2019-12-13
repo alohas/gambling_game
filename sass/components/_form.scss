@@ -36,6 +36,12 @@ input {
     font-weight: 300;
     color: rgba($color-white, 0.5);
   }
+
+  &[type="password"] {
+    font-family: inherit;
+    font-weight: 300;
+    color: rgba($color-white, 0.5);
+  }
 }
 
 label {
@@ -63,4 +69,8 @@ input:placeholder-shown + label {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-1rem);
+}
+
+textarea {
+  resize: none;
 }

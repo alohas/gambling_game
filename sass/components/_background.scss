@@ -6,6 +6,10 @@
   height: 100vh;
   overflow: hidden;
   z-index: -10;
+
+  @include landscape {
+    display: none;
+  }
 }
 
 .bg__img {
