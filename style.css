@@ -723,9 +723,10 @@ path {
   .profile_user-name {
     font-size: 3rem; }
   .profile_user-points {
-    text-align: center; }
-    .profile_user-points svg {
-      display: inline-block; }
+    text-align: center;
+    background-color: white; }
+    .profile_user-points::before {
+      content: url("assets/images/coins-icon.png"); }
   .profile_settings-icon {
     display: inline-block; }
   .profile_settings a {
