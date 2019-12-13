@@ -24,6 +24,11 @@
   }
 }
 
+.signup_select {
+  width: 70%;
+  padding: 0.5rem 0.5rem;
+}
+
 #signup:target {
   visibility: visible;
 }

@@ -491,7 +491,6 @@
               name="username"
               id="username"
               placeholder="username"
-              required
               autocomplete="off"
             />
             <label for="username">username</label>
@@ -502,7 +501,6 @@
               name="password"
               id="password"
               placeholder="password"
-              required
               autocomplete="off"
             />
             <label for="password">password</label>
@@ -551,15 +549,11 @@
             />
             <label for="password">password</label>
           </div>
-          <div class="signup_form-country">
-            <input
-              type="text"
-              name="country"
-              id="country"
-              placeholder="country"
-              required
-            />
-            <label for="country">country</label>
+          <div class="signup_form-country signup_select_form-country">
+            <select class="signup_select">
+              <option value="Denmark" class="signup_option_form-country">Denmark</option>
+            </select>
+            <label for="country"></label>
           </div>
           <div class="signup_form-age">
             <input
@@ -747,6 +741,7 @@
               name="password"
               id="password"
               placeholder="password"
+              required
               required
             />
             <label for="password"> old password</label>
@@ -1013,5 +1008,6 @@
     <script src="script/reviews.js"></script>
     <script src="script/edit-profile.js"></script>
     <script src="script/game.js"></script>
+    <script src="script/signup.js"></script>
   </body>
 </html>
