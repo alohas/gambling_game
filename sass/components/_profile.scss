@@ -26,8 +26,8 @@
 			font-size: 3rem;
 		}
 		&-points {
+			font-size: $text-s;
 			text-align: center;
-			background-color: white;
 			&::before {
 				content: url("assets/images/coins-icon.png");
 			}
@@ -56,5 +56,5 @@
 }
 
 #profile:target {
-  visibility: visible;
+	visibility: visible;
 }

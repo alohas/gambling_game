@@ -648,7 +648,7 @@
         </div>
         <div class="profile_settings">
           <svg class="profile_settings-icon"></svg>
-          <a href="#" class="text-link see-friends">friends</a>
+          <a href="#friends" class="text-link see-friends">friends</a>
           <br />
           <br />
           <svg class="profile_settings-icon"></svg>
@@ -907,36 +907,44 @@
       </tr>
     </template>
 
-    <div class="friends u-modal" id="friends">
+    <div class="friends u-modal" id="friends" style="overflow-y: scroll; overflow-x: hidden;">
       <a href="#slider" class="u-close"></a>
       <div class="friends_container">
         <div class="profile_user">
           <svg class="profile_user-icon"></svg>
-          <h2 class="profile_user-name heading-secondary">ewa_xd</h2>
-          <p class="profile_user-points paragraph"><svg>$</svg> 1200</p>
+          <h2 class="profile_user-name heading-secondary">User</h2>
+          <p class="profile_user-points paragraph"> 1200</p>
         </div>
-        <div class="friends_list">
+        <div class="friends_list friends_current">
           <h3 class="friends_list-heading heading-tertiary">Friends</h3>
-          <ul class="friends_list-list">
-            <li class="friends_list-list-item">
-              <svg></svg>
-              <p class="paragraph">~ewa_xd</p>
-              <button class="button">+</button>
-            </li>
-            <li class="friends_list-list-item">
-              <svg></svg>
-              <p class="paragraph">~ewa_xd</p>
-              <button class="button">+</button>
-            </li>
-            <li class="friends_list-list-item">
-              <svg></svg>
-              <p class="paragraph">~ewa_xd</p>
-              <button class="button">+</button>
-            </li>
+          <ul class="friends_list-list friends_current-parent">
+          </ul>
+        </div>
+
+        <div class="friends_list friends_suggestion">
+          <h3 class="friends_list-heading heading-tertiary">Suggestions</h3>
+          <ul class="friends_list-list friends_suggestion-parent">
           </ul>
         </div>
       </div>
     </div>
+
+    <template id="friends-current">
+      <li class="friends_list-list-item">
+        <svg></svg>
+          <p class="paragraph">~ewa_xd</p>
+          <button class="button" data-uuid="">-</button>
+        </li>
+    </template>
+
+    <template id="friends-suggestion">
+      <li class="friends_list-list-item">
+        <svg></svg>
+          <p class="paragraph">~ewa_xd</p>
+          <button class="button" data-uuid="">+</button>
+        </li>
+    </template>
+    
     <template id="review" class="review-template">
       <article class="review">
         <svg
@@ -988,5 +996,6 @@
     <script src="script/edit-profile.js"></script>
     <script src="script/game.js"></script>
     <script src="script/signup.js"></script>
+    <script src="script/friends.js"></script>
   </body>
 </html>
