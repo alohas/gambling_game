@@ -100,6 +100,10 @@ document.querySelector('.editUser_form-login').addEventListener('click', () => {
 // Clear out spaces
 // Validate password not to have spaces
 // Log out button
+// edit user saves in value the recently tiped thing before
+// confirming
+// check for signup validation not the same username in the db
+// check for form validation on click
 
 let saveChangesTrigger = false;
 
@@ -108,7 +112,7 @@ function checkForChanges() {
 		'.editUser_form-username input',
 		'.editUser_form-email input',
 		'.option_form-country',
-		'.editUser_form-email input'
+		'.editUser_form-age input'
 	];
 	let selectorObject = [ 'username', 'email', 'country', 'age' ];
 	for (let i = 0; i < 4; i++) {
@@ -128,6 +132,9 @@ function checkForChanges() {
 }
 
 // Edit the user
+
+// stars
+// both error messages bottom with bold, padding fixed, smaller
 
 function put(editedUser) {
 	fetch('https://rpsexam-61a3.restdb.io/rest/registeredusers/' + editedUser._id, {

@@ -14,6 +14,23 @@
 	display: none;
 }
 
+.editUser_paragraph-modifyPassword {
+	color: $color-purple;
+	font-size: $text-xs;
+	font-weight: 600;
+	hyphens: auto;
+	padding: 1.5rem 0;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.editUser_select {
+	width: 70%;
+	padding: 0.5rem 0.5rem;
+}
+
 .confirmModifications_paragraph-alertWrongPass {
 	display: none;
 }

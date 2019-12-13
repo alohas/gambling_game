@@ -356,13 +356,9 @@
           <h2 class="profile_user-name heading-secondary">ewa_xd</h2>
           <p class="profile_user-points paragraph"><svg>$</svg> 1200</p>
         </div>
-        <div class="profile_friends">
-          <svg class="profile_friends-icon"></svg>
-          <a href="#friends" class="text-link">friends</a>
-        </div>
         <div class="profile_settings">
           <svg class="profile_settings-icon"></svg>
-          <a href="#" class="text-link see-friends">friends</a>
+          <a href="#friends" class="text-link see-friends">friends</a>
           <br />
           <br />
           <svg class="profile_settings-icon"></svg>
@@ -402,7 +398,7 @@
             <label for="email">email</label>
           </div>
           <div class="editUser_form-country select_form-country">
-            <select>
+            <select class="editUser_select">
               <option value="volvo" class="option_form-country"></option>
             </select>
             <label for="country">country</label>
@@ -414,12 +410,11 @@
               id="age"
               placeholder="age"
               min="10"
-              max="18"
               required
             />
             <label for="age">age</label>
           </div>
-          <p class="paragraph editUser_paragraph-modifyPassword">
+          <p class="editUser_paragraph-modifyPassword">
             Modify password
           </p>
           <p class="paragraph editUser_paragraph-alertNoModifs">

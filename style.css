@@ -1020,6 +1020,19 @@ input:placeholder-shown + label {
 .editUser_paragraph-alertNoModifs {
   display: none; }
 
+.editUser_paragraph-modifyPassword {
+  color: #7186f5;
+  font-size: 1.6rem;
+  font-weight: 600;
+  hyphens: auto;
+  padding: 1.5rem 0; }
+  .editUser_paragraph-modifyPassword:hover {
+    cursor: pointer; }
+
+.editUser_select {
+  width: 70%;
+  padding: 0.5rem 0.5rem; }
+
 .confirmModifications_paragraph-alertWrongPass {
   display: none; }
 
