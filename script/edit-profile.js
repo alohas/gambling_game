@@ -82,7 +82,11 @@ function showUserEdit() {
 }
 
 document.querySelector('.editUser_form-login').addEventListener('click', () => {
-	checkForChanges();
+	if (document.querySelector('.editUser_form').checkValidity()) {
+		checkForChanges();
+	} else {
+		document.querySelector('.editUser_form').reportValidity();
+	}
 });
 
 // IMPORTANT
