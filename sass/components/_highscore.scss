@@ -18,6 +18,7 @@
     background: rgba($color-black, 0.5);
   }
   &_sorting {
+    display: none;
     &-list {
       list-style: none;
       li {
