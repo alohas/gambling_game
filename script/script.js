@@ -33,7 +33,7 @@ document.querySelector("#allUsers").addEventListener("click", scoreBoard);
 document
   .querySelector("#userCountry")
   .addEventListener("click", showScoresByCountry);
-document.querySelector("#userAge");
+document.querySelector("#userAge").addEventListener("click", showScoresByAge);
 
 function moreSlider() {
   if (!slidedMore) {
@@ -133,28 +133,34 @@ function scoreBoard() {
     .then(data => {
       scores = data.sort((a, b) => (a.coins < b.coins ? 1 : -1));
       //console.log(scores);
-      showScores();
+      showScores(scores);
     });
 }
 
-function showScores() {
+function showScores(arrayOfUsers) {
   const parent = document.querySelector(".highscoreParent");
   parent.innerHTML = " ";
   for (let i = 0; i <= 9; i++) {
+    if (arrayOfUsers.length < 9) {
+      if (i == arrayOfUsers.length) {
+        break;
+      }
+    }
+
     const template = document.querySelector("#scoreBoard").content;
     const clone = template.cloneNode(true);
-    clone.querySelector("tr").id = scores[i]._id;
+    clone.querySelector("tr").id = arrayOfUsers[i]._id;
     clone.querySelector(".place").textContent = i + 1;
-    clone.querySelector(".name").textContent = scores[i].username;
-    clone.querySelector(".score").textContent = scores[i].coins;
-    clone.querySelector(".country").textContent = scores[i].country;
-    clone.querySelector(".age").textContent = scores[i].age;
+    clone.querySelector(".name").textContent = arrayOfUsers[i].username;
+    clone.querySelector(".score").textContent = arrayOfUsers[i].coins;
+    clone.querySelector(".country").textContent = arrayOfUsers[i].country;
+    clone.querySelector(".age").textContent = arrayOfUsers[i].age;
     parent.appendChild(clone);
   }
   if (loggedUserID) {
-    for (let i = 0; i < scores.length; i++) {
-      if (loggedUserID == scores[i]._id) {
-        if (i <= 10) {
+    for (let i = 0; i < arrayOfUsers.length; i++) {
+      if (loggedUserID == arrayOfUsers[i]._id) {
+        if (i < 10) {
           let list = document.querySelectorAll("tr");
           list.forEach(tr => {
             if (tr.id == loggedUserID) {
@@ -166,10 +172,10 @@ function showScores() {
           const clone = template.cloneNode(true);
           clone.querySelector("tr").classList.add("you");
           clone.querySelector(".place").textContent = i + 1;
-          clone.querySelector(".name").textContent = scores[i].username;
-          clone.querySelector(".score").textContent = scores[i].coins;
-          clone.querySelector(".country").textContent = scores[i].country;
-          clone.querySelector(".age").textContent = scores[i].age;
+          clone.querySelector(".name").textContent = arrayOfUsers[i].username;
+          clone.querySelector(".score").textContent = arrayOfUsers[i].coins;
+          clone.querySelector(".country").textContent = arrayOfUsers[i].country;
+          clone.querySelector(".age").textContent = arrayOfUsers[i].age;
           parent.appendChild(clone);
         }
       }
@@ -194,13 +200,43 @@ function showScoresByCountry() {
       for (let i = 0; i < data.length; i++) {
         if (loggedUserID == data[i]._id) {
           countryName = data[i].country;
-          console.log(countryName);
         }
       }
       let filteredUsers = data.filter(function(user) {
         return user.country == countryName;
       });
-      //scores = data.sort((a, b) => (a.coins < b.coins ? 1 : -1));
-      console.log(filteredUsers);
+      filteredUsers = filteredUsers.sort((a, b) =>
+        a.coins < b.coins ? 1 : -1
+      );
+      showScores(filteredUsers);
+    });
+}
+
+function showScoresByAge() {
+  let agecap;
+  const parent = document.querySelector(".highscoreParent");
+  parent.innerHTML = " ";
+  fetch(`https://rpsexam-61a3.restdb.io/rest/registeredusers`, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5ddfb3cc4658275ac9dc201e",
+      "cache-control": "no-cache"
+    }
+  })
+    .then(e => e.json())
+    .then(data => {
+      for (let i = 0; i < data.length; i++) {
+        if (loggedUserID == data[i]._id) {
+          agecap = data[i].age;
+        }
+      }
+      let filteredUsers = data.filter(function(user) {
+        return user.age == agecap;
+      });
+      filteredUsers = filteredUsers.sort((a, b) =>
+        a.coins < b.coins ? 1 : -1
+      );
+      showScores(filteredUsers);
     });
 }
