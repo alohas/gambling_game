@@ -1,13 +1,6 @@
 .reviews {
   visibility: hidden;
 
-  &_heading {
-    color: $color-purple;
-    position: absolute;
-    top: 8rem;
-    left: $margin;
-  }
-
   &_container {
     width: $slider-size;
     height: 100vh;

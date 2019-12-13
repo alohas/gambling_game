@@ -30,6 +30,19 @@
   }
 }
 
+.u-modal-heading {
+  color: $color-purple;
+  font-size: 3rem;
+  font-weight: 300;
+
+  border-bottom: 2px solid;
+
+  position: absolute;
+  top: 8rem;
+  left: $margin;
+  padding: 0;
+}
+
 .u-close-left {
   width: 3.5rem;
   height: 3.5rem;

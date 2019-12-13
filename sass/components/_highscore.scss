@@ -1,11 +1,6 @@
 .highscore {
   visibility: hidden;
-  &_heading {
-    color: $color-purple;
-    position: absolute;
-    top: 8rem;
-    left: $margin;
-  }
+
   &_container {
     width: $slider-size;
     height: 100vh;
@@ -63,6 +58,9 @@
         font-weight: 400;
         color: $color-purple;
       }
+      th:first-child {
+        color: $color-yellow;
+      }
 
       td:not(:first-child),
       th:not(:first-child) {
@@ -70,8 +68,19 @@
       }
 
       tbody {
-        font-size: $text-s;
+        font-size: $text-xs;
         font-weight: 300;
+        tr {
+          border-bottom: 1px solid rgba($color-purple, 0.8);
+          td:first-child {
+            color: $color-yellow;
+            font-weight: 400;
+            font-size: $text-s;
+          }
+        }
+        td {
+          padding: 1rem 0;
+        }
       }
     }
   }

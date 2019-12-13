@@ -391,6 +391,16 @@ body {
       position: fixed;
       z-index: 102; } }
 
+.u-modal-heading {
+  color: #7186f5;
+  font-size: 3rem;
+  font-weight: 300;
+  border-bottom: 2px solid;
+  position: absolute;
+  top: 8rem;
+  left: 2.5rem;
+  padding: 0; }
+
 .u-close-left {
   width: 3.5rem;
   height: 3.5rem;
@@ -551,7 +561,7 @@ body {
           grid-template-columns: 100vw; } }
       .slider_left-facts .box {
         height: 100%;
-        background: rgba(255, 255, 255, 0.07);
+        background: rgba(0, 0, 0, 0.5);
         padding: 2.5rem; }
         @media (max-width: 900px) and (orientation: portrait) {
           .slider_left-facts .box {
@@ -576,14 +586,18 @@ body {
         align-self: end;
         justify-self: center;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr min-content 1fr;
+        grid-gap: 2rem;
         place-items: center; }
+        .slider_left-ratings .ratings_overall-h2 {
+          justify-self: left; }
         .slider_left-ratings .ratings_overall-border {
           width: 2px;
           height: 2.8rem;
           background: #7186f5; }
         .slider_left-ratings .ratings_overall h3 {
-          padding-top: 1rem; }
+          padding-top: 1rem;
+          font-size: 2.8rem; }
           .slider_left-ratings .ratings_overall h3:first-child {
             justify-self: right; }
         .slider_left-ratings .ratings_overall .star {
@@ -641,7 +655,7 @@ body {
   padding: 2rem;
   display: grid;
   grid-template-columns: min-content 1fr;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(0, 0, 0, 0.5);
   transform: skew(-15deg); }
   @media (max-width: 900px) and (orientation: portrait) {
     .review {
@@ -723,6 +737,15 @@ body {
 
 .menu {
   visibility: hidden; }
+  .menu_heading {
+    color: #7186f5;
+    font-size: 3rem;
+    font-weight: 300;
+    border-bottom: 2px solid;
+    position: absolute;
+    top: 8rem;
+    left: 2.5rem;
+    padding: 0; }
   .menu_container {
     width: 32vw;
     height: 100vh;
@@ -820,9 +843,17 @@ path {
     color: #5dfdcb;
     font-weight: 400; }
   .profile_settings-icon {
-    display: inline-block; }
+    display: inline-block;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-right: 0.7rem;
+    transform: translateY(0.5rem); }
   .profile_settings a {
-    color: #7186f5 !important; }
+    color: #7186f5 !important;
+    transform: all 0.2s ease-in;
+    font-size: 3rem !important; }
+    .profile_settings a:hover {
+      color: #5dfdcb !important; }
   .profile_friends-icon {
     display: inline-block; }
   .profile_friends a {
@@ -866,7 +897,7 @@ input {
 
 label {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   width: 70%;
   opacity: 1;
   visibility: visible;
@@ -887,6 +918,18 @@ input:placeholder-shown + label {
 
 textarea {
   resize: none; }
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 70%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #7186f5;
+  font-family: inherit;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: #fff; }
 
 .login {
   visibility: hidden;
@@ -944,11 +987,6 @@ textarea {
 
 .reviews {
   visibility: hidden; }
-  .reviews_heading {
-    color: #7186f5;
-    position: absolute;
-    top: 8rem;
-    left: 2.5rem; }
   .reviews_container {
     width: 32vw;
     height: 100vh;
@@ -992,11 +1030,6 @@ textarea {
 
 .highscore {
   visibility: hidden; }
-  .highscore_heading {
-    color: #7186f5;
-    position: absolute;
-    top: 8rem;
-    left: 2.5rem; }
   .highscore_container {
     width: 32vw;
     height: 100vh;
@@ -1039,12 +1072,22 @@ textarea {
         font-size: 2.2rem;
         font-weight: 400;
         color: #7186f5; }
+      .highscore_table table th:first-child {
+        color: #f7f71c; }
       .highscore_table table td:not(:first-child),
       .highscore_table table th:not(:first-child) {
         border-left: 2px solid #7186f5; }
       .highscore_table table tbody {
-        font-size: 2.2rem;
+        font-size: 1.6rem;
         font-weight: 300; }
+        .highscore_table table tbody tr {
+          border-bottom: 1px solid rgba(113, 134, 245, 0.8); }
+          .highscore_table table tbody tr td:first-child {
+            color: #f7f71c;
+            font-weight: 400;
+            font-size: 2.2rem; }
+        .highscore_table table tbody td {
+          padding: 1rem 0; }
 
 #highscore:target {
   visibility: visible; }

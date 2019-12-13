@@ -52,7 +52,7 @@
 
       .box {
         height: 100%;
-        background: rgba($color-white, 0.07);
+        background: rgba($color-black, 0.5);
         padding: 2.5rem;
 
         @include tablet {
@@ -87,8 +87,13 @@
         justify-self: center;
 
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr min-content 1fr;
+        grid-gap: 2rem;
         place-items: center;
+
+        &-h2 {
+          justify-self: left;
+        }
 
         &-border {
           width: 2px;
@@ -98,6 +103,7 @@
 
         h3 {
           padding-top: 1rem;
+          font-size: $text-m;
 
           &:first-child {
             justify-self: right;

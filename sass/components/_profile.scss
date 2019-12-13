@@ -47,10 +47,19 @@
   &_settings {
     &-icon {
       display: inline-block;
+      width: 3.5rem;
+      height: 3.5rem;
+      margin-right: 0.7rem;
+      transform: translateY(0.5rem);
     }
 
     a {
       color: $color-purple !important;
+      transform: all 0.2s ease-in;
+      font-size: 3rem !important;
+      &:hover {
+        color: $color-mint !important;
+      }
     }
   }
 
