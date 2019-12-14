@@ -3,12 +3,17 @@
 let login = document.querySelector('button.login_form-button.button');
 login.addEventListener('click', (e) => {
 	e.preventDefault();
+
+	// Due to preventDefault(), we check the validity of the form manually
+
 	if (document.querySelector('.login_form').checkValidity()) {
 		get();
 	} else {
 		document.querySelector('.login_form').reportValidity();
 	}
 });
+
+// Get the user data from the database
 
 function get() {
 	fetch('https://rpsexam-61a3.restdb.io/rest/registeredusers', {
@@ -53,6 +58,8 @@ function checkUser(data) {
 		}
 	}
 }
+
+//  Logout user and clear local storage
 
 document.querySelector('.logOut').addEventListener('click', (e) => {
 	localStorage.removeItem('RPSuser');

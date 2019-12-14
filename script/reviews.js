@@ -1,31 +1,34 @@
-"use strict";
+'use strict';
 
 console.log(userObject);
 
+// Fetching the reviews from the database
+
 function fetchReviews() {
-  fetch(`https://rpsexam-61a3.restdb.io/rest/registeredusers`, {
-    method: "get",
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-      "x-apikey": "5ddfb3cc4658275ac9dc201e",
-      "cache-control": "no-cache"
-    }
-  })
-    .then(e => e.json())
-    .then(users => {
-      users.forEach(user => {
-        if (user.review != "") {
-          if (user.review != undefined) {
-            populateReviews(user);
-          }
-        }
-      });
-    });
+	fetch(`https://rpsexam-61a3.restdb.io/rest/registeredusers`, {
+		method: 'get',
+		headers: {
+			'Content-Type': 'application/json; charset=utf-8',
+			'x-apikey': '5ddfb3cc4658275ac9dc201e',
+			'cache-control': 'no-cache'
+		}
+	})
+		.then((e) => e.json())
+		.then((users) => {
+			// Check if the user posted a review and if he has execute fc
+
+			users.forEach((user) => {
+				if (user.review != '') {
+					if (user.review != undefined) {
+						populateReviews(user);
+					}
+				}
+			});
+		});
 }
 
-// The buttons on the menu don't close when you click to go on one another
-
-// Use this to randomize avatar names
+// Use this to randomize avatar names and send them to the db
+// Cannot be generated automatically as db is limited in this regard
 
 // for (let i = 0; i < users.length; i++) {
 //   let randomNum = Math.floor(Math.random() * 3) + 1;
@@ -33,74 +36,83 @@ function fetchReviews() {
 //   put(users[i]);
 // }
 
+// Use the standard review template and append the data
+// for each user to it
+
 function populateReviews(user) {
-  let parent = document.querySelector(".reviews_see");
-  let template = document.querySelector(".review-template").content;
-  let clone = template.cloneNode(true);
-  clone.querySelector(".avatarUser").textContent = user.imageName;
-  clone.querySelector(".usernameUser").textContent = user.username;
-  clone.querySelector(".starUser").textContent = user.starRate;
-  clone.querySelector(".reviewUser").textContent = user.review;
-  parent.appendChild(clone);
+	let parent = document.querySelector('.reviews_see');
+	let template = document.querySelector('.review-template').content;
+	let clone = template.cloneNode(true);
+	clone.querySelector('.avatarUser').textContent = user.imageName;
+	clone.querySelector('.usernameUser').textContent = user.username;
+	clone.querySelector('.starUser').textContent = user.starRate;
+	clone.querySelector('.reviewUser').textContent = user.review;
+	parent.appendChild(clone);
 }
 
 fetchReviews();
 
-let stars = document.querySelector(".stars").children;
+// Increasing and decreasing star rate by click
+
+let stars = document.querySelector('.stars').children;
 
 for (let star of stars) {
-  star.addEventListener("click", e => {
-    for (let star of stars) {
-      star.classList.remove("full");
-    }
-    const rate = Number(e.target.classList[1]);
-    colorstars(rate);
-  });
+	star.addEventListener('click', (e) => {
+		for (let star of stars) {
+			star.classList.remove('full');
+		}
+		const rate = Number(e.target.classList[1]);
+		colorstars(rate);
+	});
 }
 
 function colorstars(rating) {
-  console.log(rating);
-  for (let i = 0; i < rating; i++) {
-    stars[i].classList.add("full");
-  }
-  for (let star of stars) {
-    if (star.classList[2] == "full") {
-      star.src = "assets/images/dummy_star_full.png";
-    } else {
-      star.src = "assets/images/dummy_star_empty.png";
-    }
-  }
+	console.log(rating);
+	for (let i = 0; i < rating; i++) {
+		stars[i].classList.add('full');
+	}
+	for (let star of stars) {
+		if (star.classList[2] == 'full') {
+			star.src = 'assets/images/dummy_star_full.png';
+		} else {
+			star.src = 'assets/images/dummy_star_empty.png';
+		}
+	}
 }
 
-document.querySelector(".reviews_add-post").addEventListener("click", e => {
-  e.preventDefault();
-  modifyUserObject();
+// Adding a review
+
+document.querySelector('.reviews_add-post').addEventListener('click', (e) => {
+	e.preventDefault();
+	modifyUserObject();
 });
 
+// Modifying the saved user object's variables - starRate and review
+
 function modifyUserObject() {
-  let starRate = document.querySelectorAll(".full").length;
-  userObject.starRate = starRate;
-  userObject.review = document.querySelector(".reviews_add-input").value;
-  putReviews(userObject);
+	let starRate = document.querySelectorAll('.full').length;
+	userObject.starRate = starRate;
+	userObject.review = document.querySelector('.reviews_add-input').value;
+	putReviews(userObject);
 }
+
+// Function to send the modified user to the database
 
 function putReviews(editedUser) {
-  fetch(
-    "https://rpsexam-61a3.restdb.io/rest/registeredusers/" + editedUser._id,
-    {
-      method: "put",
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        "x-apikey": "5ddfb3cc4658275ac9dc201e",
-        "cache-control": "no-cache"
-      },
-      body: JSON.stringify(editedUser)
-    }
-  )
-    .then(e => e.json())
-    .then(editedActivity => {
-      populateReviews(editedActivity);
-    });
-}
+	fetch('https://rpsexam-61a3.restdb.io/rest/registeredusers/' + editedUser._id, {
+		method: 'put',
+		headers: {
+			'Content-Type': 'application/json; charset=utf-8',
+			'x-apikey': '5ddfb3cc4658275ac9dc201e',
+			'cache-control': 'no-cache'
+		},
+		body: JSON.stringify(editedUser)
+	})
+		.then((e) => e.json())
+		.then((editedActivity) => {
+			// When modified user data is back from the database we give it as a
+			// parameter to the function that creates the review
 
-// Next to add are pages + edit own comment
+			populateReviews(editedActivity);
+		});
+}

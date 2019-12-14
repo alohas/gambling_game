@@ -1,5 +1,7 @@
 'use strict';
 
+// User object immitating the user in the db
+
 let newUser = {
 	age: 0,
 	bonus_collected: null,
@@ -37,16 +39,19 @@ function getUsers(valueInput, propertyToCheck) {
 		});
 }
 
-// once you use e.preventDefault() it does not validate form fields anymore
-
 document.querySelector('.signup_form-button').addEventListener('click', (e) => {
 	e.preventDefault();
+
+	// Manual form validation due to preventDefault()
+
 	if (document.querySelector('.signup_form').checkValidity()) {
 		getInputValues();
 	} else {
 		document.querySelector('.signup_form').reportValidity();
 	}
 });
+
+// Check if the user has typed an already existing username with the db
 
 document.querySelector('.signup_form-username').addEventListener('change', usernameCheck);
 
@@ -56,6 +61,8 @@ function usernameCheck() {
 	getUsers(usernameInput, username);
 }
 
+// Check if the user has typed an already existing email with the db
+
 document.querySelector('.signup_form-email').addEventListener('change', emailCheck);
 
 function emailCheck() {
@@ -63,6 +70,9 @@ function emailCheck() {
 	let email = 'email';
 	getUsers(emailInput, email);
 }
+
+// After the signup button is clicked and if it validates
+// we update the user object with input from the user
 
 function getInputValues() {
 	let usernameInput = document.querySelector('.signup_form-username input').value;
@@ -80,6 +90,8 @@ function getInputValues() {
 	postUser(newUser);
 }
 
+// Send the user to the database
+
 function postUser(user) {
 	console.log(user);
 	fetch('https://rpsexam-61a3.restdb.io/rest/registeredusers', {
@@ -93,10 +105,11 @@ function postUser(user) {
 	})
 		.then((e) => e.json())
 		.then((newActivity) => {
-			// addActivityToDOM(newActivity);
 			console.log(newActivity);
 		});
 }
+
+// Country select options
 
 function offerSelectOptionsSignup() {
 	let selectCountry = document.querySelector('.signup_select_form-country select');
@@ -112,7 +125,8 @@ function offerSelectOptionsSignup() {
 	}
 }
 
-// add the select options signup on sign up open button
+// Add the countries options for signup
+// Execute after countriesArray is available
 
 setTimeout(() => offerSelectOptionsSignup(), 500);
 
