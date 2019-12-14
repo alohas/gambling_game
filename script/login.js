@@ -1,12 +1,13 @@
 "use strict";
 
 let login = document.querySelector("button.login_form-button.button");
+
 login.addEventListener("click", e => {
   e.preventDefault();
-  get();
+  getNow();
 });
 
-function get() {
+function getNow() {
   fetch("https://rpsexam-61a3.restdb.io/rest/registeredusers", {
     method: "get",
     headers: {

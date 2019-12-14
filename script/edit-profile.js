@@ -1,6 +1,6 @@
 "use strict";
 
-get();
+//get();
 
 // Fetch the country API in order to populate the select form element
 
