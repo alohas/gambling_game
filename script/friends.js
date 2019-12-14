@@ -59,6 +59,27 @@ function getFriends(friends) {
 		});
 }
 
+// Disable buttons
+
+function disableButtons() {
+	document.querySelectorAll('.friends_container button').forEach((el) => {
+		el.style.color = 'grey';
+		el.style.border = '2px solid grey';
+		el.disabled = true;
+	});
+}
+
+// Enable buttons
+
+function enableButtons() {
+	document.querySelectorAll('.friends_container button').forEach((el) => {
+		el.style.color = '#5dfdcb';
+		el.style.border = '2px solid #7186f5';
+		el.disabled = false;
+		location.reload();
+	});
+}
+
 // Use the standard template for friends
 
 function addFriendEntry(el) {
@@ -144,6 +165,7 @@ function addFriend() {
 	event.target.parentElement.remove();
 	// Get friend from db through previously stored uuid on element
 	getFriend(event.target.dataset.uuid);
+	disableButtons();
 	setTimeout(() => {
 		// Add to the new friend object in the friends object property the logged in user's username
 		fluidFriendObject.friends += ',' + userObject.username;
@@ -163,6 +185,7 @@ function removeFriend() {
 	userObject.friends = userObject.friends.replace(currentUsername, '');
 	event.target.parentElement.remove();
 	getFriend(event.target.dataset.uuid);
+	disableButtons();
 	setTimeout(() => {
 		let loggedInUserUsername = userObject.username;
 		loggedInUserUsername = ',' + loggedInUserUsername;
@@ -204,5 +227,6 @@ function changeStatus(editedUser) {
 		.then((e) => e.json())
 		.then((editedActivity) => {
 			console.log(editedActivity);
+			enableButtons();
 		});
 }
