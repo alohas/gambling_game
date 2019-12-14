@@ -7,7 +7,6 @@ let newUser = {
 	bonus_collected: null,
 	coins: 0,
 	country: 'Antarctica',
-	datePosted: null,
 	email: 'email@com',
 	friends: '',
 	imageName: 'avatar-3',
