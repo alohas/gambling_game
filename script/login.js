@@ -28,16 +28,16 @@ function getNow() {
 //checks if enetred credentials are correct
 
 function checkUser(data) {
-  let username = document.querySelector("#username").value;
-  let password = document.querySelector("#password").value;
+  let username = document.querySelector("#login_username").value;
+  let password = document.querySelector("#login_password").value;
   for (let i = 0; i < data.length; i++) {
     if (username == data[i].username) {
       if (password == data[i].password) {
         userObject = data[i];
         localStorage.setItem("RPSuser", data[i]._id);
         loggedUserID = localStorage.getItem("RPSuser");
-        document.querySelector("#password").value = "";
-        document.querySelector("#username").value = "";
+        document.querySelector("#login_password").value = "";
+        document.querySelector("#login_username").value = "";
         //document.querySelector(".profile").style.visibility = "visible";
         window.location.hash = "#profile";
         //document.querySelector(".login").style.visibility = "hidden";
