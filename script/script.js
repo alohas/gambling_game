@@ -150,9 +150,10 @@ function populateUserInfo(user) {
   document.querySelector(".profile_user-name").textContent = user.username;
   document.querySelector("#friends > div > div.profile_user > h2").textContent =
     user.username;
-  document.querySelector(".profile_user-points").textContent = " " + user.coins;
+  document.querySelector(".profile_user-points").textContent =
+    "$ " + user.coins;
   document.querySelector("#friends > div > div.profile_user > p").textContent =
-    " " + user.coins;
+    "$ " + user.coins;
   document.querySelector(".app_player-name").textContent = user.username;
   document.querySelector(".app_player-coins span").textContent = user.coins;
   document.querySelector("div.app_player").style.display = "block";
