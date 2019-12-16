@@ -297,6 +297,15 @@
   }
 }
 
+@keyframes slide-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @keyframes gameIn {
   to {
     transform: translateY(-50%) translateX(0);
@@ -323,6 +332,8 @@
     transform: translateX(0);
   }
 }
+
+//GAME HAND SHAKE
 
 @keyframes shakePlayer {
   0% {
@@ -381,14 +392,5 @@
   }
   100% {
     transform: rotateY(180deg) translateY(0px);
-  }
-}
-
-@keyframes slide-right {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
   }
 }

@@ -126,17 +126,25 @@ function populateUserInfo(user) {
   document.querySelector("div.highscore_sorting").style.display = "block";
 }
 
+//CLOSING MODAL WITH THE X
 const wrapperMenu = document.querySelector(".wrapper");
-const closeMenu = document.querySelector(".menu-close");
 
 wrapperMenu.addEventListener("click", () => {
   wrapperMenu.classList.toggle("open");
 });
 
-closeMenu.addEventListener("click", () => {
+const closeModal = document.querySelectorAll(".u-close");
+closeModal.forEach(elem => {
+  elem.addEventListener("click", () => {
+    wrapperMenu.classList.toggle("open");
+  });
+});
+
+document.querySelector(".menu-login").addEventListener("click", () => {
   wrapperMenu.classList.toggle("open");
 });
 
+//SCORE BOARD
 document.querySelector(".link-highscore > a").addEventListener("click", e => {
   scoreBoard();
 });
