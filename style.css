@@ -842,6 +842,8 @@ path {
     text-align: center;
     color: #5dfdcb;
     font-weight: 400; }
+    .profile_user-points::before {
+      content: url("assets/images/coins-icon.png"); }
   .profile_settings-icon {
     display: inline-block;
     width: 3.5rem;
@@ -1095,8 +1097,8 @@ select {
 .friends {
   visibility: hidden; }
   .friends_container {
-    width: 32vw;
     height: 100vh;
+    width: 32vw;
     padding-top: 12rem;
     display: grid;
     align-items: end;
@@ -1106,7 +1108,6 @@ select {
       .friends_container {
         width: 100vw; } }
   .friends_list {
-    height: 45vh;
     width: 90%; }
     .friends_list-heading {
       color: #5dfdcb;

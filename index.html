@@ -4,10 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Feel the new millenial hype with the virtual rock, paper, scissors for free!">
-    <!-- meta descript and title tag -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
-    <!-- <title>RPS game - make your bet!</title> -->
     <title>Get lucky with rock, paper, scissors!</title>
   </head>
   <body>
@@ -255,7 +253,6 @@
               <circle class="cls-1q" cx="126.21" cy="125.21" r="80.08" />
             </svg>
             <h2 class="heading-secondary">Bet</h2>
-            <!-- seo -->
             <p class="paragraph">
               Choose the amount of points you are willing to risk and double it
               if you’re lucky!
@@ -307,7 +304,6 @@
               />
             </svg>
             <h2 class="heading-secondary">Compete</h2>
-            <!-- seo -->
             <p class="paragraph">
               Play against your friends and strangers. Check your place on the
               high score board.
@@ -369,7 +365,6 @@
               />
             </svg>
             <h2 class="heading-secondary">Win</h2>
-            <!-- seo h2 -->
             <p class="paragraph">
               The chances of winning against the bot are as high as me atm.
             </p>
@@ -442,7 +437,6 @@
           <h3 class="heading-tertiary">
             Bet some coins and test your chance to win!
           </h3>
-          <!-- seo -->
           <p class="paragraph">
             Gamble your coins to achieve, save yourself a spot on the score
             board and become the best player of them all. Simply place your bet, hit
@@ -875,37 +869,44 @@
       </tr>
     </template>
 
-    <div class="friends u-modal" id="friends">
-        <h3 class="heading-tertiary u-modal-heading">friends</h3>
+    <div class="friends u-modal" id="friends" style="overflow-y: scroll; overflow-x: hidden;">
       <a href="#slider" class="u-close"></a>
       <div class="friends_container">
         <div class="profile_user">
           <svg class="profile_user-icon"></svg>
-          <h2 class="profile_user-name heading-secondary">ewa_xd</h2>
-          <p class="profile_user-points paragraph"><svg>$</svg> 1200</p>
+          <h2 class="profile_user-name heading-secondary">User</h2>
+          <p class="profile_user-points paragraph"> 1200</p>
         </div>
-        <div class="friends_list">
+        <div class="friends_list friends_current">
           <h3 class="friends_list-heading heading-tertiary">Friends</h3>
-          <ul class="friends_list-list">
-            <li class="friends_list-list-item">
-              <svg></svg>
-              <p class="paragraph">~ewa_xd</p>
-              <button class="button">+</button>
-            </li>
-            <li class="friends_list-list-item">
-              <svg></svg>
-              <p class="paragraph">~ewa_xd</p>
-              <button class="button">+</button>
-            </li>
-            <li class="friends_list-list-item">
-              <svg></svg>
-              <p class="paragraph">~ewa_xd</p>
-              <button class="button">+</button>
-            </li>
+          <ul class="friends_list-list friends_current-parent">
+          </ul>
+        </div>
+
+        <div class="friends_list friends_suggestion">
+          <h3 class="friends_list-heading heading-tertiary">Suggestions</h3>
+          <ul class="friends_list-list friends_suggestion-parent">
           </ul>
         </div>
       </div>
     </div>
+
+    <template id="friends-current">
+      <li class="friends_list-list-item">
+        <svg></svg>
+          <p class="paragraph">~ewa_xd</p>
+          <button class="button" data-uuid="">-</button>
+        </li>
+    </template>
+
+    <template id="friends-suggestion">
+      <li class="friends_list-list-item">
+        <svg></svg>
+          <p class="paragraph">~ewa_xd</p>
+          <button class="button" data-uuid="">+</button>
+        </li>
+    </template>
+    
     <template id="review" class="review-template">
       <article class="review">
         <img class="review_icon avatarUser" src="assets/images/player.svg" alt="">
@@ -926,5 +927,6 @@
     <script src="script/edit-profile.js"></script>
     <script src="script/game.js"></script>
     <script src="script/signup.js"></script>
+    <script src="script/friends.js"></script>
   </body>
 </html>
