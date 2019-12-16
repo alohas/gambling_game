@@ -919,7 +919,7 @@ select {
   .signup_form {
     height: 50vh;
     display: grid;
-    margin-bottom: 50%; }
+    margin-bottom: 35%; }
     .signup_form-age {
       margin-bottom: 3rem; }
     .signup_form-button {

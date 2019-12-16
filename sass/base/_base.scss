@@ -1,29 +1,29 @@
 *,
 *::after,
 *::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
 }
 
 html {
-  overflow-x: hidden;
-  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+	overflow-x: hidden;
+	font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
 
-  @include tablet {
-    font-size: 56.25%;
-  }
+	@include tablet {
+		font-size: 56.25%;
+	}
 }
 
 body {
-  box-sizing: border-box;
-  position: relative;
-  scroll-behavior: smooth;
-  overflow: hidden;
+	box-sizing: border-box;
+	position: relative;
+	scroll-behavior: smooth;
+	overflow: hidden;
 }
 
 svg {
-  display: block;
-  width: 1rem;
-  height: 1rem;
+	display: block;
+	width: 1rem;
+	height: 1rem;
 }
