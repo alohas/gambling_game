@@ -902,7 +902,6 @@ label {
   grid-template-columns: 2fr 1fr;
   width: 70%;
   opacity: 1;
-  visibility: visible;
   transition: all 0.2s ease-in;
   font-size: 1.5rem;
   font-weight: 500;
@@ -915,7 +914,6 @@ label {
 
 input:placeholder-shown + label {
   opacity: 0;
-  visibility: hidden;
   transform: translateY(-1rem); }
 
 textarea {
@@ -1097,7 +1095,6 @@ select {
 .friends {
   visibility: hidden; }
   .friends_container {
-    height: 100vh;
     width: 32vw;
     padding-top: 12rem;
     display: grid;
