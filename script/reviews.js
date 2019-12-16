@@ -45,9 +45,16 @@ function populateReviews(user) {
   let clone = template.cloneNode(true);
   clone.querySelector(".avatarUser").textContent = user.imageName;
   clone.querySelector(".usernameUser").textContent = user.username;
-  clone.querySelector(".starUser").textContent = user.starRate;
+  let starsHTML = "";
+  for (let i = 0; i < user.starRate; i++) {
+    starsHTML += '<img src="assets/images/star_full.png" alt="Star Rate"/>';
+  }
+  for (let i = 0; i < 5 - user.starRate; i++) {
+    starsHTML += '<img src="assets/images/star_empty.png" alt="Star Rate"/>';
+  }
+  clone.querySelector(".starUser").innerHTML = starsHTML;
   clone.querySelector(".reviewUser").textContent = user.review;
-  parent.appendChild(clone);
+  parent.prepend(clone);
 }
 
 fetchReviews();

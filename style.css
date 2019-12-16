@@ -633,9 +633,7 @@ body {
   .review_content {
     transform: skew(15deg); }
     .review_content-stars {
-      width: calc(5 * 1.5rem);
-      height: 1.5rem;
-      background-color: #f7f71c; }
+      height: 1.5rem; }
     .review_content-text {
       font-size: 1.8rem;
       font-weight: 400; }
