@@ -85,4 +85,9 @@ select {
   font-size: 2.8rem;
   font-weight: 300;
   color: $color-white;
+
+  option {
+    color: $color-black;
+    font-size: 1.8rem;
+  }
 }
