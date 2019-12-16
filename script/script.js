@@ -1,6 +1,42 @@
 "use strict";
 
+//GAME THEME CHANGE
+const html = document.querySelector("html");
+const orangeBtn = document.querySelector(".orange");
+const pinkBtn = document.querySelector(".pink");
+const violetBtn = document.querySelector(".violet");
+const redBtn = document.querySelector(".red");
+const closeColorsBtn = document.querySelector(".store_close");
+const openColorsBtn = document.querySelector(".app_rightBar-cart");
+
+openColorsBtn.addEventListener("click", () => {
+  console.log("hi");
+  document.querySelector(".store").style.display = "grid";
+});
+closeColorsBtn.addEventListener("click", () => {
+  document.querySelector(".store").style.display = "none";
+});
+
+orangeBtn.addEventListener("click", () => {
+  html.setAttribute("data-attribute", "orange");
+  document.querySelector(".store").style.display = "none";
+});
+redBtn.addEventListener("click", () => {
+  html.setAttribute("data-attribute", "red");
+  document.querySelector(".store").style.display = "none";
+});
+violetBtn.addEventListener("click", () => {
+  html.setAttribute("data-attribute", "violet");
+  document.querySelector(".store").style.display = "none";
+});
+pinkBtn.addEventListener("click", () => {
+  html.setAttribute("data-attribute", "pink");
+  document.querySelector(".store").style.display = "none";
+});
+
 let loggedUserID = localStorage.getItem("RPSuser");
+
+//
 
 let userObject;
 if (loggedUserID) {

@@ -1,3 +1,23 @@
+html {
+  --color-primary: #f99419;
+  --color-secondary: #8c5dda;
+}
+
+html[data-attribute="pink"] {
+  --color-primary: #fffc31;
+  --color-secondary: #5c415d;
+}
+
+html[data-attribute="violet"] {
+  --color-primary: #47c8ff;
+  --color-secondary: #da5d5d;
+}
+
+html[data-attribute="red"] {
+  --color-primary: #ff84e8;
+  --color-secondary: #702b62;
+}
+
 #game {
   width: 55vw;
   height: 500px;
@@ -6,7 +26,7 @@
   right: ((100vw - $slider-size) - 55vw) / 2;
   top: 50%;
 
-  color: $game-orange;
+  color: var(--color-primary);
 
   transform: translateY(-50%) translateX(100vw);
   animation: gameIn 0.6s ease-in 3.5s forwards;
