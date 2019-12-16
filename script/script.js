@@ -109,10 +109,14 @@ function fetchUser(id) {
 
 // use THIS function to use user data model on loading stuff on page
 function populateUserInfo(user) {
+  getUserFriends();
   console.log(user);
   document.querySelector(".profile_user-name").textContent = user.username;
-  document.querySelector(".profile_user-points").textContent =
-    "$ " + user.coins;
+  document.querySelector("#friends > div > div.profile_user > h2").textContent =
+    user.username;
+  document.querySelector(".profile_user-points").textContent = " " + user.coins;
+  document.querySelector("#friends > div > div.profile_user > p").textContent =
+    " " + user.coins;
   document.querySelector(".app_player-name").textContent = user.username;
   document.querySelector(".app_player-coins span").textContent = user.coins;
   document.querySelector("div.app_player").style.display = "block";
