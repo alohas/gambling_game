@@ -1092,7 +1092,7 @@ select {
 
 .editUser_paragraph-modifyPassword {
   color: #7186f5;
-  font-size: 1.6rem;
+  font-size: 2.8rem;
   font-weight: 600;
   padding: 1.5rem 0; }
   .editUser_paragraph-modifyPassword:hover {
@@ -1117,6 +1117,30 @@ select {
   padding-bottom: 1.5rem;
   font-size: 1.4rem;
   font-weight: 600; }
+
+.modal-confirm {
+  display: none;
+  position: fixed;
+  /* Stay in place */
+  z-index: 200;
+  /* Sit on top */
+  padding-top: 15%;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Black w/ opacity */
+  text-align: center; }
+  .modal-confirm .confirmation-modal_modal-content {
+    background-color: #000;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #5dfdcb;
+    width: 30%; }
 
 html {
   --color-primary: #f99419;
