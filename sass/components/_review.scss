@@ -1,41 +1,39 @@
 .review {
-  width: 80%;
-  padding: 2rem;
+	width: 80%;
+	padding: 2rem;
 
-  display: grid;
-  grid-template-columns: min-content 1fr;
+	display: grid;
+	grid-template-columns: min-content 1fr;
 
-  background: rgba($color-black, 0.5);
-  transform: skew(-15deg);
+	background: rgba($color-black, 0.5);
+	transform: skew(-15deg);
 
-  @include tablet {
-    background: rgba($color-black, 0.4);
-  }
+	@include tablet {
+		background: rgba($color-black, 0.4);
+	}
 
-  &_icon {
-    width: 6rem;
-    height: 6rem;
-    margin-right: 2rem;
+	&_icon {
+		width: 6rem;
+		height: 6rem;
+		margin-right: 2rem;
 
-    transform: skew(15deg);
-  }
+		transform: skew(15deg);
+	}
 
-  &_content {
-    transform: skew(15deg);
-    &-stars {
-      width: calc(5 * 1.5rem);
-      height: 1.5rem;
-      background-color: $color-yellow;
-    }
+	&_content {
+		transform: skew(15deg);
+		&-stars {
+			height: 1.5rem;
+		}
 
-    &-text {
-      font-size: 1.8rem;
-      font-weight: 400;
-    }
+		&-text {
+			font-size: 1.8rem;
+			font-weight: 400;
+		}
 
-    &-user {
-      font-size: 1.6rem;
-      font-weight: 300;
-    }
-  }
+		&-user {
+			font-size: 1.6rem;
+			font-weight: 300;
+		}
+	}
 }

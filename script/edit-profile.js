@@ -104,13 +104,25 @@ function showUserEdit() {
 	offerSelectOptions();
 }
 
-document.querySelector('.editUser_form-login').addEventListener('click', () => {
+document.querySelector('.editUser_form-login').addEventListener('click', (e) => {
 	// Check for form validity manually
-
-	if (document.querySelector('.editUser_form').checkValidity()) {
-		checkForChanges();
-	} else {
+	e.preventDefault();
+	let k = 0;
+	let selector = [
+		'.editUser_form-username input',
+		'.editUser_form-email input',
+		'.option_form-country',
+		'.editUser_form-age input'
+	];
+	selector.forEach((el) => {
+		if (document.querySelector(el).value == '') {
+			k++;
+		}
+	});
+	if (k == 3) {
 		document.querySelector('.editUser_form').reportValidity();
+	} else {
+		checkForChanges();
 	}
 });
 
@@ -135,6 +147,8 @@ function checkForChanges() {
 			userObject[selectorObject[i]] = document.querySelector(selector[i]).value;
 			// and store true in variable in order to be later on used
 			saveChangesTrigger = true;
+		} else if (document.querySelector(selector[i]).value == userObject[selectorObject[i]]) {
+			document.querySelector(selector[i]).input = document.querySelector(selector[i]).value;
 		}
 	}
 	if (saveChangesTrigger == false) {
