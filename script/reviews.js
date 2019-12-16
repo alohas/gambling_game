@@ -93,6 +93,10 @@ document.querySelector(".reviews_add-post").addEventListener("click", e => {
   e.target.textContent = "posted";
   e.target.style.color = "#7186f5";
   document.querySelector("#review > textarea").value = " ";
+  for (let star of stars) {
+    star.classList.remove("full");
+    star.src = "assets/images/star_empty.png";
+  }
   document.querySelector("textarea").style.color = "rgba(255, 255, 255, 0.4)";
 });
 
