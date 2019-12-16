@@ -660,7 +660,7 @@
             <label for="email">email</label>
           </div>
           <div class="editUser_form-country select_form-country">
-            <select>
+            <select class="editUser_select">
               <option value="volvo" class="option_form-country"></option>
             </select>
             <!-- <label for="country">select your country</label> -->
@@ -672,12 +672,11 @@
               id="age"
               placeholder="age"
               min="10"
-              max="18"
               required
             />
             <label for="age">age</label>
           </div>
-          <p class="paragraph editUser_paragraph-modifyPassword">
+          <p class="editUser_paragraph-modifyPassword">
             Modify password
           </p>
           <p class="paragraph editUser_paragraph-alertNoModifs">
@@ -738,38 +737,35 @@
               type="password"
               name="password"
               id="password"
-              placeholder="password"
+              placeholder="old password"
               required
               required
             />
             <label for="password"> old password</label>
           </div>
-          <p class="paragraph modifyPassword_paragraph-alertWrongPass">
-            Wrong password
-          </p>
-          <p class="paragraph">Choose new password</p>
+          <p class="paragraph"></p>
           <div class="modifyPassword_form-password_new">
             <input
               type="password"
               name="password"
               id="password"
-              placeholder="password"
+              placeholder="new password"
               required
             />
             <label for="password"> new password</label>
           </div>
-          <p class="paragraph">Retype new password</p>
+          <p class="paragraph"> </p>
           <div class="modifyPassword_form-password_new-retype">
             <input
               type="password"
               name="password"
               id="password"
-              placeholder="password"
+              placeholder="new password"
               required
             />
-            <label for="password"> new password confirm </label>
+            <label for="password"> new password confirmation </label>
           </div>
-          <p class="paragraph modifyPassword_paragraph-alertNoMatch"></p>
+          <p class="paragraph modifyPassword_paragraph-alert"></p>
           <input
             type="submit"
             class="modifyPassword_form-login button-small"
