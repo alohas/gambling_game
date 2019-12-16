@@ -49,7 +49,9 @@ start.addEventListener("click", e => {
 
 document
   .querySelector(".modal_winner_body_notlogged_buttons-login")
-  .addEventListener("click", userSlider);
+  .addEventListener("click", e => {
+    window.location.hash = "#login";
+  });
 
 document
   .querySelector(".modal_start_body-logged-up")
@@ -81,7 +83,6 @@ options.forEach(option => {
     options.forEach(e => {
       e.disabled = true;
     });
-    console.log(option.querySelector("svg").dataset.name);
     generatedHand = optionsPC[Math.floor(Math.random() * 8)];
     let result = null;
 
@@ -120,7 +121,7 @@ function aRound(playerHand, computerHand) {
   document.querySelector(".pch span").textContent = computerHand;
 
   winner.style.visibility = "visible";
-  console.log(playerHand, computerHand);
+  //console.log(playerHand, computerHand);
   if (playerHand === computerHand) {
     winner.textContent = "It is a tie!";
     return;
@@ -407,6 +408,23 @@ function checkScore() {
         "block";
       document.querySelector(".modal_winner_body_notlogged").style.display =
         "none";
+      if (userObject.coins == 0) {
+        userObject.coins = 100;
+        populateUserInfo(userObject);
+        const postData = JSON.stringify(userObject);
+        fetch(
+          `https://rpsexam-61a3.restdb.io/rest/registeredusers/${loggedUserID}`,
+          {
+            method: "put",
+            headers: {
+              "Content-Type": "application/json; charset=utf-8",
+              "x-apikey": "5ddfb3cc4658275ac9dc201e",
+              "cache-control": "no-cache"
+            },
+            body: postData
+          }
+        );
+      }
     }
   }
 }
@@ -454,3 +472,9 @@ function startGame() {
     );
   }
 }
+
+document
+  .querySelector(".modal_winner_body_notlogged_buttons-signup")
+  .addEventListener("click", e => {
+    window.location.hash = "#signup";
+  });

@@ -54,7 +54,6 @@ function checkUser(data) {
         document.querySelector("#review").style.display = "block";
         document.querySelector("div.highscore_sorting").style.display = "block";
         resetGame();
-        getUserFriends();
       }
     }
   }

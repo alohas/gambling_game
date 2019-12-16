@@ -5,7 +5,7 @@
 let newUser = {
   age: 0,
   bonus_collected: null,
-  coins: 1000,
+  coins: 300,
   country: "Antarctica",
   email: "email@com",
   friends: "",
@@ -42,11 +42,19 @@ document.querySelector(".signup_form-button").addEventListener("click", e => {
   e.preventDefault();
 
   // Manual form validation due to preventDefault()
-
-  if (document.querySelector(".signup_form").checkValidity()) {
-    getInputValues();
+  // https://emailregex.com/
+  if (
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      document.querySelector(".signup_form-email input").value
+    )
+  ) {
+    if (document.querySelector(".signup_form").checkValidity()) {
+      getInputValues();
+    } else {
+      document.querySelector(".signup_form").reportValidity();
+    }
   } else {
-    document.querySelector(".signup_form").reportValidity();
+    alert("wrong email input");
   }
 });
 
@@ -111,8 +119,23 @@ function postUser(user) {
     body: JSON.stringify(user)
   })
     .then(e => e.json())
-    .then(newActivity => {
-      console.log(newActivity);
+    .then(newUser => {
+      console.log(newUser);
+      window.location.hash = "#profile";
+      localStorage.setItem("RPSuser", newUser._id);
+      loggedUserID = localStorage.getItem("RPSuser");
+      document.querySelector(".modal_winner_body_notlogged").style.display =
+        "none";
+      document.querySelector(".modal_winner_body_logged").style.display =
+        "block";
+      document.querySelector(".modal_start_body-trial").style.display = "none";
+      document.querySelector(".modal_start_body-logged").style.display =
+        "block";
+      document.querySelector(".nav_user-link").href = "#profile";
+      document.querySelector("#review").style.display = "block";
+      document.querySelector("div.highscore_sorting").style.display = "block";
+      resetGame();
+      fetchUser(newUser._id);
     });
 }
 
