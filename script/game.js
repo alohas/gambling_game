@@ -410,6 +410,7 @@ function checkScore() {
         "none";
       if (userObject.coins == 0) {
         userObject.coins = 100;
+
         populateUserInfo(userObject);
         const postData = JSON.stringify(userObject);
         fetch(
@@ -444,6 +445,7 @@ function resetGame() {
   });
   bet.style.visibility = "hidden";
   modalStart.style.display = "grid";
+  inputAmount.value = 10;
 }
 
 function startGame() {
