@@ -36,7 +36,14 @@ pinkBtn.addEventListener("click", () => {
 
 let loggedUserID = localStorage.getItem("RPSuser");
 
-//
+//INFO MODAL
+document.querySelector(".app_rightBar-info").addEventListener("click", () => {
+  document.querySelector(".info").style.display = "grid";
+});
+
+document.querySelector(".info_close").addEventListener("click", () => {
+  document.querySelector(".info").style.display = "none";
+});
 
 let userObject;
 if (loggedUserID) {

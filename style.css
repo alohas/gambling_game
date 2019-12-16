@@ -1453,3 +1453,39 @@ html[data-attribute="red"] {
       transition: all 0.1s ease-in; }
       .store_themes .red:hover {
         background: #ff84e8; }
+
+.info {
+  width: 100%;
+  height: 100%;
+  display: none;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8); }
+  .info_container {
+    width: 70%; }
+  .info_close {
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+    font-size: 6rem;
+    font-weight: 100;
+    cursor: pointer; }
+  .info_heading-img {
+    display: inline-block;
+    width: 8rem; }
+  .info_heading-h1 {
+    display: inline-block;
+    font-size: 3.5rem;
+    font-weight: 400;
+    transform: translateY(-3rem); }
+  .info_rules {
+    color: #8c5dda; }
+    .info_rules-h2 {
+      font-size: 2.8rem; }
+    .info_rules p {
+      font-size: 2.2rem; }
+      .info_rules p span {
+        color: #5dfdcb;
+        font-size: 2.8rem; }
