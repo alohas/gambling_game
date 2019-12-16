@@ -1353,6 +1353,11 @@ html[data-attribute="red"] {
     cursor: pointer; }
     .app_options button:hover svg path {
       fill: #5dfdcb; }
+  .app_options button:disabled {
+    border: 2px solid grey;
+    cursor: default; }
+  .app_options button:disabled > svg > path {
+    fill: grey; }
   .app_options svg {
     width: 70%;
     height: auto;

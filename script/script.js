@@ -161,6 +161,13 @@ function populateUserInfo(user) {
     .querySelector(".modal_start_body-logged-input")
     .setAttribute("max", user.coins);
   document.querySelector("div.highscore_sorting").style.display = "block";
+  if (user.username == "admin") {
+    document.querySelector("#admin_list").style.display = "inline-block";
+    document.querySelector(".admin_panel").style.display = "inline-block";
+  } else {
+    document.querySelector("#admin_list").style.display = "none";
+    document.querySelector(".admin_panel").style.display = "none";
+  }
 }
 
 //CLOSING MODAL WITH THE X

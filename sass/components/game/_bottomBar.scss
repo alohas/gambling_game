@@ -19,6 +19,14 @@
       fill: $game-mint;
     }
   }
+  button:disabled {
+    border: 2px solid grey;
+    cursor: default;
+  }
+  button:disabled > svg > path {
+    fill: grey;
+  }
+
   svg {
     width: 70%;
     height: auto;
