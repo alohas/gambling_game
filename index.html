@@ -467,7 +467,7 @@
             <a href="#reviews" class="text-link">reviews</a>
           </li>
           <li class="menu_list-item">
-            <a href="#login" class="text-link">log in / sign up</a>
+            <a href="#login" class="text-link menu-login">log in / sign up</a>
           </li>
         </ul>
       </div>
@@ -481,7 +481,7 @@
             <input
               type="text"
               name="username"
-              id="username"
+              id="login_username"
               placeholder="username"
               autocomplete="off"
             />
@@ -491,7 +491,7 @@
             <input
               type="password"
               name="password"
-              id="password"
+              id="login_password"
               placeholder="password"
               autocomplete="off"
             />
@@ -505,7 +505,7 @@
           sign up
         </button>
       </div>
-      <a href="#slider" class="u-close-left"></a>
+      <a href="#slider" class="u-close-right"></a>
     </div>
 
     <div class="signup u-modal" id="signup">
@@ -516,7 +516,7 @@
             <input
               type="text"
               name="username"
-              id="username"
+              id="signup_form_username"
               placeholder="username"
               required
             />
@@ -526,7 +526,7 @@
             <input
               type="email"
               name="email"
-              id="email"
+              id="signup_email"
               placeholder="email"
               required
             />
@@ -536,7 +536,7 @@
             <input
               type="password"
               name="password"
-              id="password"
+              id="signup_password"
               placeholder="password"
               required
             />
@@ -552,7 +552,7 @@
             <input
               type="number"
               name="age"
-              id="age"
+              id="signup_age"
               placeholder="age"
               min="10"
               max="18"
@@ -568,7 +568,7 @@
           </button>
         </form>
       </div>
-      <a href="#slider" class="u-close-left"></a>
+      <a href="#slider" class="u-close-right"></a>
     </div>
 
     <div class="profile u-modal" id="profile">
@@ -624,7 +624,7 @@
         </div>
         <button class="button logOut">Log out</button>
       </div>
-      <a href="#slider" class="u-close-left"></a>
+      <a href="#slider" class="u-close-right"></a>
       <a href="#slider" class="u-close"></a>
     </div>
 
@@ -637,7 +637,7 @@
             <input
               type="text"
               name="username"
-              id="username"
+              id="editUser_username"
               placeholder="username"
               required
             />
@@ -647,7 +647,7 @@
             <input
               type="email"
               name="email"
-              id="email"
+              id="editUser_email"
               placeholder="email"
               required
             />
@@ -663,7 +663,7 @@
             <input
               type="number"
               name="age"
-              id="age"
+              id="editUser_age"
               placeholder="age"
               min="10"
               required
@@ -698,7 +698,7 @@
             <input
               type="password"
               name="password"
-              id="password"
+              id="confirmModifications_password"
               placeholder="password"
               required
             />
@@ -730,7 +730,7 @@
             <input
               type="password"
               name="password"
-              id="password"
+              id="modifyPassword_password"
               placeholder="old password"
               required
               required
@@ -742,7 +742,7 @@
             <input
               type="password"
               name="password"
-              id="password"
+              id="new_modifyPassword_password"
               placeholder="new password"
               required
             />
@@ -753,7 +753,7 @@
             <input
               type="password"
               name="password"
-              id="password"
+              id="newconfirm_modifyPassword_password"
               placeholder="new password"
               required
             />
@@ -777,7 +777,7 @@
 
     <div class="reviews u-modal" id="reviews">
       <h3 class="heading-tertiary u-modal-heading">reviews</h3>
-      <a href="#menu" class="u-close"></a>
+      <a href="#slider" class="u-close"></a>
       <div class="reviews_container">
         <form class="reviews_add" id="review">
           <!-- <svg class="reviews_add-stars"></svg> -->
@@ -827,12 +827,12 @@
         </form>
         <section class="reviews_see"></section>
       </div>
-      <a href="#menu" class="u-close"></a>
+      <a href="#slider" class="u-close"></a>
     </div>
 
     <div class="highscore u-modal" id="highscore">
       <h3 class="heading-tertiary u-modal-heading">highscore</h3>
-      <a href="#menu" class="u-close"></a>
+      <a href="#slider" class="u-close"></a>
       <div class="highscore_container">
         <div class="highscore_sorting">
           <ul class="highscore_sorting-list">
@@ -856,7 +856,7 @@
           </table>
         </div>
       </div>
-      <a href="#menu" class="u-close"></a>
+      <a href="#slider" class="u-close"></a>
     </div>
 
     <template id="scoreBoard">
