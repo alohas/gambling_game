@@ -451,8 +451,8 @@ function resetGame() {
   updateScore();
   modalWin.style.display = "none";
   document.querySelector(".app_result").style.visibility = "hidden";
-  playerh.src = `assets/hands/hand_default.svg`;
-  computerh.src = `assets/hands/hand_default.svg`;
+  playerh.src = `assets/hands/hand_Default.svg`;
+  computerh.src = `assets/hands/hand_Default.svg`;
   document.querySelector(".userh span").textContent = "";
   document.querySelector(".pch span").textContent = "";
   // options.forEach(e => {
