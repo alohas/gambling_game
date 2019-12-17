@@ -382,9 +382,11 @@ function checkScore() {
     options.forEach(e => {
       e.disabled = true;
     });
+
     if (game.userWin == 2) {
       document.querySelector(".modal_winner_body-message").textContent =
         "winner";
+
       if (loggedUserID) {
         userObject.coins = userObject.coins + Number(bet.textContent);
         populateUserInfo(userObject);

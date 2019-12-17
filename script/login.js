@@ -38,9 +38,8 @@ function checkUser(data) {
         loggedUserID = localStorage.getItem("RPSuser");
         document.querySelector("#login_password").value = "";
         document.querySelector("#login_username").value = "";
-        //document.querySelector(".profile").style.visibility = "visible";
         window.location.hash = "#profile";
-        //document.querySelector(".login").style.visibility = "hidden";
+        document.querySelector(".link-loginSignup").style.display = "none";
         document.querySelector(".modal_winner_body_notlogged").style.display =
           "none";
         document.querySelector(".modal_winner_body_logged").style.display =
@@ -65,9 +64,10 @@ document.querySelector(".logOut").addEventListener("click", e => {
   localStorage.removeItem("RPSuser");
   loggedUserID = undefined;
   userObject = undefined;
-  //document.querySelector(".profile").style.visibility = "hidden";
+
   window.location.hash = "#login";
-  //document.querySelector(".login").style.visibility = "hidden";
+  document.querySelector(".link-loginSignup").style.display = "list-item";
+  document.querySelector(".highscore_sorting").style.display = "none";
   resetGame();
   document.querySelector("div.app_player").style.display = "none";
   document.querySelector(".modal_start_body-trial").style.display = "block";

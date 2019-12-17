@@ -10,7 +10,6 @@ const closeColorsBtn = document.querySelector(".store_close");
 const openColorsBtn = document.querySelector(".app_rightBar-cart");
 
 openColorsBtn.addEventListener("click", () => {
-  console.log("hi");
   document.querySelector(".store").style.display = "grid";
 });
 closeColorsBtn.addEventListener("click", () => {
@@ -50,6 +49,7 @@ if (loggedUserID) {
   fetchUser(loggedUserID);
   document.querySelector(".nav_user-link").href = "#profile";
   document.querySelector("#review").style.display = "block";
+  document.querySelector(".link-loginSignup").style.display = "none";
 }
 
 let scores;
