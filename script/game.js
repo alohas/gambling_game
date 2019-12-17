@@ -13,15 +13,15 @@ const game = {
 };
 
 let optionsPC = [
-  "rock",
-  "paper",
-  "scissors",
-  "lizard",
-  "spock",
-  "spider-man",
-  "batman",
-  "wizard",
-  "glock"
+  "Rock",
+  "Paper",
+  "Scissors",
+  "Lizard",
+  "Spock",
+  "Spider-man",
+  "Batman",
+  "Wizard",
+  "Glock"
 ];
 
 const playerh = document.querySelector("div.userhimg > img");
@@ -121,7 +121,7 @@ function aRound(playerHand, computerHand) {
   document.querySelector(".pch span").textContent = computerHand;
 
   winner.style.visibility = "visible";
-  //console.log(playerHand, computerHand);
+  console.log(playerHand, computerHand);
   if (playerHand === computerHand) {
     winner.textContent = "It is a tie!";
     return;
@@ -464,6 +464,9 @@ function resetGame() {
 }
 
 function startGame() {
+  options.forEach(e => {
+    e.disabled = false;
+  });
   modalStart.style.display = "none";
   if (loggedUserID) {
     let betAmmount = 2 * Number(inputAmount.value);
