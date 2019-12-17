@@ -13,15 +13,15 @@ const game = {
 };
 
 let optionsPC = [
-  "Rock",
-  "Paper",
-  "Scissors",
-  "Lizard",
-  "Spock",
-  "Spider-man",
-  "Batman",
-  "Wizard",
-  "Glock"
+  "rock",
+  "paper",
+  "scissors",
+  "lizard",
+  "spock",
+  "spider-man",
+  "batman",
+  "wizard",
+  "glock"
 ];
 
 const playerh = document.querySelector("div.userhimg > img");
