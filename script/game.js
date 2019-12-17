@@ -482,7 +482,7 @@ function startGame() {
             e.disabled = false;
           });
         }
-      }, 15);
+      }, 4);
     }
 
     betting();
