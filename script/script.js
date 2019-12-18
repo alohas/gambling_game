@@ -330,3 +330,14 @@ document.querySelector(".u-close-right").addEventListener("click", () => {
   document.querySelector("#person").classList.remove("hidden");
   document.querySelector("#person1").classList.add("hidden");
 });
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("logoOut").style.top = "0";
+  } else {
+    document.getElementById("logoOut").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+};
