@@ -565,8 +565,6 @@ body {
             margin: auto;
             display: grid;
             grid-template-columns: 1fr 3fr; }
-            .slider_right-button .turn_icon {
-              width: 100%; }
             .slider_right-button .turn_heading {
               color: #7186f5 !important; }
             .slider_right-button .turn span {
@@ -725,6 +723,49 @@ path {
 
 .u-close-right:hover line {
   stroke: #5dfdcb; }
+
+.phone {
+  height: 50px;
+  width: 90px;
+  border: 3px solid #5dfdcb;
+  border-radius: 10px;
+  animation: rotate 1.5s ease-in-out infinite alternate;
+  margin-bottom: -20px; }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(-90deg); }
+  100% {
+    transform: rotate(-90deg); } }
+
+.loader {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #5dfdcb;
+  border-radius: 50%;
+  animation: spin 7s linear infinite;
+  position: relative;
+  left: 25px;
+  top: 5px; }
+  .loader:before, .loader:after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #5dfdcb;
+    border-right: 2px solid #5dfdcb;
+    position: absolute;
+    top: 5px;
+    left: -5px;
+    transform: rotate(350deg); }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
 
 .profile {
   visibility: hidden; }

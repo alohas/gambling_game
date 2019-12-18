@@ -167,9 +167,7 @@
 
           display: grid;
           grid-template-columns: 1fr 3fr;
-          &_icon {
-            width: 100%;
-          }
+
           &_heading {
             color: $color-purple !important;
           }
