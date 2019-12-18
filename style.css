@@ -1129,15 +1129,29 @@ html[data-attribute="red"] {
   position: relative;
   height: 100%; }
   .app_hands {
-    margin-top: 50px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
     display: grid;
-    grid-template-columns: 1fr 1fr; }
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 12rem; }
     .app_hands-user {
       justify-self: center; }
       .app_hands-user .userhimg img {
         transform: rotateY(180deg); }
     .app_hands-pc {
       justify-self: center; }
+
+h3.pch {
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 300; }
+
+h3.userh {
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 300; }
 
 @keyframes pulse {
   0% {
@@ -1454,6 +1468,7 @@ html[data-attribute="red"] {
 .info {
   width: 100%;
   height: 100%;
+  z-index: 999;
   display: none;
   place-items: center;
   position: absolute;
