@@ -1,4 +1,6 @@
 .button {
+  position: relative;
+
   display: block;
   width: 24rem;
   height: 5rem;
@@ -14,6 +16,12 @@
   border: 2px solid $color-purple;
   border-radius: 3rem;
   outline: none;
+
+  transition: all 0.35 ease-in;
+
+  &:active {
+    transform: scale(1) translateY(0.5rem);
+  }
 }
 
 .button-small {
