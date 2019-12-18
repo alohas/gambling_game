@@ -9,6 +9,7 @@
     <title>Get lucky with rock, paper, scissors!</title>
   </head>
   <body>
+
     <div class="bg">
       <div class="bg__img"></div>
       <div class="bg__img"></div>
@@ -16,6 +17,7 @@
       <div class="bg__img"></div>
       <div class="bg__img"></div>
     </div>
+
     <nav class="nav">
       <a href="#menu" class="wrapper"
         ><div class="line half start"></div>
@@ -64,7 +66,7 @@
     
     </nav>
 
-    <section id="game">
+    <main id="game">
       <div class="app">
         <!-- <div class="app_avatar"></div>
         <h3 class="app_username">Trial</h3>
@@ -212,9 +214,9 @@
               </div>
              </div>
           </div>
-    </section>
+        </main>
 
-    <main class="slider" id="slider">
+    <section class="slider" id="slider">
       <div class="slider_left">
         <div class="slider_left-facts">
           <div class="box">
@@ -489,7 +491,7 @@
           </button>
         </div>
       </div>
-    </main>
+    </section>
 
     <div class="menu u-modal" id="menu">
       <div class="menu_container">
@@ -666,7 +668,6 @@
       <a href="#slider" class="u-close"></a>
     </div>
 
-    <!-- Used to select the user; 2 classes used from signup form -->
     <div class="editUser u-modal">
       <div class="signup_container editUser_container">
           <h3 class="heading-tertiary u-modal-heading">edit</h3>
@@ -818,7 +819,6 @@
       <a href="#slider" class="u-close"></a>
       <div class="reviews_container">
         <form class="reviews_add" id="review">
-          <!-- <svg class="reviews_add-stars"></svg> -->
           <br />
           <br />
           <br />
@@ -897,16 +897,6 @@
       <a href="#slider" class="u-close"></a>
     </div>
 
-    <template id="scoreBoard">
-      <tr>
-        <td class="place"></td>
-        <td class="name"></td>
-        <td class="score"></td>
-        <td class="country"></td>
-        <td class="age"></td>
-      </tr>
-    </template>
-
     <div class="friends u-modal" id="friends" style="overflow-y: scroll; overflow-x: hidden;">
       <a href="#slider" class="u-close"></a>
       <div class="friends_container">
@@ -958,6 +948,16 @@
         </div>
       </div>
     </div>
+
+    <template id="scoreBoard">
+        <tr>
+          <td class="place"></td>
+          <td class="name"></td>
+          <td class="score"></td>
+          <td class="country"></td>
+          <td class="age"></td>
+        </tr>
+      </template>
 
     <template id="friends-current">
       <li class="friends_list-list-item">
