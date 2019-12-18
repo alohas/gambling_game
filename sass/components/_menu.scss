@@ -93,7 +93,8 @@
 }
 .nav_user:hover {
   & circle,
-  path {
+  path,
+  line {
     stroke: $color-mint;
   }
 }
@@ -108,4 +109,10 @@ path {
 
 #menu:target + #game {
   display: none !important;
+}
+
+.u-close-right:hover {
+  & line {
+    stroke: $color-mint;
+  }
 }
