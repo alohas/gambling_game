@@ -45,12 +45,12 @@
     grid-template-columns: 1fr 1fr;
     &-user {
       justify-self: center;
+      .userhimg img {
+        transform: rotateY(180deg);
+      }
     }
     &-pc {
       justify-self: center;
-      .pchimg img {
-        transform: rotateY(180deg);
-      }
     }
   }
 }
