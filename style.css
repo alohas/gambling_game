@@ -244,46 +244,6 @@
   to {
     transform: translateX(0); } }
 
-@keyframes shakePlayer {
-  0% {
-    transform: translateY(0px); }
-  15% {
-    transform: translateY(-50px); }
-  25% {
-    transform: translateY(0px); }
-  35% {
-    transform: translateY(-50px); }
-  50% {
-    transform: translateY(0px); }
-  65% {
-    transform: translateY(-50px); }
-  75% {
-    transform: translateY(0px); }
-  85% {
-    transform: translateY(-50px); }
-  100% {
-    transform: translateY(0px); } }
-
-@keyframes shakeComputer {
-  0% {
-    transform: rotateY(180deg) translateY(0px); }
-  15% {
-    transform: rotateY(180deg) translateY(-50px); }
-  25% {
-    transform: rotateY(180deg) translateY(0px); }
-  35% {
-    transform: rotateY(180deg) translateY(-50px); }
-  50% {
-    transform: rotateY(180deg) translateY(0px); }
-  65% {
-    transform: rotateY(180deg) translateY(-50px); }
-  75% {
-    transform: rotateY(180deg) translateY(0px); }
-  85% {
-    transform: rotateY(180deg) translateY(-50px); }
-  100% {
-    transform: rotateY(180deg) translateY(0px); } }
-
 *,
 *::after,
 *::before {
@@ -609,8 +569,6 @@ body {
             margin: auto;
             display: grid;
             grid-template-columns: 1fr 3fr; }
-            .slider_right-button .turn_icon {
-              width: 100%; }
             .slider_right-button .turn_heading {
               color: #7186f5 !important; }
             .slider_right-button .turn span {
@@ -753,7 +711,8 @@ body {
     background-color: #5dfdcb; }
 
 .nav_user:hover circle,
-.nav_user:hover path {
+.nav_user:hover path,
+.nav_user:hover line {
   stroke: #5dfdcb; }
 
 .nav_user > circle,
@@ -765,6 +724,52 @@ path {
 
 #menu:target + #game {
   display: none !important; }
+
+.u-close-right:hover line {
+  stroke: #5dfdcb; }
+
+.phone {
+  height: 50px;
+  width: 90px;
+  border: 3px solid #5dfdcb;
+  border-radius: 10px;
+  animation: rotate 1.5s ease-in-out infinite alternate;
+  margin-bottom: -20px; }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(-90deg); }
+  100% {
+    transform: rotate(-90deg); } }
+
+.loader {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #5dfdcb;
+  border-radius: 50%;
+  animation: spin 7s linear infinite;
+  position: relative;
+  left: 25px;
+  top: 5px; }
+  .loader:before, .loader:after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #5dfdcb;
+    border-right: 2px solid #5dfdcb;
+    position: absolute;
+    top: 5px;
+    left: -5px;
+    transform: rotate(350deg); }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
 
 .profile {
   visibility: hidden; }
@@ -1173,15 +1178,29 @@ html[data-attribute="red"] {
   position: relative;
   height: 100%; }
   .app_hands {
-    margin-top: 50px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
     display: grid;
-    grid-template-columns: 1fr 1fr; }
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 12rem; }
     .app_hands-user {
       justify-self: center; }
+      .app_hands-user .userhimg img {
+        transform: rotateY(180deg); }
     .app_hands-pc {
       justify-self: center; }
-      .app_hands-pc .pchimg img {
-        transform: rotateY(180deg); }
+
+h3.pch {
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 300; }
+
+h3.userh {
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 300; }
 
 @keyframes pulse {
   0% {
@@ -1190,6 +1209,38 @@ html[data-attribute="red"] {
     transform: scale(1.05); }
   100% {
     transform: scale(1); } }
+
+@keyframes shakeComputer {
+  14% {
+    transform: translateY(0px); }
+  28% {
+    transform: translateY(-50px); }
+  42% {
+    transform: translateY(0px); }
+  56% {
+    transform: translateY(-50px); }
+  70% {
+    transform: translateY(0px); }
+  84% {
+    transform: translateY(-50px); }
+  100% {
+    transform: translateY(0px); } }
+
+@keyframes shakePlayer {
+  14% {
+    transform: rotateY(180deg) translateY(0px); }
+  28% {
+    transform: rotateY(180deg) translateY(-50px); }
+  42% {
+    transform: rotateY(180deg) translateY(0px); }
+  56% {
+    transform: rotateY(180deg) translateY(-50px); }
+  70% {
+    transform: rotateY(180deg) translateY(0px); }
+  84% {
+    transform: rotateY(180deg) translateY(-50px); }
+  100% {
+    transform: rotateY(180deg) translateY(0px); } }
 
 .app {
   background-image: radial-gradient(#251343, #0f0819); }
@@ -1260,7 +1311,7 @@ html[data-attribute="red"] {
     font-size: 1.6rem; }
 
 .handsimg {
-  width: 100px; }
+  width: 200px; }
 
 .app-bet {
   visibility: hidden;
@@ -1357,6 +1408,11 @@ html[data-attribute="red"] {
     cursor: pointer; }
     .app_options button:hover svg path {
       fill: #5dfdcb; }
+  .app_options button:disabled {
+    border: 2px solid grey;
+    cursor: default; }
+  .app_options button:disabled > svg > path {
+    fill: grey; }
   .app_options svg {
     width: 70%;
     height: auto;
@@ -1461,6 +1517,7 @@ html[data-attribute="red"] {
 .info {
   width: 100%;
   height: 100%;
+  z-index: 999;
   display: none;
   place-items: center;
   position: absolute;

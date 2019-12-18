@@ -93,7 +93,8 @@
 }
 .nav_user:hover {
   & circle,
-  path {
+  path,
+  line {
     stroke: $color-mint;
   }
 }
@@ -108,4 +109,65 @@ path {
 
 #menu:target + #game {
   display: none !important;
+}
+
+.u-close-right:hover {
+  & line {
+    stroke: $color-mint;
+  }
+}
+
+.phone {
+  height: 50px;
+  width: 90px;
+  border: 3px solid $color-mint;
+  border-radius: 10px;
+  animation: rotate 1.5s ease-in-out infinite alternate;
+  margin-bottom: -20px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+.loader {
+  width: 35px;
+  height: 35px;
+  border: 2px solid $color-mint;
+  border-radius: 50%;
+  animation: spin 7s linear infinite;
+  position: relative;
+  left: 25px;
+  top: 5px;
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid $color-mint;
+    border-right: 2px solid $color-mint;
+    position: absolute;
+    top: 5px;
+    left: -5px;
+    transform: rotate(350deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

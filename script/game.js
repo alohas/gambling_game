@@ -78,7 +78,7 @@ handsimg.forEach(hand => {
 });
 
 options.forEach(option => {
-  options.disabled = true;
+  option.disabled = true;
   option.addEventListener("click", function() {
     options.forEach(e => {
       e.disabled = true;
@@ -121,7 +121,7 @@ function aRound(playerHand, computerHand) {
   document.querySelector(".pch span").textContent = computerHand;
 
   winner.style.visibility = "visible";
-  //console.log(playerHand, computerHand);
+  console.log(playerHand, computerHand);
   if (playerHand === computerHand) {
     winner.textContent = "It is a tie!";
     return;
@@ -364,19 +364,29 @@ function aRound(playerHand, computerHand) {
 }
 
 function updateScore() {
-  document.querySelector(".app_wins-userw span").textContent = game.userWin;
-  document.querySelector(".app_wins-pcw span").textContent = game.pcWin;
+  document.querySelector(".app_wins-userw span").textContent =
+    "- " + game.userWin + " -";
+  document.querySelector(".app_wins-pcw span").textContent =
+    "- " + game.pcWin + " -";
 }
 
 function checkScore() {
   if (game.userWin == 2 || game.pcWin == 2) {
+    options.forEach(option => {
+      option.disabled = true;
+    });
+
     modalWin.style.display = "grid";
+    document.querySelector(".modal_winner_body_logged-restart").textContent =
+      "Play Again";
     options.forEach(e => {
       e.disabled = true;
     });
+
     if (game.userWin == 2) {
       document.querySelector(".modal_winner_body-message").textContent =
         "winner";
+
       if (loggedUserID) {
         userObject.coins = userObject.coins + Number(bet.textContent);
         populateUserInfo(userObject);
@@ -409,6 +419,11 @@ function checkScore() {
       document.querySelector(".modal_winner_body_notlogged").style.display =
         "none";
       if (userObject.coins == 0) {
+        document.querySelector(".modal_winner_body-message").textContent =
+          "out of coins";
+        document.querySelector(
+          ".modal_winner_body_logged-restart"
+        ).textContent = "Get 100";
         userObject.coins = 100;
 
         populateUserInfo(userObject);
@@ -436,13 +451,13 @@ function resetGame() {
   updateScore();
   modalWin.style.display = "none";
   document.querySelector(".app_result").style.visibility = "hidden";
-  playerh.src = `assets/hands/hand_default.svg`;
-  computerh.src = `assets/hands/hand_default.svg`;
+  playerh.src = `assets/hands/hand_Default.svg`;
+  computerh.src = `assets/hands/hand_Default.svg`;
   document.querySelector(".userh span").textContent = "";
   document.querySelector(".pch span").textContent = "";
-  options.forEach(e => {
-    e.disabled = false;
-  });
+  // options.forEach(e => {
+  //   e.disabled = false;
+  // });
   bet.style.visibility = "hidden";
   modalStart.style.display = "grid";
   inputAmount.value = 10;
@@ -454,7 +469,24 @@ function startGame() {
   });
   modalStart.style.display = "none";
   if (loggedUserID) {
-    bet.textContent = 2 * Number(inputAmount.value);
+    let betAmmount = 2 * Number(inputAmount.value);
+    bet.textContent = 0;
+
+    function betting() {
+      setTimeout(function() {
+        bet.textContent++;
+        if (bet.textContent < betAmmount) {
+          betting();
+        } else {
+          options.forEach(e => {
+            e.disabled = false;
+          });
+        }
+      }, 4);
+    }
+
+    betting();
+
     bet.style.visibility = "visible";
     userObject.coins = userObject.coins - Number(inputAmount.value);
     populateUserInfo(userObject);

@@ -10,7 +10,6 @@ const closeColorsBtn = document.querySelector(".store_close");
 const openColorsBtn = document.querySelector(".app_rightBar-cart");
 
 openColorsBtn.addEventListener("click", () => {
-  console.log("hi");
   document.querySelector(".store").style.display = "grid";
 });
 closeColorsBtn.addEventListener("click", () => {
@@ -50,6 +49,7 @@ if (loggedUserID) {
   fetchUser(loggedUserID);
   document.querySelector(".nav_user-link").href = "#profile";
   document.querySelector("#review").style.display = "block";
+  document.querySelector(".link-loginSignup").style.display = "none";
 }
 
 let scores;
@@ -168,6 +168,13 @@ function populateUserInfo(user) {
     .querySelector(".modal_start_body-logged-input")
     .setAttribute("max", user.coins);
   document.querySelector("div.highscore_sorting").style.display = "block";
+  if (user.username == "admin") {
+    document.querySelector("#admin_list").style.display = "inline-block";
+    document.querySelector(".admin_panel").style.display = "inline-block";
+  } else {
+    document.querySelector("#admin_list").style.display = "none";
+    document.querySelector(".admin_panel").style.display = "none";
+  }
 }
 
 //CLOSING MODAL WITH THE X
@@ -313,3 +320,24 @@ function showScoresByAge() {
       showScores(filteredUsers);
     });
 }
+
+document.querySelector(".nav_user-link").addEventListener("click", () => {
+  document.querySelector("#person").classList.add("hidden");
+  document.querySelector("#person1").classList.remove("hidden");
+});
+
+document.querySelector(".u-close-right").addEventListener("click", () => {
+  document.querySelector("#person").classList.remove("hidden");
+  document.querySelector("#person1").classList.add("hidden");
+});
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("logoOut").style.top = "0";
+  } else {
+    document.getElementById("logoOut").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+};

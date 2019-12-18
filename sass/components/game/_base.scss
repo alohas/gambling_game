@@ -60,17 +60,32 @@ html[data-attribute="red"] {
   height: 100%;
 
   &_hands {
-    margin-top: 50px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 12rem;
     &-user {
       justify-self: center;
-    }
-    &-pc {
-      justify-self: center;
-      .pchimg img {
+      .userhimg img {
         transform: rotateY(180deg);
       }
     }
+    &-pc {
+      justify-self: center;
+    }
   }
+}
+
+h3.pch {
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+h3.userh {
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 300;
 }
