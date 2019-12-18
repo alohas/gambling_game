@@ -50,3 +50,13 @@
 #friends:target {
 	visibility: visible;
 }
+
+.friends_container {
+	.profile_user-icon {
+		border: 2px solid $color-purple;
+		border-radius: 25rem;
+		padding: $margin;
+		margin-bottom: $margin;
+		width: 17rem;
+	}
+}
