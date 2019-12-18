@@ -320,3 +320,13 @@ function showScoresByAge() {
       showScores(filteredUsers);
     });
 }
+
+document.querySelector(".nav_user-link").addEventListener("click", () => {
+  document.querySelector("#person").classList.add("hidden");
+  document.querySelector("#person1").classList.remove("hidden");
+});
+
+document.querySelector(".u-close-right").addEventListener("click", () => {
+  document.querySelector("#person").classList.remove("hidden");
+  document.querySelector("#person1").classList.add("hidden");
+});
