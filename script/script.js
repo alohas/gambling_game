@@ -326,9 +326,11 @@ document.querySelector(".nav_user-link").addEventListener("click", () => {
   document.querySelector("#person1").classList.remove("hidden");
 });
 
-document.querySelector(".u-close-right").addEventListener("click", () => {
-  document.querySelector("#person").classList.remove("hidden");
-  document.querySelector("#person1").classList.add("hidden");
+document.querySelectorAll(".u-close-right").forEach(elem => {
+  elem.addEventListener("click", () => {
+    document.querySelector("#person").classList.remove("hidden");
+    document.querySelector("#person1").classList.add("hidden");
+  });
 });
 
 var prevScrollpos = window.pageYOffset;
