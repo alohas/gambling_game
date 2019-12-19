@@ -578,10 +578,11 @@ body {
           display: none; } }
 
 .review {
-  width: 80%;
+  width: 100%;
   padding: 2rem;
   display: grid;
-  grid-template-columns: min-content 1fr;
+  grid-template-columns: 9rem 1fr;
+  grid-gap: 1rem;
   background: rgba(0, 0, 0, 0.5);
   transform: skew(-15deg); }
   @media (max-width: 900px) and (orientation: portrait) {
@@ -590,12 +591,11 @@ body {
   .review_icon {
     width: 6rem;
     height: 6rem;
-    margin-right: 2rem;
     transform: skew(15deg); }
   .review_content {
     transform: skew(15deg); }
     .review_content-stars {
-      height: 1.5rem; }
+      height: 2.5rem; }
     .review_content-text {
       font-size: 1.8rem;
       font-weight: 400; }
@@ -982,7 +982,8 @@ select {
     margin-bottom: 2rem;
     justify-items: center;
     grid-row-gap: 2rem;
-    overflow: auto; }
+    overflow: auto;
+    overflow-x: hidden; }
 
 #reviews:target {
   visibility: visible; }
@@ -1101,6 +1102,10 @@ select {
 
 .editUser {
   display: none; }
+  .editUser .button {
+    margin-top: 3rem; }
+  .editUser .button-small {
+    margin-top: 3rem; }
 
 .confirmModifications {
   display: none; }
@@ -1113,13 +1118,17 @@ select {
 
 .editUser_paragraph-modifyPassword {
   color: #7186f5;
-  font-size: 2.8rem;
-  font-weight: 600;
-  padding: 1.5rem 0; }
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1.5rem 0;
+  text-transform: lowercase; }
   .editUser_paragraph-modifyPassword:hover {
     cursor: pointer; }
-  .editUser_paragraph-modifyPassword::before {
-    content: url("assets/images/lock-icon.png"); }
+  .editUser_paragraph-modifyPassword img {
+    display: inline-block;
+    width: 3.5rem;
+    height: 3.5rem;
+    transform: translateY(0.5rem); }
 
 .editUser_paragraph-alertNoModifs {
   padding-bottom: 1.5rem;
@@ -1187,7 +1196,7 @@ html[data-attribute="red"] {
   top: 50%;
   color: var(--color-primary);
   transform: translateY(-50%) translateX(100vw);
-  animation: gameIn 0.6s ease-in 3.5s forwards; }
+  animation: gameIn 0.6s ease-in-out 3.5s forwards; }
   @media (max-width: 1100px) {
     #game {
       right: 1vw;
@@ -1224,14 +1233,16 @@ html[data-attribute="red"] {
       justify-self: center; }
 
 h3.pch {
-  text-align: right;
+  text-align: center;
   font-size: 1.5rem;
-  font-weight: 300; }
+  font-weight: 600;
+  text-transform: uppercase; }
 
 h3.userh {
-  text-align: left;
+  text-align: center;
   font-size: 1.5rem;
-  font-weight: 300; }
+  font-weight: 600;
+  text-transform: uppercase; }
 
 @keyframes pulse {
   0% {
@@ -1440,10 +1451,10 @@ h3.userh {
     .app_options button:hover svg path {
       fill: #5dfdcb; }
   .app_options button:disabled {
-    border: 2px solid grey;
+    border: 2px solid var(--color-secondary);
     cursor: default; }
   .app_options button:disabled > svg > path {
-    fill: grey; }
+    fill: var(--color-secondary); }
   .app_options svg {
     width: 70%;
     height: auto;

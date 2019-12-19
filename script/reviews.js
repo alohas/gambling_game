@@ -44,7 +44,7 @@ function populateReviews(user) {
   let template = document.querySelector(".review-template").content;
   let clone = template.cloneNode(true);
   clone.querySelector(".avatarUser").textContent = user.imageName;
-  clone.querySelector(".usernameUser").textContent = user.username;
+  clone.querySelector(".usernameUser").textContent = "~ " + user.username;
   let starsHTML = "";
   for (let i = 0; i < user.starRate; i++) {
     starsHTML += '<img src="assets/images/star_full.png" alt="Star Rate"/>';

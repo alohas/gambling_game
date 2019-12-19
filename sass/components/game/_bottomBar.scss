@@ -20,11 +20,11 @@
     }
   }
   button:disabled {
-    border: 2px solid grey;
+    border: 2px solid var(--color-secondary);
     cursor: default;
   }
   button:disabled > svg > path {
-    fill: grey;
+    fill: var(--color-secondary);
   }
 
   svg {

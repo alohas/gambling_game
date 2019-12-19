@@ -49,7 +49,9 @@ if (loggedUserID) {
   fetchUser(loggedUserID);
   document.querySelector(".nav_user-link").href = "#profile";
   document.querySelector("#review").style.display = "block";
-  document.querySelector(".link-loginSignup").style.display = "none";
+  // document.querySelector(".link-loginSignup").style.display = "none";
+  document.querySelector(".menu-login").textContent = "see profile";
+  document.querySelector(".menu-login").href = "#profile";
 }
 
 let scores;
@@ -191,9 +193,25 @@ closeModal.forEach(elem => {
   });
 });
 
-document.querySelector(".menu-login").addEventListener("click", () => {
+document.querySelector(".link-loginSignup").addEventListener("click", () => {
   wrapperMenu.classList.toggle("open");
+  document.querySelector("#person").classList.add("hidden");
+  document.querySelector("#person1").classList.remove("hidden");
 });
+
+document
+  .querySelector(".modal_winner_body_notlogged_buttons-login")
+  .addEventListener("click", () => {
+    document.querySelector("#person").classList.add("hidden");
+    document.querySelector("#person1").classList.remove("hidden");
+  });
+
+document
+  .querySelector(".modal_winner_body_notlogged_buttons-signup")
+  .addEventListener("click", () => {
+    document.querySelector("#person").classList.add("hidden");
+    document.querySelector("#person1").classList.remove("hidden");
+  });
 
 //SCORE BOARD
 document.querySelector(".link-highscore > a").addEventListener("click", e => {

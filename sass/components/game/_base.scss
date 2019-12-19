@@ -78,12 +78,15 @@ html[data-attribute="red"] {
 }
 
 h3.pch {
-  text-align: right;
+  text-align: center;
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 600;
+  text-transform: uppercase;
 }
+
 h3.userh {
-  text-align: left;
+  text-align: center;
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 600;
+  text-transform: uppercase;
 }
