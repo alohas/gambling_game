@@ -1,3 +1,6 @@
+#personclose {
+  cursor: pointer;
+}
 .app_rightBar {
   position: absolute;
   top: 4%;
@@ -22,6 +25,33 @@
       height: 57%;
       margin: auto;
       transform: translateY(1.2rem);
+
+      .cls-1b,
+      .cls-2b,
+      .cls-3b,
+      .cls-4b {
+        fill: none;
+        stroke: #f99419;
+        stroke-linecap: round;
+      }
+      .cls-1b,
+      .cls-3b,
+      .cls-4b {
+        stroke-linejoin: round;
+      }
+      .cls-1b,
+      .cls-2b {
+        stroke-width: 10px;
+      }
+      .cls-2b {
+        stroke-miterlimit: 10;
+      }
+      .cls-3b {
+        stroke-width: 6px;
+      }
+      .cls-4b {
+        stroke-width: 5px;
+      }
     }
   }
   &-info {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Feel the new millenial hype with the virtual rock, paper, scissors for free!">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sass/main.scss" />
     <title>Get lucky with rock, paper, scissors!</title>
   </head>
   <body>
@@ -25,7 +25,7 @@
         <div class="line half end"></div
       ></a>
 
-      <img src="assets/images/logo.svg" alt="logo" class="nav_logo" id="logoOut">
+      <img src="/static/images/logo.svg" alt="logo" class="nav_logo" id="logoOut">
       <a href="#login" class="nav_user-link">
         <svg
           class="nav_user"
@@ -60,7 +60,7 @@
           <circle id="crcl" class="cls-2k" cx="112.5" cy="63.5" r="57.5" />
         </svg>
     
-      <svg id="person1" class="nav_user hidden" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.86 170.5"><defs><style>.cls-1{fill:none;stroke:#7186f5;stroke-linecap:round;stroke-linejoin:round;stroke-width:15px;}</style></defs><line class="cls-1" x1="2.5" y1="2.5" x2="169.77" y2="166"/><line class="cls-1" x1="3.77" y1="168" x2="172.36" y2="5.22"/></svg>
+      <svg class="nav_user hidden" id="personclose"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.86 170.5"><defs><style>.cls-1{fill:none;stroke:#7186f5;stroke-linecap:round;stroke-linejoin:round;stroke-width:15px;}</style></defs><line class="cls-1" x1="2.5" y1="2.5" x2="169.77" y2="166"/><line class="cls-1" x1="3.77" y1="168" x2="172.36" y2="5.22"/></svg>
 
       </a>
     
@@ -92,10 +92,10 @@
   </div>
         <div class="app_wins">
           <div class="app_wins-userw">
-            <img src="assets/game/you200.png" alt="you" /> <span>- 0 -</span>
+            <img src="/static/game/you200.png" alt="you" /> <span>- 0 -</span>
           </div>
           <div class="app_wins-pcw">
-            <img src="assets/game/bot200.png" alt="bot" /> <span>- 0 -</span>
+            <img src="/static/game/bot200.png" alt="bot" /> <span>- 0 -</span>
           </div>
         </div>
         <h3 class="app-bet">1</h3>
@@ -110,7 +110,7 @@
           <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.97 147.8"><path class="qmark" d="M151.2,176.78a98.93,98.93,0,0,1,1.5-20q1.7-9,9.5-17.2,4.4-4.61,9.2-9a122.58,122.58,0,0,0,8.8-8.9,53.35,53.35,0,0,0,6.7-9.3,20.87,20.87,0,0,0,2.7-10.4,24.31,24.31,0,0,0-2.11-10.1,23.48,23.48,0,0,0-6.12-8.2,29.13,29.13,0,0,0-9.83-5.5,40.71,40.71,0,0,0-13.24-2,32.15,32.15,0,0,0-13.24,2.6,26.82,26.82,0,0,0-9.73,7.2,31.37,31.37,0,0,0-5.92,10.7A38.88,38.88,0,0,0,127.6,110h-12a42.63,42.63,0,0,1,2.2-18.2,38.22,38.22,0,0,1,8.9-14.1,40.42,40.42,0,0,1,14.1-9.1,49.2,49.2,0,0,1,18-3.2,57.71,57.71,0,0,1,18.3,2.7,39.39,39.39,0,0,1,13.7,7.6,32.75,32.75,0,0,1,8.6,11.9,38.7,38.7,0,0,1,3,15.4,28.12,28.12,0,0,1-3.9,15.1,60.53,60.53,0,0,1-9.5,11.7q-5.59,5.4-11.6,10.9A63.28,63.28,0,0,0,167,153a23.38,23.38,0,0,0-3.8,11.5q-.4,6.3-.4,12.3Zm-1.2,36.4v-17.6h14.6v17.6Z" transform="translate(-115.43 -65.38)"/></svg>
         </div>
         <div class="app_rightBar-cart" >
-        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 209.5 193.79"><defs><style>.cls-1b,.cls-2b,.cls-3b,.cls-4b{fill:none;stroke:#f99419;stroke-linecap:round;}.cls-1b,.cls-3b,.cls-4b{stroke-linejoin:round;}.cls-1b,.cls-2b{stroke-width:10px;}.cls-2b{stroke-miterlimit:10;}.cls-3b{stroke-width:6px;}.cls-4b{stroke-width:5px;}</style></defs><polyline class="cls-1b" points="5 5 33 10 80 130 195 120 204.5 46.5 47.5 46.5"/><path class="cls-2b" d="M120,182l-18.81,16.85a11.94,11.94,0,0,0-3.91,11.27A11.58,11.58,0,0,0,98.93,214a12,12,0,0,0,10.1,5.22H232.12" transform="translate(-40 -52)"/><circle class="cls-3b" cx="68.81" cy="179.42" r="9.44"/><circle class="cls-3b" cx="181.84" cy="181.34" r="9.44"/><line class="cls-4b" x1="66.41" y1="46.5" x2="66.41" y2="94.92"/><line class="cls-4b" x1="88.84" y1="46.5" x2="88.84" y2="128.75"/><line class="cls-4b" x1="111.27" y1="46.5" x2="111.27" y2="127.16"/><line class="cls-4b" x1="133.71" y1="46.5" x2="133.71" y2="125.36"/><line class="cls-4b" x1="155.93" y1="46.5" x2="155.93" y2="123.52"/><line class="cls-4b" x1="178.37" y1="46.5" x2="178.37" y2="121.48"/><line class="cls-4b" x1="58.42" y1="74.89" x2="200.32" y2="74.89"/><line class="cls-4b" x1="68.28" y1="100.06" x2="197.38" y2="100.06"/></svg>
+        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 209.5 193.79"><polyline class="cls-1b" points="5 5 33 10 80 130 195 120 204.5 46.5 47.5 46.5"/><path class="cls-2b" d="M120,182l-18.81,16.85a11.94,11.94,0,0,0-3.91,11.27A11.58,11.58,0,0,0,98.93,214a12,12,0,0,0,10.1,5.22H232.12" transform="translate(-40 -52)"/><circle class="cls-3b" cx="68.81" cy="179.42" r="9.44"/><circle class="cls-3b" cx="181.84" cy="181.34" r="9.44"/><line class="cls-4b" x1="66.41" y1="46.5" x2="66.41" y2="94.92"/><line class="cls-4b" x1="88.84" y1="46.5" x2="88.84" y2="128.75"/><line class="cls-4b" x1="111.27" y1="46.5" x2="111.27" y2="127.16"/><line class="cls-4b" x1="133.71" y1="46.5" x2="133.71" y2="125.36"/><line class="cls-4b" x1="155.93" y1="46.5" x2="155.93" y2="123.52"/><line class="cls-4b" x1="178.37" y1="46.5" x2="178.37" y2="121.48"/><line class="cls-4b" x1="58.42" y1="74.89" x2="200.32" y2="74.89"/><line class="cls-4b" x1="68.28" y1="100.06" x2="197.38" y2="100.06"/></svg>
           </div>
         </div>
 
@@ -118,7 +118,7 @@
           <div class="app_hands-user">
             
             <div class="userhimg handsimg">
-              <img src="assets/hands/hand_Default.svg" alt="default" />
+              <img src="/static/hands/hand_Default.svg" alt="default" />
             </div>
             <h3 class="userh"><span></span></h3>
           </div>
@@ -126,7 +126,7 @@
           <div class="app_hands-pc">
             
             <div class="pchimg handsimg">
-              <img src="assets/hands/hand_Default.svg" alt="default" />
+              <img src="/static/hands/hand_Default.svg" alt="default" />
             </div>
             <h3 class="pch"><span></span></h3>
           </div>
@@ -201,7 +201,7 @@
             <div class="info_close heading-secondary">&times;</div>
             <div class="info_container">
               <div class="info_heading">
-                <img src="assets/images/logo.svg" alt="logo" class="info_heading-img">
+                <img src="/static/images/logo.svg" alt="logo" class="info_heading-img">
                 <h2 class="info_heading-h1 heading-secondary">Rock Paper Scissors</h2>
               </div>
               <div class="info_rules">
@@ -406,20 +406,20 @@
         </div>
         <div class="slider_left-ratings">
           <div class="ratings_overall">
-            <h3 class="heading-tertiary ratings_overall-h1"> <img class="star" src="assets/images/star_full.png" alt=""> 4.7</h3>
+            <h3 class="heading-tertiary ratings_overall-h1"> <img class="star" src="/static/images/star_full.png" alt=""> 4.7</h3>
             <div class="ratings_overall-border"></div>
             <h3 class="heading-tertiary ratings_overall-h2">124 ratings</h3>
           </div>
           <div class="ratings_reviews">
             <div class="review">
-                <img class="review_icon" src="assets/images/player.svg" alt="">
+                <img class="review_icon" src="/static/images/player.svg" alt="">
               <div class="review_content">
                 <div>
-                  <img src="assets/images/star_full.png" alt="Star Rate">
-                  <img src="assets/images/star_full.png" alt="Star Rate">
-                  <img src="assets/images/star_full.png" alt="Star Rate">
-                  <img src="assets/images/star_full.png" alt="Star Rate">
-                  <img src="assets/images/star_empty.png" alt="Star Rate">
+                  <img src="/static/images/star_full.png" alt="Star Rate">
+                  <img src="/static/images/star_full.png" alt="Star Rate">
+                  <img src="/static/images/star_full.png" alt="Star Rate">
+                  <img src="/static/images/star_full.png" alt="Star Rate">
+                  <img src="/static/images/star_empty.png" alt="Star Rate">
                 </div>
                 <p class="review_content-text paragraph">
                   Interesting user interface for sure!
@@ -428,14 +428,14 @@
               </div>
             </div>
             <div class="review">
-                <img class="review_icon" src="assets/images/player.svg" alt="">
+                <img class="review_icon" src="/static/images/player.svg" alt="">
               <div class="review_content">
                 <div>
-                  <img src="assets/images/star_full.png" alt="Star Rate">
-                  <img src="assets/images/star_full.png" alt="Star Rate">
-                  <img src="assets/images/star_full.png" alt="Star Rate">
-                  <img src="assets/images/star_empty.png" alt="Star Rate">
-                  <img src="assets/images/star_empty.png" alt="Star Rate">
+                  <img src="/static/images/star_full.png" alt="Star Rate">
+                  <img src="/static/images/star_full.png" alt="Star Rate">
+                  <img src="/static/images/star_full.png" alt="Star Rate">
+                  <img src="/static/images/star_empty.png" alt="Star Rate">
+                  <img src="/static/images/star_empty.png" alt="Star Rate">
                 </div>
                 <p class="review_content-text paragraph">
                   Best game I ever played in my whole life, without a doubt.
@@ -444,14 +444,14 @@
               </div>
             </div>
             <div class="review">
-              <img class="review_icon" src="assets/images/player.svg" alt="">
+              <img class="review_icon" src="/static/images/player.svg" alt="">
               <div class="review_content">
                 <div>
-                  <img src="assets/images/star_full.png" alt="Star Rate">
-                  <img src="assets/images/star_full.png" alt="Star Rate">
-                  <img src="assets/images/star_full.png" alt="Star Rate">
-                  <img src="assets/images/star_full.png" alt="Star Rate">
-                  <img src="assets/images/star_full.png" alt="Star Rate">
+                  <img src="/static/images/star_full.png" alt="Star Rate">
+                  <img src="/static/images/star_full.png" alt="Star Rate">
+                  <img src="/static/images/star_full.png" alt="Star Rate">
+                  <img src="/static/images/star_full.png" alt="Star Rate">
+                  <img src="/static/images/star_full.png" alt="Star Rate">
                 </div>
                 <p class="review_content-text paragraph">
                   Makes the time pass faster than usual.
@@ -650,15 +650,15 @@
 
         
         <div class="profile_settings">
-          <img class="profile_settings-icon" src="assets/images/friends.png" alt="friends">
+          <img class="profile_settings-icon" src="/static/images/friends.png" alt="friends">
           <a href="#friends" class="text-link see-friends">friends</a>
           <br />
           <br />
-          <img class="profile_settings-icon" src="assets/images/edit.png" alt="friends">
+          <img class="profile_settings-icon" src="/static/images/edit.png" alt="friends">
           <a href="#" class="text-link edit-profile">edit profile</a>
           <br />
           <br />
-          <img class="profile_settings-icon admin_panel" src="assets/images/shield.png" alt="admin_panel">
+          <img class="profile_settings-icon admin_panel" src="/static/images/shield.png" alt="admin_panel">
           <a href="https://alohas.github.io/exam_user-list/" target="_blank" class="text-link" id="admin_list">access user list</a>
         </div>
         <button class="button logOut">Log out</button>
@@ -709,7 +709,7 @@
             <label for="age">age</label>
           </div>
           <p class="editUser_paragraph-modifyPassword">
-            <img src="assets/images/lock.png" alt="lock icon">
+            <img src="/static/images/lock.png" alt="lock icon">
             Modify password
           </p>
           <p class="paragraph editUser_paragraph-alertNoModifs">
@@ -824,27 +824,27 @@
           <br />
           <div class="stars">
             <img
-              src="assets/images/star_empty.png"
+              src="/static/images/star_empty.png"
               alt="Star Rate"
               class="star-1 1"
             />
             <img
-              src="assets/images/star_empty.png"
+              src="/static/images/star_empty.png"
               alt="Star Rate"
               class="star-2 2"
             />
             <img
-              src="assets/images/star_empty.png"
+              src="/static/images/star_empty.png"
               alt="Star Rate"
               class="star-3 3"
             />
             <img
-              src="assets/images/star_empty.png"
+              src="/static/images/star_empty.png"
               alt="Star Rate"
               class="star-4 4"
             />
             <img
-              src="assets/images/star_empty.png"
+              src="/static/images/star_empty.png"
               alt="Star Rate"
               class="star-5 5"
             />
@@ -977,7 +977,7 @@
     
     <template id="review" class="review-template">
       <article class="review">
-        <img class="review_icon avatarUser" src="assets/images/player.svg" alt="">
+        <img class="review_icon avatarUser" src="/static/images/player.svg" alt="">
         
         <div class="review_content contentUser">
           <div class="review_content-stars starUser"></div>
@@ -996,11 +996,5 @@
     </div>
 
     <script src="script/script.js"></script>
-    <script src="script/login.js"></script>
-    <script src="script/reviews.js"></script>
-    <script src="script/edit-profile.js"></script>
-    <script src="script/game.js"></script>
-    <script src="script/signup.js"></script>
-    <script src="script/friends.js"></script>
   </body>
 </html>

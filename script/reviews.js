@@ -47,10 +47,10 @@ function populateReviews(user) {
   clone.querySelector(".usernameUser").textContent = "~ " + user.username;
   let starsHTML = "";
   for (let i = 0; i < user.starRate; i++) {
-    starsHTML += '<img src="assets/images/star_full.png" alt="Star Rate"/>';
+    starsHTML += '<img src="/images/star_full.png" alt="Star Rate"/>';
   }
   for (let i = 0; i < 5 - user.starRate; i++) {
-    starsHTML += '<img src="assets/images/star_empty.png" alt="Star Rate"/>';
+    starsHTML += '<img src="/images/star_empty.png" alt="Star Rate"/>';
   }
   clone.querySelector(".starUser").innerHTML = starsHTML;
   clone.querySelector(".reviewUser").textContent = user.review;
@@ -80,9 +80,9 @@ function colorstars(rating) {
   }
   for (let star of stars) {
     if (star.classList[2] == "full") {
-      star.src = "assets/images/star_full.png";
+      star.src = "/images/star_full.png";
     } else {
-      star.src = "assets/images/star_empty.png";
+      star.src = "/images/star_empty.png";
     }
   }
 }
@@ -95,7 +95,7 @@ document.querySelector(".reviews_add-post").addEventListener("click", e => {
   document.querySelector("#review > textarea").value = " ";
   for (let star of stars) {
     star.classList.remove("full");
-    star.src = "assets/images/star_empty.png";
+    star.src = "/images/star_empty.png";
   }
   document.querySelector("textarea").style.color = "rgba(255, 255, 255, 0.4)";
 });

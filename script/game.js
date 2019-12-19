@@ -87,10 +87,10 @@ options.forEach(option => {
     let result = null;
 
     setTimeout(() => {
-      playerh.src = `assets/hands/hand_${
+      playerh.src = `/hands/hand_${
         option.querySelector("svg").dataset.name
       }.svg`;
-      computerh.src = `assets/hands/hand_${generatedHand}.svg`;
+      computerh.src = `/hands/hand_${generatedHand}.svg`;
 
       result = aRound(option.querySelector("svg").dataset.name, generatedHand);
 
@@ -451,8 +451,8 @@ function resetGame() {
   updateScore();
   modalWin.style.display = "none";
   document.querySelector(".app_result").style.visibility = "hidden";
-  playerh.src = `assets/hands/hand_Default.svg`;
-  computerh.src = `assets/hands/hand_Default.svg`;
+  playerh.src = `/hands/hand_Default.svg`;
+  computerh.src = `/hands/hand_Default.svg`;
   document.querySelector(".userh span").textContent = "";
   document.querySelector(".pch span").textContent = "";
   // options.forEach(e => {
