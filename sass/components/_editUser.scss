@@ -1,52 +1,52 @@
 .editUser {
-  display: none;
+	display: none;
 }
 
 .confirmModifications {
-  display: none;
+	display: none;
 }
 
 .modifyPassword {
-  display: none;
+	display: none;
 }
 
 .editUser_paragraph-alertNoModifs {
-  display: none;
+	display: none;
 }
 
 .editUser_paragraph-modifyPassword {
-  color: $color-purple;
-  font-size: $text-xs;
-  font-weight: 600;
-  padding: 1.5rem 0;
+	color: $color-purple;
+	font-size: $text-m;
+	font-weight: 600;
+	padding: 1.5rem 0;
 
-  &:hover {
-    cursor: pointer;
-  }
+	&:hover {
+		cursor: pointer;
+	}
 
-  &::before {
-    content: url("assets/images/lock-icon.png");
-  }
+	&::before {
+		content: url("assets/images/lock-icon.png");
+	}
 }
 
 .editUser_paragraph-alertNoModifs {
-  padding-bottom: 1.5rem;
-  font-size: $text-xxs;
-  font-weight: 600;
+	padding-bottom: 1.5rem;
+	font-size: $text-xxs;
+	font-weight: 600;
 }
 
 .editUser_select {
-  width: 70%;
-  padding: 0.5rem 0.5rem;
+	width: 70%;
+	padding: 0.5rem 0.5rem;
 }
 
 .confirmModifications_paragraph-alertWrongPass {
-  display: none;
+	display: none;
 }
 
 .modifyPassword_paragraph-alert {
-  display: none;
-  padding-bottom: 1.5rem;
-  font-size: $text-xxs;
-  font-weight: 600;
+	display: none;
+	padding-bottom: 1.5rem;
+	font-size: $text-xxs;
+	font-weight: 600;
 }
