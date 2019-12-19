@@ -89,7 +89,7 @@ function moreSlider(mediaQuery) {
       document.querySelector(".slider").style.animation = "";
       document.querySelector(".nav").style.animation = "";
       document.querySelector(".slider").style.animation =
-        "sliderFullIn 0.4s ease-in forwards";
+        "sliderFullIn 0.4s ease-in-out forwards";
       // document.querySelector(".nav").style.animation =
       //   "navIn 0.4s ease-in forwards";
       document.querySelector(".nav").style.width = "100vw";
@@ -99,7 +99,7 @@ function moreSlider(mediaQuery) {
       document.querySelector(".slider").style.animation = "";
       document.querySelector(".nav").style.animation = "";
       document.querySelector(".slider").style.animation =
-        "sliderOut 0.4s ease-in forwards";
+        "sliderOut 0.4s ease-in-out forwards";
       // document.querySelector(".nav").style.animation =
       //   "navOut 0.4s ease-in forwards";
       document.querySelector(".nav").style.width = "32vw";

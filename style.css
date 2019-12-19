@@ -455,7 +455,7 @@ body {
   grid-template-columns: 1fr 32vw;
   grid-gap: 2.5rem;
   transform: translateX(-100vw);
-  animation: sliderIn 0.4s ease-in 3s forwards;
+  animation: sliderIn 0.4s ease-in-out 3s forwards;
   z-index: 30; }
   @media (max-width: 900px) and (orientation: portrait) {
     .slider {

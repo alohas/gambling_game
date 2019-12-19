@@ -8,7 +8,7 @@
   grid-gap: $margin;
 
   transform: translateX(-100vw);
-  animation: sliderIn 0.4s ease-in 3s forwards;
+  animation: sliderIn 0.4s ease-in-out 3s forwards;
 
   z-index: 30;
 
