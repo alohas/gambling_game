@@ -7,11 +7,20 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile:sass": "node-sass sass/main.scss style.css -w"
   },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "/static/",
+        "staticOutDir": "dist"
+      }
+    ]
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cssnano": "^4.1.10",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "sass": "^1.23.7"
   },
   "dependencies": {
     "parcel-plugin-static-files-copy": "^2.2.1"
