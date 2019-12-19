@@ -493,10 +493,10 @@ function populateReviews(user) {
   clone.querySelector(".usernameUser").textContent = "~ " + user.username;
   let starsHTML = "";
   for (let i = 0; i < user.starRate; i++) {
-    starsHTML += '<img src="/images/star_full.png" alt="Star Rate"/>';
+    starsHTML += '<img src="./distimages/star_full.png" alt="Star Rate"/>';
   }
   for (let i = 0; i < 5 - user.starRate; i++) {
-    starsHTML += '<img src="/images/star_empty.png" alt="Star Rate"/>';
+    starsHTML += '<img src="./distimages/star_empty.png" alt="Star Rate"/>';
   }
   clone.querySelector(".starUser").innerHTML = starsHTML;
   clone.querySelector(".reviewUser").textContent = user.review;
@@ -1000,10 +1000,10 @@ options.forEach(option => {
     let result = null;
 
     setTimeout(() => {
-      playerh.src = `/hands/hand_${
+      playerh.src = `./disthands/hand_${
         option.querySelector("svg").dataset.name
       }.svg`;
-      computerh.src = `/hands/hand_${generatedHand}.svg`;
+      computerh.src = `./disthands/hand_${generatedHand}.svg`;
 
       result = aRound(option.querySelector("svg").dataset.name, generatedHand);
 
@@ -1363,8 +1363,8 @@ function resetGame() {
   updateScore();
   modalWin.style.display = "none";
   document.querySelector(".app_result").style.visibility = "hidden";
-  playerh.src = `/hands/hand_Default.svg`;
-  computerh.src = `/hands/hand_Default.svg`;
+  playerh.src = `./disthands/hand_Default.svg`;
+  computerh.src = `./disthands/hand_Default.svg`;
   document.querySelector(".userh span").textContent = "";
   document.querySelector(".pch span").textContent = "";
   // options.forEach(e => {
